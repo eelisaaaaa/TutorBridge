@@ -3,165 +3,122 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TutorBridge | Pricing & Savings Comparison</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+  <title>Pricing &amp; Currency Comparison — TutorBridge</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .calc-box {
+      background: #fff;
+      border: 2px solid var(--amber);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      box-shadow: var(--shadow-md);
+      max-width: 800px;
+      margin: 0 auto 32px;
+    }
+    .res-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+      text-align: center;
+    }
+    .res-card {
+      background: var(--off-white);
+      border: 1px solid var(--grey-mid);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+    }
+    .res-card.highlight {
+      background: var(--amber-light);
+      border-color: var(--amber);
+    }
+    .res-val {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--teal-deep);
+      margin-top: 4px;
+    }
+    .res-card.highlight .res-val {
+      color: var(--coral);
+    }
+  </style>
 </head>
 <body>
+  <div id="global-navbar"></div>
 
-  <!-- Shared Navbar with Always-On Hamburger Menu -->
-  <nav class="navbar navbar-dark navbar-custom sticky-top">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-        <img src="assets/logo.svg" alt="TutorBridge Logo">
-        <span>TutorBridge</span>
-      </a>
-      <button class="navbar-toggler border-0 ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse mt-2" id="navbarNav">
-        <div class="p-3 bg-teal rounded-3 shadow-sm" style="background-color: var(--dark-teal);">
-          <ul class="navbar-nav mb-3">
-            <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door me-2"></i>Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="tutor-directory.html"><i class="bi bi-grid me-2"></i>Directory</a></li>
-            <li class="nav-item"><a class="nav-link" href="tutor-profile.html"><i class="bi bi-card-checklist me-2"></i>Swipe Deck</a></li>
-            <li class="nav-item"><a class="nav-link" href="shortlist.html"><i class="bi bi-heart me-2"></i>Shortlist</a></li>
-            <li class="nav-item"><a class="nav-link" href="how-it-works.html"><i class="bi bi-info-circle me-2"></i>How It Works</a></li>
-            <li class="nav-item"><a class="nav-link active" href="pricing.html"><i class="bi bi-calculator me-2"></i>Pricing</a></li>
-            <li class="nav-item"><a class="nav-link" href="about-us.html"><i class="bi bi-journal-text me-2"></i>About Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="faq.html"><i class="bi bi-question-circle me-2"></i>FAQ</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope me-2"></i>Contact</a></li>
-          </ul>
-          <a href="request-tutor.html" class="btn btn-coral w-100 text-center fw-bold">Request a Tutor</a>
+  <main class="container">
+    <div style="text-align:right; margin-bottom:12px;">
+      <span class="owner-pill">Page Owner: Kalai</span>
+    </div>
+
+    <div class="page-header">
+      <h1>Pricing &amp; Currency Comparison</h1>
+      <p>Compare local physical Singapore tuition rates against TutorBridge cross-border 1-on-1 rates.</p>
+    </div>
+
+    <!-- Live Calculator Widget -->
+    <div class="calc-box">
+      <h2 style="font-size:20px; color:var(--teal-deep); text-align:center; margin-bottom:20px;">
+        🧮 Interactive Tuition Savings Calculator
+      </h2>
+
+      <div class="grid-2">
+        <div class="form-group">
+          <label class="form-label">Select Subject</label>
+          <select id="calc-subject" class="form-select">
+            <option value="emath">Elementary Mathematics ($18/hr)</option>
+            <option value="amath">Additional Mathematics ($20/hr)</option>
+            <option value="physics">Pure / Combined Physics ($22/hr)</option>
+            <option value="chem">Pure / Combined Chemistry ($18/hr)</option>
+            <option value="bio">Pure / Combined Biology ($17/hr)</option>
+            <option value="english">English Language ($15/hr)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Lesson Hours Per Week</label>
+          <input type="number" id="calc-hours" class="form-input" min="1" max="10" value="2">
+        </div>
+      </div>
+
+      <div class="res-grid">
+        <div class="res-card">
+          <div style="font-size:12px; font-weight:700; color:var(--grey-dark);">LOCAL SG COST (MO)</div>
+          <div class="res-val" id="res-local-cost">$440</div>
+        </div>
+
+        <div class="res-card">
+          <div style="font-size:12px; font-weight:700; color:var(--teal-deep);">TUTORBRIDGE COST (MO)</div>
+          <div class="res-val" id="res-platform-cost">$144</div>
+        </div>
+
+        <div class="res-card highlight">
+          <div style="font-size:12px; font-weight:700; color:#7a5a20;">YOUR MONTHLY SAVINGS</div>
+          <div class="res-val" id="res-savings">$296</div>
+          <div style="font-size:11px; font-weight:700; color:var(--coral);" id="res-savings-pct">67% Saved</div>
         </div>
       </div>
     </div>
-  </nav>
 
-  <main>
-    <!-- Page Banner -->
-    <section class="page-banner text-center">
-      <div class="container">
-        <h1 class="fw-extrabold">Pricing & Currency Comparison</h1>
-        <p class="lead text-secondary max-w-700 mx-auto">
-          Transparent pricing showing direct live savings compared to typical Singapore local tuition rates.
-        </p>
-      </div>
-    </section>
-
-    <!-- Calculator Widget Section -->
-    <section class="py-5 bg-white">
-      <div class="container max-w-800">
-        <div class="card p-4 p-md-5 border-2 shadow-sm rounded-4" style="border-color: var(--primary-teal);">
-          <h3 class="fw-bold mb-4 text-center text-teal" style="color: var(--primary-teal);">
-            <i class="bi bi-calculator me-2"></i>Live Savings Calculator
-          </h3>
-
-          <div class="row g-3 mb-4">
-            <div class="col-md-6">
-              <label class="form-label fw-bold small">Select Subject</label>
-              <select id="calcSubjectSelect" class="form-select form-select-lg fs-6">
-                <option value="Mathematics">Mathematics (E-Math / A-Math)</option>
-                <option value="Physics">Physics</option>
-                <option value="Chemistry">Chemistry</option>
-                <option value="English">English Literature</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label fw-bold small">Weekly Hours Needed</label>
-              <input type="number" id="calcHoursInput" class="form-control form-control-lg fs-6" value="4" min="1" max="20" placeholder="e.g. 4 hours/week">
-            </div>
-          </div>
-
-          <button id="calcComputeBtn" class="btn btn-coral btn-lg w-100 fw-bold fs-6 mb-4">Calculate Live Cost Comparison</button>
-
-          <!-- Live Output Result Box -->
-          <div id="calcResultBox" class="p-4 rounded-3 border" style="background-color: #f8fafc;">
-            <div class="row text-center align-items-center g-3">
-              <div class="col-md-4">
-                <div class="p-3 bg-light rounded">
-                  <span class="small text-muted d-block mb-1">Local SG Physical Rate</span>
-                  <h4 class="fw-bold text-dark mb-0">S$880<span class="fs-7 text-muted">/mo</span></h4>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="p-3 bg-teal text-white rounded" style="background-color: var(--primary-teal);">
-                  <span class="small text-light opacity-75 d-block mb-1">TutorBridge Rate</span>
-                  <h4 class="fw-bold text-white mb-0">S$256<span class="fs-7 text-light opacity-75">/mo</span></h4>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="p-3 bg-warning bg-opacity-25 rounded border border-warning">
-                  <span class="small text-dark fw-bold d-block mb-1">Direct Monthly Savings</span>
-                  <h3 class="fw-extrabold text-success mb-0">S$624</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Explanation Text Below Calculator -->
-        <div class="mt-5">
-          <h4 class="fw-bold mb-3">Why are our rates so much lower?</h4>
-          <p class="text-secondary">
-            Singapore physical tuition agencies charge significant overhead fees and local tutors demand rates of S$50–S$80/hr due to Singapore's high cost of living.
-          </p>
-          <p class="text-secondary">
-            By connecting with certified English-fluent tutors living in countries with favorable exchange rates, your tuition dollars go much further. Our tutors receive competitive, highly attractive pay in their local currency while you save up to 75% on tuition fees.
-          </p>
-        </div>
-      </div>
-    </section>
+    <!-- Detailed Explanation Text Below Calculator -->
+    <div class="card" style="max-width:800px; margin:0 auto 32px;">
+      <h3 style="color:var(--teal-deep); margin-bottom:12px;">Why is TutorBridge so much more affordable?</h3>
+      <p style="font-size:14px; color:var(--charcoal); line-height:1.7; margin-bottom:12px;">
+        1. <strong>Exchange Rate Advantage:</strong> Tutors living in Malaysia, the Philippines, and Indonesia earn competitive local income when paid in SGD ($15 - $25 SGD/hr), allowing them to dedicate 100% of their energy to teaching high-quality lessons.
+      </p>
+      <p style="font-size:14px; color:var(--charcoal); line-height:1.7; margin-bottom:12px;">
+        2. <strong>Zero Physical Center Overhead:</strong> Traditional Singapore tuition centers charge premium rates to cover expensive shopping mall rent. Online 1-on-1 Zoom sessions pass those savings directly back to lower- and middle-income families.
+      </p>
+      <p style="font-size:14px; color:var(--charcoal); line-height:1.7;">
+        3. <strong>Transparent SGD Billing:</strong> Parents are billed strictly in Singapore Dollars via PayNow or Credit Card. TutorBridge manages cross-border currency payouts seamlessly with zero hidden fees.
+      </p>
+    </div>
   </main>
 
-  <!-- Shared Footer -->
-  <footer class="footer-custom">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-lg-3 col-md-6">
-          <a class="d-flex align-items-center gap-2 text-white text-decoration-none mb-3" href="index.html">
-            <img src="assets/logo.svg" alt="TutorBridge Logo" style="width: 32px; height: 32px;">
-            <span class="fs-4 fw-bold">TutorBridge</span>
-          </a>
-          <p class="small">Borderless platform connecting Singapore secondary students with verified international tutors.</p>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <h5>Explore</h5>
-          <ul class="list-unstyled">
-            <li><a href="tutor-directory.html">Tutor Directory</a></li>
-            <li><a href="tutor-profile.html">Tutor Swipe Deck</a></li>
-            <li><a href="shortlist.html">Your Shortlist</a></li>
-            <li><a href="pricing.html">Pricing Calculator</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <h5>Platform</h5>
-          <ul class="list-unstyled">
-            <li><a href="how-it-works.html">How It Works</a></li>
-            <li><a href="about-us.html">About Our Story</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="resources.html">Resources for Parents</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <h5>Contact</h5>
-          <p class="small mb-1"><i class="bi bi-envelope me-2"></i>hello@tutorbridge.sg</p>
-          <p class="small mb-0"><i class="bi bi-geo-alt me-2"></i>Singapore 239917</p>
-        </div>
-      </div>
-      <hr class="footer-divider">
-      <div class="text-center small text-muted">
-        © 2026 TutorBridge SG. ST0501 Front-End Web Development CA2 Project.
-      </div>
-    </div>
-  </footer>
+  <div id="global-footer"></div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/tutors-data.js"></script>
+  <script src="js/data.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/calculator.js"></script>
 </body>
 </html>

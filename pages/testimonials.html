@@ -3,156 +3,146 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TutorBridge | Success Stories & Testimonials</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+  <title>Success Stories — TutorBridge</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .carousel-card {
+      background: #fff;
+      border: 1px solid var(--grey-mid);
+      border-radius: var(--radius-md);
+      padding: 36px 28px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      min-height: 240px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--grey-mid);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .dot.active {
+      background: var(--coral);
+      transform: scale(1.25);
+    }
+    .nav-arrow-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid var(--teal-deep);
+      color: var(--teal-deep);
+      font-size: 20px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: var(--transition);
+    }
+    .nav-arrow-btn:hover {
+      background: var(--teal-deep);
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
+  <div id="global-navbar"></div>
 
-  <!-- Shared Navbar with Always-On Hamburger Menu -->
-  <nav class="navbar navbar-dark navbar-custom sticky-top">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-        <img src="assets/logo.svg" alt="TutorBridge Logo">
-        <span>TutorBridge</span>
-      </a>
-      <button class="navbar-toggler border-0 ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse mt-2" id="navbarNav">
-        <div class="p-3 bg-teal rounded-3 shadow-sm" style="background-color: var(--dark-teal);">
-          <ul class="navbar-nav mb-3">
-            <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door me-2"></i>Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="tutor-directory.html"><i class="bi bi-grid me-2"></i>Directory</a></li>
-            <li class="nav-item"><a class="nav-link" href="tutor-profile.html"><i class="bi bi-card-checklist me-2"></i>Swipe Deck</a></li>
-            <li class="nav-item"><a class="nav-link" href="shortlist.html"><i class="bi bi-heart me-2"></i>Shortlist</a></li>
-            <li class="nav-item"><a class="nav-link" href="how-it-works.html"><i class="bi bi-info-circle me-2"></i>How It Works</a></li>
-            <li class="nav-item"><a class="nav-link" href="pricing.html"><i class="bi bi-calculator me-2"></i>Pricing</a></li>
-            <li class="nav-item"><a class="nav-link" href="about-us.html"><i class="bi bi-journal-text me-2"></i>About Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="faq.html"><i class="bi bi-question-circle me-2"></i>FAQ</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope me-2"></i>Contact</a></li>
-          </ul>
-          <a href="request-tutor.html" class="btn btn-coral w-100 text-center fw-bold">Request a Tutor</a>
+  <main class="container">
+    <div style="text-align:right; margin-bottom:12px;">
+      <span class="owner-pill">Page Owner: Kalai</span>
+    </div>
+
+    <div class="page-header">
+      <h1>Success Stories &amp; Testimonials</h1>
+      <p>Real stories from Singapore secondary school students and parents achieving academic excellence with TutorBridge.</p>
+    </div>
+
+    <div style="max-width:760px; margin:0 auto 40px; position:relative;">
+      <div style="display:flex; align-items:center; gap:16px;">
+        <button class="nav-arrow-btn" aria-label="Previous Slide" onclick="prevSlide()">←</button>
+        
+        <div style="flex:1;">
+          <div id="testimonial-slide-box">
+            <!-- JS populated -->
+          </div>
         </div>
+
+        <button class="nav-arrow-btn" aria-label="Next Slide" onclick="nextSlide()">→</button>
+      </div>
+
+      <div class="carousel-dots" id="carousel-dots-box">
+        <!-- JS dots populated -->
       </div>
     </div>
-  </nav>
 
-  <main>
-    <!-- Page Banner -->
-    <section class="page-banner text-center">
-      <div class="container">
-        <h1 class="fw-extrabold">Student Success Stories</h1>
-        <p class="lead text-secondary max-w-700 mx-auto">
-          Hear from Singapore parents and Sec 1–5 students who transformed their grades with TutorBridge.
-        </p>
-      </div>
-    </section>
-
-    <!-- Carousel Section (3-5 Testimonial Cards) -->
-    <section class="py-5 bg-white">
-      <div class="container max-w-800">
-        <div id="testimonialCarousel" class="carousel slide shadow-sm rounded-4 border p-4 p-md-5" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            
-            <!-- Slide 1 -->
-            <div class="carousel-item active text-center">
-              <div class="fs-4 text-warning mb-3">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-              </div>
-              <p class="fs-5 italic text-secondary mb-4">
-                "My daughter's Physics grade jumped from C5 to A2 in just 4 months. Her tutor Amara in Cape Town charges less than half what we paid locally — and she actually looks forward to lessons!"
-              </p>
-              <h5 class="fw-bold mb-0">Mei Ling (Parent of Sec 4 Student)</h5>
-              <span class="badge badge-coral mt-2">Subject Improved: Pure Physics (C5 → A2)</span>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="carousel-item text-center">
-              <div class="fs-4 text-warning mb-3">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-              </div>
-              <p class="fs-5 italic text-secondary mb-4">
-                "I was struggling with E-Math paper 2 problem sums. Ethan broke down every question type patiently. I scored an A1 in my Prelims!"
-              </p>
-              <h5 class="fw-bold mb-0">Jayden Lim (Sec 4 O-Level Student)</h5>
-              <span class="badge badge-teal mt-2">Subject Improved: E-Math (D7 → A1)</span>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="carousel-item text-center">
-              <div class="fs-4 text-warning mb-3">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-              </div>
-              <p class="fs-5 italic text-secondary mb-4">
-                "As a single parent of two Sec 2 boys, tuition fees used to take up a huge chunk of my salary. TutorBridge saved us over S$500 a month with fantastic tutors."
-              </p>
-              <h5 class="fw-bold mb-0">Mrs. Rahim (Parent, Tampines)</h5>
-              <span class="badge badge-coral mt-2">Subjects: Chemistry & English</span>
-            </div>
-
-          </div>
-
-          <!-- Carousel Controls -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev" style="filter: invert(1);">
-            <span class="carousel-control-prev-icon"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next" style="filter: invert(1);">
-            <span class="carousel-control-next-icon"></span>
-          </button>
-        </div>
-      </div>
-    </section>
+    <div class="highlight-box" style="max-width:760px; margin:0 auto; text-align:center;">
+      🌟 Join over 1,200 Singapore students who elevated their O &amp; N-Level results while saving on tuition!
+    </div>
   </main>
 
-  <!-- Shared Footer -->
-  <footer class="footer-custom">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-lg-3 col-md-6">
-          <a class="d-flex align-items-center gap-2 text-white text-decoration-none mb-3" href="index.html">
-            <img src="assets/logo.svg" alt="TutorBridge Logo" style="width: 32px; height: 32px;">
-            <span class="fs-4 fw-bold">TutorBridge</span>
-          </a>
-          <p class="small">Borderless platform connecting Singapore secondary students with verified international tutors.</p>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <h5>Explore</h5>
-          <ul class="list-unstyled">
-            <li><a href="tutor-directory.html">Tutor Directory</a></li>
-            <li><a href="tutor-profile.html">Tutor Swipe Deck</a></li>
-            <li><a href="shortlist.html">Your Shortlist</a></li>
-            <li><a href="pricing.html">Pricing Calculator</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <h5>Platform</h5>
-          <ul class="list-unstyled">
-            <li><a href="how-it-works.html">How It Works</a></li>
-            <li><a href="about-us.html">About Our Story</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="resources.html">Resources for Parents</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <h5>Contact</h5>
-          <p class="small mb-1"><i class="bi bi-envelope me-2"></i>hello@tutorbridge.sg</p>
-          <p class="small mb-0"><i class="bi bi-geo-alt me-2"></i>Singapore 239917</p>
-        </div>
-      </div>
-      <hr class="footer-divider">
-      <div class="text-center small text-muted">
-        © 2026 TutorBridge SG. ST0501 Front-End Web Development CA2 Project.
-      </div>
-    </div>
-  </footer>
+  <div id="global-footer"></div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/tutors-data.js"></script>
+  <script src="js/data.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    let currentSlide = 0;
+
+    function renderSlide() {
+      const box = document.getElementById('testimonial-slide-box');
+      const dotsBox = document.getElementById('carousel-dots-box');
+      if (!box || typeof TESTIMONIALS_DATA === 'undefined') return;
+
+      const t = TESTIMONIALS_DATA[currentSlide];
+
+      box.innerHTML = `
+        <div class="carousel-card">
+          <img src="${t.avatar}" style="width:70px; height:70px; border-radius:50%; object-fit:cover; margin-bottom:14px; border:3px solid var(--teal-light);" alt="${t.name}">
+          <p style="font-size:16px; color:var(--charcoal); font-style:italic; margin-bottom:16px; line-height:1.6;">
+            "${t.quote}"
+          </p>
+          <div style="font-weight:700; color:var(--teal-deep); font-size:15px;">${t.name}</div>
+          <div style="font-size:13px; color:var(--coral); font-weight:600; margin-top:4px;">
+            ${t.subject} &bull; ${t.improvement}
+          </div>
+        </div>
+      `;
+
+      dotsBox.innerHTML = TESTIMONIALS_DATA.map((_, idx) => `
+        <span class="dot ${idx === currentSlide ? 'active' : ''}" onclick="goToSlide(${idx})"></span>
+      `).join('');
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % TESTIMONIALS_DATA.length;
+      renderSlide();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + TESTIMONIALS_DATA.length) % TESTIMONIALS_DATA.length;
+      renderSlide();
+    }
+
+    function goToSlide(idx) {
+      currentSlide = idx;
+      renderSlide();
+    }
+
+    document.addEventListener('DOMContentLoaded', renderSlide);
+  </script>
 </body>
 </html>

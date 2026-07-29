@@ -1,115 +1,126 @@
-/* =========================================================
-   ST0501 CA2 FRONT-END WEB DEVELOPMENT
-   TutorBridge Shared Tutor Data & Storage Helper
-   ========================================================= */
+/* TutorBridge Shared Mock Data */
 
 const TUTORS_DATA = [
   {
-    id: 1,
-    name: "Amara Nkosi",
-    subject: "Mathematics",
-    level: "O/N-Level",
-    country: "South Africa",
-    rate: 14,
+    id: "tutor-1",
+    name: "Aisha Rahman",
+    subject: "Elementary & Additional Mathematics",
+    level: "O-Level / N-Level",
+    country: "Malaysia (KL)",
+    rate: 18,
+    sgLocalRate: 55,
+    qualifications: "B.Sc. Pure Mathematics (University of Malaya), 5+ yrs tuition experience",
     rating: 4.9,
-    reviews: 48,
-    avatar: "AN",
-    bio: "Specializing in E-Math and A-Math problem-solving techniques for Singapore Sec 1–5 students.",
-    qualifications: "B.Sc Mathematics & Education, Cape Town. 6+ years O-Level prep experience.",
-    availability: "Mon, Wed, Fri (4 PM - 9 PM SGT)"
+    reviewsCount: 38,
+    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=350&q=80",
+    bio: "Specializes in algebra, calculus, and trigonometry for Sec 1-5. Helps students improve from C/D grades to A1/A2 through structured step-by-step techniques."
   },
   {
-    id: 2,
-    name: "David Tan",
-    subject: "Chemistry",
+    id: "tutor-2",
+    name: "Dr. Mark Tan",
+    subject: "Pure & Combined Physics",
     level: "O-Level",
-    country: "Malaysia",
-    rate: 16,
-    rating: 4.8,
-    reviews: 32,
-    avatar: "DT",
-    bio: "Ex-MOE syllabus trained tutor focusing on organic chemistry concepts and exam paper drill.",
-    qualifications: "M.Sc Chemical Engineering, University of Malaya. 8 years teaching experience.",
-    availability: "Tue, Thu (5 PM - 9.30 PM SGT), Sat (All Day)"
-  },
-  {
-    id: 3,
-    name: "Priya Santos",
-    subject: "English",
-    level: "O/N-Level",
-    country: "Philippines",
-    rate: 12,
+    country: "Philippines (Manila)",
+    rate: 22,
+    sgLocalRate: 65,
+    qualifications: "Ph.D. Applied Physics (Ateneo de Manila), Ex-High School Teacher",
     rating: 5.0,
-    reviews: 61,
-    avatar: "PS",
-    bio: "Helping students master essay structure, comprehension, and oral exam confidence.",
-    qualifications: "First Class BA English Literature, Ateneo. Certified TESOL Educator.",
-    availability: "Weekdays 3 PM - 8 PM SGT"
+    reviewsCount: 52,
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=350&q=80",
+    bio: "Passionate about making physics simple and visual. Focuses on O-Level TYS topical mastery and exam phrasing tips."
   },
   {
-    id: 4,
-    name: "Rahul Sharma",
-    subject: "Physics",
-    level: "O-Level",
-    country: "India",
-    rate: 15,
-    rating: 4.9,
-    reviews: 54,
-    avatar: "RS",
-    bio: "Simplifying mechanics, waves, and electricity through interactive virtual simulations.",
-    qualifications: "B.Tech Mechanical Engineering, IIT Delhi. 5+ years SG physics tuition.",
-    availability: "Sat & Sun (9 AM - 6 PM SGT)"
-  },
-  {
-    id: 5,
-    name: "Siti Rahmah",
-    subject: "Biology",
-    level: "O/N-Level",
-    country: "Malaysia",
-    rate: 13,
-    rating: 4.7,
-    reviews: 29,
-    avatar: "SR",
-    bio: "Structured cell biology and human physiology notes tailored to Cambridge GCE Syllabus.",
-    qualifications: "B.Sc Biotechnology, Universiti Sains Malaysia.",
-    availability: "Mon to Fri (6 PM - 9.30 PM SGT)"
-  },
-  {
-    id: 6,
-    name: "Ethan Lee",
-    subject: "Mathematics",
-    level: "N-Level",
-    country: "Philippines",
-    rate: 11,
+    id: "tutor-3",
+    name: "Nurul Huda",
+    subject: "Pure & Combined Chemistry",
+    level: "O-Level / N-Level",
+    country: "Indonesia (Bandung)",
+    rate: 16,
+    sgLocalRate: 50,
+    qualifications: "B.Eng Chemical Engineering (ITB Bandung), Top scorer",
     rating: 4.8,
-    reviews: 41,
-    avatar: "EL",
-    bio: "Patient and encouraging foundation math specialist for Sec 1-3 students.",
-    qualifications: "B.S. Math Education. Specialist in step-by-step foundation building.",
-    availability: "Weekdays 4 PM - 8 PM SGT"
+    reviewsCount: 29,
+    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=350&q=80",
+    bio: "Patient and encouraging tutor who makes organic chemistry and stoichiometry easy to grasp for Sec 3-5 students."
+  },
+  {
+    id: "tutor-4",
+    name: "Rajesh Kumar",
+    subject: "English Language & Literature",
+    level: "O-Level / N-Level",
+    country: "India (Bengaluru)",
+    rate: 15,
+    sgLocalRate: 48,
+    qualifications: "M.A. English Literature, Certified IELTS & Cambridge Trainer",
+    rating: 4.9,
+    reviewsCount: 44,
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=350&q=80",
+    bio: "Focuses on Paper 1 essay writing techniques, Paper 2 comprehension strategy, and oral communication practice."
+  },
+  {
+    id: "tutor-5",
+    name: "Chloe Lee",
+    subject: "Biology & General Science",
+    level: "O-Level / N-Level",
+    country: "Malaysia (Penang)",
+    rate: 17,
+    sgLocalRate: 52,
+    qualifications: "B.Sc. Biomedical Science (USM), 4 yrs O-Level tutoring",
+    rating: 4.85,
+    reviewsCount: 31,
+    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=350&q=80",
+    bio: "Uses custom diagrams and memory mnemonics to master complex human physiology and plant biology topics."
   }
 ];
 
-// LocalStorage Helper for Shortlist Management
-const ShortlistStorage = {
-  KEY: "tutorbridge_shortlist",
-  getIds: function () {
-    const data = localStorage.getItem(this.KEY);
-    return data ? JSON.parse(data) : [1, 3]; // Default demo items
+const TESTIMONIALS_DATA = [
+  {
+    name: "Darren Koh (Sec 4 Express)",
+    subject: "Additional Mathematics",
+    improvement: "Jumped from E8 to A2 in 4 months",
+    quote: "My tutor Aisha explained calculus so clearly! The rates were less than half of what my previous home tutor charged, which really helped my family.",
+    avatar: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=200&q=80"
   },
-  add: function (id) {
-    const ids = this.getIds();
-    if (!ids.includes(id)) {
-      ids.push(id);
-      localStorage.setItem(this.KEY, JSON.stringify(ids));
-    }
+  {
+    name: "Mrs. Sarah Lim (Parent of Sec 3 N-Level student)",
+    subject: "Combined Science (Physics/Chem)",
+    improvement: "Saved over $350/month in tuition fees",
+    quote: "TutorBridge has been a lifesaver. My daughter gets 1-on-1 Zoom sessions with a highly qualified physics doctor for just $22/hr. Her confidence has skyrocketed!",
+    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80"
   },
-  remove: function (id) {
-    let ids = this.getIds();
-    ids = ids.filter(item => item !== id);
-    localStorage.setItem(this.KEY, JSON.stringify(ids));
-  },
-  has: function (id) {
-    return this.getIds().includes(id);
+  {
+    name: "Siti Zulaiha (Sec 5 Normal Academic)",
+    subject: "O-Level English Language",
+    improvement: "Achieved B3 grade in O-Levels",
+    quote: "The trial lesson feature gave me peace of mind. Rajesh helped me structure my argumentative essays step-by-step. Highly recommended!",
+    avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80"
   }
-};
+];
+
+const FAQ_DATA = [
+  {
+    category: "Safety & Vetting",
+    question: "How are overseas tutors vetted and verified?",
+    answer: "Every tutor must pass our rigorous academic verification process: submitting degree/certificate transcripts, passing our full Singapore O/N-Level diagnostic paper with an A-grade standard, and completing a live teaching interview."
+  },
+  {
+    category: "Safety & Vetting",
+    question: "Are online Zoom sessions recorded for student safety?",
+    answer: "Yes, all lessons conducted through the TutorBridge platform are optionally recorded and monitored for safety and quality assurance. Parents can review recorded sessions at any time in the Sessions portal."
+  },
+  {
+    category: "Trial & Booking",
+    question: "How does the trial lesson work?",
+    answer: "You can request a 30-minute commitment-free trial session with any shortlisted tutor. If you are satisfied after the trial, you can confirm a regular weekly schedule."
+  },
+  {
+    category: "Payments & Refunds",
+    question: "How are payments handled and converted?",
+    answer: "All pricing is displayed transparently in SGD ($/hr). You pay safely via local SGD options (PayNow, Credit Card, GrabPay). We take care of currency conversion and cross-border tutor payouts seamlessly."
+  },
+  {
+    category: "Payments & Refunds",
+    question: "What is the cancellation and refund policy?",
+    answer: "You can reschedule or cancel any scheduled session up to 24 hours prior without charge. Unused prepaid lesson credits are fully refundable within 30 days."
+  }
+];
