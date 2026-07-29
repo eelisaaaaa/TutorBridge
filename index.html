@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TutorBridge | Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Shared Navbar with Right-Side Offcanvas Hamburger Menu -->
+  <nav class="navbar navbar-dark navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="assets/logo.svg" alt="TutorBridge Logo">
+        <span>TutorBridge</span>
+      </a>
+
+      <!-- Right-Side Hamburger Menu Button (Three Lines) -->
+      <button class="navbar-toggler border-0 ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Right-Side Offcanvas Side Menu Drawer (Works on Mobile & Desktop) -->
+      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color: var(--footer-bg) !important; width: 320px;">
+        <div class="offcanvas-header border-bottom border-secondary">
+          <h5 class="offcanvas-title fw-bold text-white d-flex align-items-center gap-2" id="offcanvasNavbarLabel">
+            <img src="assets/logo.svg" alt="TutorBridge Logo" style="width: 28px; height: 28px;">
+            <span>TutorBridge</span>
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column justify-content-between p-4">
+          <ul class="navbar-nav">
+            <li class="nav-item mb-1"><a class="nav-link py-2 px-3 rounded text-white bg-teal active" href="index.html" style="background-color: var(--primary-teal);"><i class="bi bi-house-door me-2"></i>Home</a></li>
+            <li class="nav-item mb-1"><a class="nav-link py-2 px-3 rounded text-white" href="tutor-directory.html"><i class="bi bi-grid me-2"></i>Directory</a></li>
+            <li class="nav-item mb-1"><a class="nav-link py-2 px-3 rounded text-white" href="tutor-profile.html"><i class="bi bi-card-checklist me-2"></i>Swipe Deck</a></li>
+            <li class="nav-item mb-1"><a class="nav-link py-2 px-3 rounded text-white" href="shortlist.html"><i class="bi bi-heart me-2"></i>Shortlist</a></li>
+            <li class="nav-item mb-1"><a class="nav-link py-2 px-3 rounded text-white" href="how-it-works.html"><i class="bi bi-info-circle me-2"></i>How It Works</a></li>
+            <li class="nav-item mb-1"><a class="nav-link py-2 px-3 rounded text-white" href="pricing.html"><i class="bi bi-calculator me-2"></i>Pricing</a></li>
+            <li class="nav-item mb-1"><a class="nav-link py-2 px-3 rounded text-white" href="about-us.html"><i class="bi bi-journal-text me-2"></i>About Us</a></li>
+            <li class="nav-item mb-1"><a class="nav-link py-2 px-3 rounded text-white" href="faq.html"><i class="bi bi-question-circle me-2"></i>FAQ</a></li>
+            <li class="nav-item mb-1"><a class="nav-link py-2 px-3 rounded text-white" href="testimonials.html"><i class="bi bi-star me-2"></i>Success Stories</a></li>
+            <li class="nav-item mb-1"><a class="nav-link py-2 px-3 rounded text-white" href="resources.html"><i class="bi bi-book me-2"></i>Parent Resources</a></li>
+            <li class="nav-item mb-1"><a class="nav-link py-2 px-3 rounded text-white" href="contact.html"><i class="bi bi-envelope me-2"></i>Contact</a></li>
+          </ul>
+          <div class="mt-4">
+            <a href="request-tutor.html" class="btn btn-coral w-100 text-center fw-bold py-2">Request a Tutor</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section (Headline + Subject/Level Search + CTA) -->
+    <section class="page-banner text-center py-5">
+      <div class="container">
+        <div class="badge bg-white text-dark shadow-sm px-3 py-2 rounded-pill mb-3">
+          <i class="bi bi-patch-check-fill text-teal me-1" style="color: var(--primary-teal);"></i>
+          Verified tutors, cross-border rates, real savings
+        </div>
+        <h1 class="fw-extrabold display-5 mb-3">Find affordable, quality tuition</h1>
+        <p class="lead text-secondary max-w-700 mx-auto mb-4">
+          Connecting Singapore Sec 1–5 students with top overseas educators at a fraction of local physical rates.
+        </p>
+
+        <!-- Search Bar Container -->
+        <div class="card p-3 shadow-sm max-w-700 mx-auto border-0 mb-4" style="background: #ffffff;">
+          <div class="row g-2 align-items-center">
+            <div class="col-md-5">
+              <select class="form-select border-0 bg-light" id="heroSubjectSelect">
+                <option value="">Select Subject...</option>
+                <option value="Mathematics">Mathematics (E-Math/A-Math)</option>
+                <option value="Physics">Physics</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="English">English Literature</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <select class="form-select border-0 bg-light" id="heroLevelSelect">
+                <option value="">Select Level...</option>
+                <option value="O-Level">O-Level</option>
+                <option value="N-Level">N-Level</option>
+                <option value="Sec 1-2">Sec 1–2 Foundation</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <a href="tutor-directory.html" class="btn btn-coral w-100 fw-bold">Find a Tutor</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Savings Snapshot -->
+        <div class="d-inline-block bg-warning bg-opacity-25 border border-warning px-4 py-2 rounded-pill fw-bold text-dark">
+          <i class="bi bi-lightning-charge-fill me-1 text-warning"></i>
+          Savings snapshot — "Save up to 75% vs local tuition"
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Strip -->
+    <section class="py-3 bg-teal text-white text-center" style="background-color: var(--primary-teal);">
+      <div class="container">
+        <div class="row g-3 justify-content-center">
+          <div class="col-md-3"><strong>1,200+</strong> Tutors Vetted</div>
+          <div class="col-md-3"><strong>3,500+</strong> SG Students Taught</div>
+          <div class="col-md-3"><strong>S$184,200</strong> Saved This Month</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Teaser (3 Steps) -->
+    <section class="py-5 bg-white">
+      <div class="container text-center">
+        <h2 class="fw-bold mb-2">How It Works</h2>
+        <p class="text-muted mb-4">A simple 3-step process to get started.</p>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card-custom h-100 p-4">
+              <div class="step-tab-num">01</div>
+              <h5 class="fw-bold">Browse & Filter Tutors</h5>
+              <p class="text-muted small mb-0">Search by subject, origin country, hourly budget, or swipe profiles.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-custom h-100 p-4">
+              <div class="step-tab-num">02</div>
+              <h5 class="fw-bold">Request a Free Trial</h5>
+              <p class="text-muted small mb-0">Book a 25-minute online trial lesson over Zoom / Google Meet.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-custom h-100 p-4">
+              <div class="step-tab-num">03</div>
+              <h5 class="fw-bold">Confirm & Lock Savings</h5>
+              <p class="text-muted small mb-0">Confirm your weekly schedule and pay securely with zero markup.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Tutor Cards (Snapshot of 3 Tutors) -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <h2 class="fw-bold mb-1">Featured Tutors</h2>
+            <p class="text-muted mb-0">Top-rated tutors ready for immediate trial bookings.</p>
+          </div>
+          <a href="tutor-directory.html" class="btn btn-outline-teal btn-sm fw-bold" style="color: var(--primary-teal); border-color: var(--primary-teal);">View All Directory <i class="bi bi-arrow-right"></i></a>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card card-custom h-100 p-3 shadow-sm border-0">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="rounded-circle text-white d-flex align-items-center justify-content-center fw-bold fs-4" style="width: 50px; height: 50px; background-color: var(--primary-teal);">
+                  AN
+                </div>
+                <div>
+                  <h5 class="card-title mb-0 fw-bold">Amara Nkosi</h5>
+                  <span class="text-muted small"><i class="bi bi-geo-alt me-1"></i>South Africa</span>
+                </div>
+              </div>
+              <p class="card-text text-secondary small mb-2">
+                <strong>Mathematics</strong> • <span class="badge badge-teal">O/N-Level</span><br>
+                Specializing in E-Math and A-Math problem-solving techniques.
+              </p>
+              <div class="d-flex justify-content-between align-items-center my-3 bg-light p-2 rounded">
+                <span class="fw-bold text-teal fs-5" style="color: var(--dark-teal);">S$14<span class="fs-7 text-muted fw-normal">/hr</span></span>
+                <span class="text-warning small fw-bold"><i class="bi bi-star-fill"></i> 4.9 (48)</span>
+              </div>
+              <a href="tutor-directory.html" class="btn btn-outline-teal btn-sm w-100" style="color: var(--primary-teal); border-color: var(--primary-teal);">View Profile</a>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card card-custom h-100 p-3 shadow-sm border-0">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="rounded-circle text-white d-flex align-items-center justify-content-center fw-bold fs-4" style="width: 50px; height: 50px; background-color: var(--primary-teal);">
+                  DT
+                </div>
+                <div>
+                  <h5 class="card-title mb-0 fw-bold">David Tan</h5>
+                  <span class="text-muted small"><i class="bi bi-geo-alt me-1"></i>Malaysia</span>
+                </div>
+              </div>
+              <p class="card-text text-secondary small mb-2">
+                <strong>Chemistry</strong> • <span class="badge badge-teal">O-Level</span><br>
+                Ex-MOE syllabus trained tutor focusing on organic chemistry drill.
+              </p>
+              <div class="d-flex justify-content-between align-items-center my-3 bg-light p-2 rounded">
+                <span class="fw-bold text-teal fs-5" style="color: var(--dark-teal);">S$16<span class="fs-7 text-muted fw-normal">/hr</span></span>
+                <span class="text-warning small fw-bold"><i class="bi bi-star-fill"></i> 4.8 (32)</span>
+              </div>
+              <a href="tutor-directory.html" class="btn btn-outline-teal btn-sm w-100" style="color: var(--primary-teal); border-color: var(--primary-teal);">View Profile</a>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card card-custom h-100 p-3 shadow-sm border-0">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="rounded-circle text-white d-flex align-items-center justify-content-center fw-bold fs-4" style="width: 50px; height: 50px; background-color: var(--primary-teal);">
+                  PS
+                </div>
+                <div>
+                  <h5 class="card-title mb-0 fw-bold">Priya Santos</h5>
+                  <span class="text-muted small"><i class="bi bi-geo-alt me-1"></i>Philippines</span>
+                </div>
+              </div>
+              <p class="card-text text-secondary small mb-2">
+                <strong>English</strong> • <span class="badge badge-teal">O/N-Level</span><br>
+                Helping students master essay structure and oral exam confidence.
+              </p>
+              <div class="d-flex justify-content-between align-items-center my-3 bg-light p-2 rounded">
+                <span class="fw-bold text-teal fs-5" style="color: var(--dark-teal);">S$12<span class="fs-7 text-muted fw-normal">/hr</span></span>
+                <span class="text-warning small fw-bold"><i class="bi bi-star-fill"></i> 5.0 (61)</span>
+              </div>
+              <a href="tutor-directory.html" class="btn btn-outline-teal btn-sm w-100" style="color: var(--primary-teal); border-color: var(--primary-teal);">View Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dual Volunteer & Tutor Application Anchors Section -->
+    <section class="py-5 bg-white">
+      <div class="container">
+        <div class="text-center max-w-700 mx-auto mb-4">
+          <h2 class="fw-bold">Want to give back or earn as a tutor?</h2>
+          <p class="text-muted">Join our community as a student volunteer helper or apply to become a paid tutor.</p>
+        </div>
+
+        <div class="row g-4 justify-content-center mb-5">
+          <div class="col-md-5">
+            <div class="card p-4 text-center border-teal h-100" style="border: 2px solid var(--primary-teal);">
+              <h4 class="fw-bold">Become a Volunteer</h4>
+              <p class="small text-muted">Scrolls to #apply-volunteer below</p>
+              <a href="#apply-volunteer" class="btn btn-teal mt-auto">Go to Volunteer Section ↓</a>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="card p-4 text-center border-coral h-100" style="border: 2px solid var(--warm-coral);">
+              <h4 class="fw-bold">Apply to Tutor & Earn</h4>
+              <p class="small text-muted">Scrolls to #apply-tutor below</p>
+              <a href="#apply-tutor" class="btn btn-coral mt-auto">Go to Tutor Application ↓</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section Anchor 1: #apply-volunteer -->
+        <div id="apply-volunteer" class="p-4 bg-light rounded-4 mb-5 border">
+          <h3 class="fw-bold mb-3 text-teal" style="color: var(--primary-teal);">Volunteer With Us</h3>
+          
+          <ul class="nav nav-pills mb-3" id="volunteerTabs" role="tablist">
+            <li class="nav-item">
+              <button class="nav-link active" id="local-tab" data-bs-toggle="tab" data-bs-target="#local-student">Local Student (SG)</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link" id="foreign-tab" data-bs-toggle="tab" data-bs-target="#foreign-student">Foreign (Uni / Poly)</button>
+            </li>
+          </ul>
+
+          <div class="tab-content bg-white p-4 rounded border" id="volunteerTabContent">
+            <div class="tab-pane fade show active" id="local-student">
+              <h5 class="fw-bold">Local Student: Upload Previous Exam Results</h5>
+              <p class="small text-muted mb-3">Upload previous exam results to auto-tag qualifying subjects and levels.</p>
+              <div class="mb-3">
+                <input class="form-control" type="file" id="examResultUpload">
+              </div>
+              <button class="btn btn-coral">Submit Volunteer Application</button>
+            </div>
+            <div class="tab-pane fade" id="foreign-student">
+              <h5 class="fw-bold">Foreign O/N-Level Diagnostic Paper</h5>
+              <p class="small text-muted mb-3">Scored by topic — no full-pass needed. Want only 1 topic? Short quiz from TYS.</p>
+              <button class="btn btn-teal">Start Short TYS Quiz</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section Anchor 2: #apply-tutor -->
+        <div id="apply-tutor" class="p-4 bg-light rounded-4 border">
+          <h3 class="fw-bold mb-3 text-coral" style="color: var(--warm-coral);">Apply to Earn as a Tutor</h3>
+          <form class="needs-validation-custom">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label fw-bold small">Full Name / Email</label>
+                <input type="text" class="form-control" placeholder="Your Name or Email" required>
+              </div>
+              <div class="col-md-3">
+                <label class="form-label fw-bold small">Subject</label>
+                <select class="form-select" required>
+                  <option value="">Select...</option>
+                  <option value="Math">Math</option>
+                  <option value="Physics">Physics</option>
+                  <option value="Chemistry">Chemistry</option>
+                </select>
+              </div>
+              <div class="col-md-3">
+                <label class="form-label fw-bold small">Level</label>
+                <select class="form-select" required>
+                  <option value="">Select...</option>
+                  <option value="O-Level">O-Level</option>
+                  <option value="N-Level">N-Level</option>
+                </select>
+              </div>
+            </div>
+            <div class="alert alert-warning mt-3 small mb-3">
+              <strong>Requirement:</strong> Must pass the full O/N-Level paper for the chosen subject to qualify.
+            </div>
+            <button type="submit" class="btn btn-coral fw-bold">Start Qualification Test</button>
+            <div class="form-feedback-msg"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared Footer -->
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <a class="d-flex align-items-center gap-2 text-white text-decoration-none mb-3" href="index.html">
+            <img src="assets/images/" alt="TutorBridge Logo" style="width: 32px; height: 32px;">
+            <span class="fs-4 fw-bold">TutorBridge</span>
+          </a>
+          <p class="small">Borderless platform connecting Singapore secondary students with verified international tutors.</p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5>Explore</h5>
+          <ul class="list-unstyled">
+            <li><a href="tutor-directory.html">Tutor Directory</a></li>
+            <li><a href="tutor-profile.html">Tutor Swipe Deck</a></li>
+            <li><a href="pages/shortlist.html">Your Shortlist</a></li>
+            <li><a href="pages/pricing.html">Pricing Calculator</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5>Platform</h5>
+          <ul class="list-unstyled">
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="about-us.html">About Our Story</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="resources.html">Resources for Parents</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5>Contact</h5>
+          <p class="small mb-1"><i class="bi bi-envelope me-2"></i>hello@tutorbridge.sg</p>
+          <p class="small mb-0"><i class="bi bi-geo-alt me-2"></i>Singapore 239917</p>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <div class="text-center small text-muted">
+        © 2026 TutorBridge SG. ST0501 Front-End Web Development CA2 Project.
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/tutors-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

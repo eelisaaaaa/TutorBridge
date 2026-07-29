@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TutorBridge | About Us</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Shared Navbar with Right-Side Offcanvas Hamburger Menu -->
+  <nav class="navbar navbar-dark navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="assets/logo.svg" alt="TutorBridge Logo">
+        <span>TutorBridge</span>
+      </a>
+
+      <!-- Right-Side Hamburger Menu Button (Three Lines) -->
+      <button class="navbar-toggler border-0 ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Right-Side Offcanvas Side Menu Drawer -->
+      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color: var(--footer-bg) !important; width: 320px;">
+        <div class="offcanvas-header border-bottom border-secondary">
+          <h5 class="offcanvas-title fw-bold text-white d-flex align-items-center gap-2" id="offcanvasNavbarLabel">
+            <img src="assets/logo.svg" alt="TutorBridge Logo" style="width: 28px; height: 28px;">
+            <span>TutorBridge</span>
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column justify-content-between p-4">
+          <ul class="navbar-nav">
+            <li class="nav-item mb-1"><a class="nav-link py-2 px-3 rounded text-white" href="index.html"><i class="bi bi-house-door me-2"></i>Home</a></li>
+            <li class="nav-item mb-1"><a class="nav-link py-2 px-3 rounded text-white" href="tutor-directory.html"><i class="bi bi-grid me-2"></i>Directory</a></li>
+            <li class="nav-item mb-1"><a class="nav-link py-2 px-3 rounded text-white" href="tutor-profile.html"><i class="bi bi-card-checklist me-2"></i>Swipe Deck</a></li>
+            <li class="nav-item mb-1"><a class="nav-link py-2 px-3 rounded text-white" href="shortlist.html"><i class="bi bi-heart me-2"></i>Shortlist</a></li>
+            <li class="nav-item mb-1"><a class="nav-link py-2 px-3 rounded text-white" href="how-it-works.html"><i class="bi bi-info-circle me-2"></i>How It Works</a></li>
+            <li class="nav-item mb-1"><a class="nav-link py-2 px-3 rounded text-white" href="pricing.html"><i class="bi bi-calculator me-2"></i>Pricing</a></li>
+            <li class="nav-item mb-1"><a class="nav-link py-2 px-3 rounded text-white bg-teal active" href="about-us.html" style="background-color: var(--primary-teal);"><i class="bi bi-journal-text me-2"></i>About Us</a></li>
+            <li class="nav-item mb-1"><a class="nav-link py-2 px-3 rounded text-white" href="faq.html"><i class="bi bi-question-circle me-2"></i>FAQ</a></li>
+            <li class="nav-item mb-1"><a class="nav-link py-2 px-3 rounded text-white" href="testimonials.html"><i class="bi bi-star me-2"></i>Success Stories</a></li>
+            <li class="nav-item mb-1"><a class="nav-link py-2 px-3 rounded text-white" href="resources.html"><i class="bi bi-book me-2"></i>Parent Resources</a></li>
+            <li class="nav-item mb-1"><a class="nav-link py-2 px-3 rounded text-white" href="contact.html"><i class="bi bi-envelope me-2"></i>Contact</a></li>
+          </ul>
+          <div class="mt-4">
+            <a href="request-tutor.html" class="btn btn-coral w-100 text-center fw-bold py-2">Request a Tutor</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Page Banner: "Our Story" -->
+    <section class="page-banner text-center">
+      <div class="container">
+        <h1 class="fw-extrabold">Our Story</h1>
+        <p class="lead text-secondary max-w-700 mx-auto">
+          Why we built TutorBridge — solving Singapore's tuition affordability gap through global exchange rates.
+        </p>
+      </div>
+    </section>
+
+    <!-- Problem Statement Block -->
+    <section class="py-5 bg-white">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <h2 class="fw-bold mb-3">The Problem: Tuition Cost vs. Exchange-Rate Advantage</h2>
+            <p class="text-secondary">
+              Private tuition costs in Singapore are a significant financial barrier for lower- and middle-income families, widening the education gap between income groups. Local physical tuition rates average <strong>S$50–S$80 per hour</strong> per subject.
+            </p>
+            <p class="text-secondary">
+              We realized that highly qualified, English-fluent educators based in countries with favorable exchange rates (such as South Africa, Malaysia, India, and the Philippines) can teach the exact same Cambridge GCE O-Level and N-Level syllabi over Zoom at a fraction of local costs — starting from just <strong>S$12–S$18 per hour</strong>.
+            </p>
+            <div class="p-3 bg-light rounded border-start border-4 border-teal mt-4" style="border-color: var(--primary-teal) !important;">
+              <h5 class="fw-bold text-teal" style="color: var(--primary-teal);">Our Mission Statement</h5>
+              <p class="mb-0 small text-secondary">
+                To provide Sec 1–5 students in Singapore with equal access to world-class, affordable subject tutoring regardless of their family's postcode or income level.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="card p-4 shadow-sm border-0 bg-teal text-white rounded-4" style="background-color: var(--primary-teal);">
+              <h3 class="fw-bold text-white mb-3"><i class="bi bi-globe me-2"></i>The Borderless Advantage</h3>
+              <ul class="list-unstyled mb-0">
+                <li class="mb-3 d-flex gap-2">
+                  <i class="bi bi-check-circle-fill text-warning fs-5"></i>
+                  <div>
+                    <strong>75% Direct Savings:</strong> Pay S$14/hr instead of S$60/hr while receiving identical quality step-by-step guidance.
+                  </div>
+                </li>
+                <li class="mb-3 d-flex gap-2">
+                  <i class="bi bi-check-circle-fill text-warning fs-5"></i>
+                  <div>
+                    <strong>Rigorous Safety & Vetting:</strong> Every tutor undergoes identity verification, academic transcript checks, and mock lesson evaluations.
+                  </div>
+                </li>
+                <li class="mb-0 d-flex gap-2">
+                  <i class="bi bi-check-circle-fill text-warning fs-5"></i>
+                  <div>
+                    <strong>1-on-1 Personalized Attention:</strong> Customized homework review, past-year paper drills, and exam technique coaching.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform Impact Metrics -->
+    <section class="py-5 bg-light">
+      <div class="container text-center">
+        <h2 class="fw-bold mb-4">Empowering Families Across Singapore</h2>
+        <div class="row g-4">
+          <div class="col-md-3">
+            <div class="card card-custom p-4 h-100">
+              <h1 class="fw-extrabold text-teal display-4" style="color: var(--primary-teal);">1,200+</h1>
+              <p class="text-muted fw-bold mb-0">Families Supported</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card card-custom p-4 h-100">
+              <h1 class="fw-extrabold text-teal display-4" style="color: var(--primary-teal);">S$2.1M</h1>
+              <p class="text-muted fw-bold mb-0">Total Tuition Saved</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card card-custom p-4 h-100">
+              <h1 class="fw-extrabold text-teal display-4" style="color: var(--primary-teal);">4.9★</h1>
+              <p class="text-muted fw-bold mb-0">Average Satisfaction</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card card-custom p-4 h-100">
+              <h1 class="fw-extrabold text-teal display-4" style="color: var(--primary-teal);">98%</h1>
+              <p class="text-muted fw-bold mb-0">Grade Improvement</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared Footer -->
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <a class="d-flex align-items-center gap-2 text-white text-decoration-none mb-3" href="index.html">
+            <img src="assets/logo.svg" alt="TutorBridge Logo" style="width: 32px; height: 32px;">
+            <span class="fs-4 fw-bold">TutorBridge</span>
+          </a>
+          <p class="small">Borderless platform connecting Singapore secondary students with verified international tutors.</p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5>Explore</h5>
+          <ul class="list-unstyled">
+            <li><a href="tutor-directory.html">Tutor Directory</a></li>
+            <li><a href="tutor-profile.html">Tutor Swipe Deck</a></li>
+            <li><a href="shortlist.html">Your Shortlist</a></li>
+            <li><a href="pricing.html">Pricing Calculator</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5>Platform</h5>
+          <ul class="list-unstyled">
+            <li><a href="howItWorks.html">How It Works</a></li>
+            <li><a href="aboutus.html">About Our Story</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="resourcesForParents.html">Resources for Parents</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5>Contact</h5>
+          <p class="small mb-1"><i class="bi bi-envelope me-2"></i>hello@tutorbridge.sg</p>
+          <p class="small mb-0"><i class="bi bi-geo-alt me-2"></i>Singapore 239917</p>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <div class="text-center small text-muted">
+        © 2026 TutorBridge SG. ST0501 Front-End Web Development CA2 Project.
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/javascript/tutors-data.js"></script>
+  <script src="../assets/javascript/script.js"></script>
+</body>
+</html>

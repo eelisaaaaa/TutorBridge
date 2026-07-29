@@ -1,0 +1,288 @@
+/* =========================================================
+   ST0501 CA2 FRONT-END WEB DEVELOPMENT
+   TutorBridge Custom Design System & Styles
+   ========================================================= */
+
+:root {
+  /* Primary Theme Colors (Deep Teal & Soft Teal) */
+  --primary-teal: #0f766e;     /* Deep Teal for header, main CTAs, headers */
+  --soft-teal: #14b8a6;        /* Soft Teal for highlights and active tabs */
+  --dark-teal: #115e59;        /* Dark Teal */
+  --light-teal: #ccfbf1;       /* Light Teal tint */
+  --subtle-teal: #f0fdfa;      /* Soft background tint */
+
+  /* Neutral Colors */
+  --off-white: #f8fafc;        /* Backgrounds */
+  --charcoal: #1e293b;         /* Body Text */
+  --light-grey: #e2e8f0;       /* Borders and Dividers */
+  --card-white: #ffffff;       /* Card backgrounds */
+
+  /* Accent Colors */
+  --warm-coral: #ff6f61;       /* Primary CTA & Shortlist heart */
+  --coral-hover: #e05548;
+  --muted-amber: #ffb74d;      /* Highlight / Bonus badges */
+  --amber-hover: #f5a623;
+
+  /* Footer Colors */
+  --footer-bg: #0f172a;        /* Dark Midnight Slate */
+  --footer-text: #94a3b8;
+  --footer-heading: #f8fafc;
+}
+
+/* Base Reset & Typography */
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--off-white);
+  color: var(--charcoal);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--dark-teal);
+  letter-spacing: -0.02em;
+}
+
+/* Navbar (Deep Teal Banner with Lion Logo) */
+.navbar-custom {
+  background-color: var(--primary-teal) !important;
+  box-shadow: 0 4px 15px rgba(15, 118, 110, 0.2);
+  padding: 0.75rem 0;
+}
+
+.navbar-brand {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ffffff !important;
+}
+
+.navbar-brand img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.navbar-custom .nav-link {
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-weight: 500;
+  font-size: 0.92rem;
+  padding: 0.5rem 0.85rem !important;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link.active {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Buttons */
+.btn-teal {
+  background-color: var(--primary-teal);
+  color: #ffffff;
+  border: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-teal:hover {
+  background-color: var(--soft-teal);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-coral {
+  background-color: var(--warm-coral);
+  color: #ffffff;
+  border: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-coral:hover {
+  background-color: var(--coral-hover);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-amber {
+  background-color: var(--muted-amber);
+  color: #1e293b;
+  border: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-amber:hover {
+  background-color: var(--amber-hover);
+  color: #1e293b;
+}
+
+/* Page Banner */
+.page-banner {
+  background: linear-gradient(135deg, var(--subtle-teal) 0%, #e0f2fe 100%);
+  padding: 3.5rem 0 2.5rem 0;
+  border-bottom: 1px solid var(--light-grey);
+}
+
+.page-banner h1 {
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* General Cards & Shadows */
+.card-custom {
+  background-color: var(--card-white);
+  border: 1px solid var(--light-grey);
+  border-radius: 12px;
+  transition: all 0.25s ease;
+}
+
+.card-custom:hover {
+  box-shadow: 0 10px 25px rgba(15, 118, 110, 0.08);
+  border-color: var(--soft-teal);
+}
+
+/* Badges */
+.badge-teal {
+  background-color: var(--light-teal);
+  color: var(--dark-teal);
+  font-weight: 600;
+}
+
+.badge-coral {
+  background-color: #ffe4e1;
+  color: #c0392b;
+  font-weight: 600;
+}
+
+/* Swipe Deck Interface (tutor-profile.html) */
+.swipe-container {
+  max-width: 440px;
+  margin: 0 auto;
+  perspective: 1000px;
+}
+
+.swipe-card {
+  background: #ffffff;
+  border: 2px solid var(--light-teal);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.swipe-actions {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.btn-action-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid var(--light-grey);
+  background: #ffffff;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-action-dismiss:hover {
+  background: #fef2f2;
+  border-color: #ef4444;
+  color: #ef4444;
+  transform: scale(1.1);
+}
+
+.btn-action-shortlist:hover {
+  background: #fff1f2;
+  border-color: var(--warm-coral);
+  color: var(--warm-coral);
+  transform: scale(1.1);
+}
+
+/* How It Works Step Tracker */
+.step-tab {
+  background: var(--card-white);
+  border: 2px solid var(--light-grey);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.step-tab.active {
+  border-color: var(--warm-coral);
+  background-color: #fff7ed;
+  box-shadow: 0 4px 12px rgba(255, 111, 97, 0.15);
+}
+
+.step-tab-num {
+  font-size: 0.8rem;
+  font-weight: 800;
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  background: var(--light-teal);
+  color: var(--dark-teal);
+  margin-bottom: 0.5rem;
+}
+
+.step-tab.active .step-tab-num {
+  background: var(--warm-coral);
+  color: #ffffff;
+}
+
+/* Footer (Shared Across All 12 Pages) */
+footer.footer-custom {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  padding-top: 3.5rem;
+  padding-bottom: 1.5rem;
+  border-top: 4px solid var(--primary-teal);
+  margin-top: auto;
+}
+
+footer.footer-custom h5 {
+  color: var(--footer-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 1.2rem;
+}
+
+footer.footer-custom ul li a {
+  color: var(--footer-text);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+footer.footer-custom ul li a:hover {
+  color: var(--soft-teal);
+  text-decoration: underline;
+}
+
+footer.footer-custom .footer-divider {
+  border-color: #334155;
+  margin: 2rem 0 1.25rem 0;
+}
