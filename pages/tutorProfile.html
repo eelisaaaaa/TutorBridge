@@ -4,13 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Find Your Tutor — TutorBridge</title>
+
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/tutorprofile.css">
 </head>
+
 <body>
   <div id="global-navbar"></div>
 
   <main class="container">
-    <div style="text-align:right; margin-bottom:12px;">
+
+    <div class="page-owner">
       <span class="owner-pill">Page Owner: Zi Xuan</span>
     </div>
 
@@ -19,27 +23,46 @@
       <p>Swipe right to shortlist tutors or dismiss to see the next available profile.</p>
     </div>
 
-    <!-- Swipe Deck Container -->
     <div class="swipe-wrapper">
+
       <div class="swipe-card-stack" id="swipe-stack">
-        <!-- JS rendered cards -->
+        <!-- JavaScript renders cards -->
       </div>
 
-      <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--grey-dark); margin-top:16px; padding:0 8px;">
+      <div class="swipe-instructions">
         <span>&larr; Swipe left (Dismiss)</span>
         <span>Swipe right (Shortlist) &rarr;</span>
       </div>
 
       <div class="swipe-controls">
-        <button class="swipe-btn dismiss" title="Dismiss" onclick="handleSwipe('left')">&times;</button>
-        <div style="font-size:12px; font-weight:600; color:var(--grey-dark);">Tap actions or drag card</div>
-        <button class="swipe-btn shortlist" title="Shortlist" onclick="handleSwipe('right')">&hearts;</button>
+        <button
+          class="swipe-btn dismiss"
+          title="Dismiss"
+          onclick="handleSwipe('left')">
+          &times;
+        </button>
+
+        <div class="swipe-text">
+          Tap actions or drag card
+        </div>
+
+        <button
+          class="swipe-btn shortlist"
+          title="Shortlist"
+          onclick="handleSwipe('right')">
+          &hearts;
+        </button>
       </div>
 
-      <div style="text-align:center; margin-top:24px;">
-        <a href="../pages/shortlist.html" class="btn btn-ghost" style="padding:8px 20px; font-size:13px;">View Your Shortlist &rarr;</a>
+      <div class="shortlist-link">
+        <a href="../pages/shortlist.html"
+           class="btn btn-ghost">
+          View Your Shortlist &rarr;
+        </a>
       </div>
+
     </div>
+
   </main>
 
   <div id="global-footer"></div>
@@ -47,8 +70,7 @@
   <script src="../assets/javascript/tutors-data.js"></script>
   <script src="../assets/javascript/main.js"></script>
   <script src="../assets/javascript/swipe.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', initSwipeDeck);
-  </script>
+  <script src="../assets/javascript/find-tutor.js"></script>
+
 </body>
 </html>
