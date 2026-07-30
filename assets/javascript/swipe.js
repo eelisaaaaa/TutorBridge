@@ -160,3 +160,7 @@ function resetSwipeDeck() {
   currentSwipeIndex = 0;
   renderSwipeCards();
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    initSwipeDeck();
+});

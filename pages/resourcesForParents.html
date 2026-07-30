@@ -4,75 +4,159 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resources for Parents — TutorBridge</title>
+
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/resourcesForParents.css">
 </head>
+
 <body>
-  <div id="global-navbar"></div>
 
-  <main class="container">
-    <div style="text-align:right; margin-bottom:12px;">
-      <span class="owner-pill">Page Owner: Zi Xuan</span>
-    </div>
+<div id="global-navbar"></div>
 
-    <div class="page-header">
-      <h1>Resources for Parents</h1>
-      <p>Guidance articles, exam preparation tips, and official MOE/SEAB syllabus links for parents.</p>
-    </div>
+<main class="container">
 
-    <!-- Article / Tips List -->
-    <section style="margin-bottom:32px;">
-      <h2 style="font-size:20px; color:var(--teal-deep); margin-bottom:16px;">📚 Parent Study &amp; Prep Guides</h2>
-      
-      <div class="grid-3">
-        <div class="card">
-          <h3 style="font-size:16px; color:var(--teal-deep); margin-bottom:8px;">Preparing for Your First Online Session</h3>
-          <p style="font-size:13px; color:var(--grey-dark); line-height:1.6; margin-bottom:12px;">
-            Set up a quiet study environment with webcams turned on, digital notebooks ready, and stable Wi-Fi connectivity.
-          </p>
-          <a href="#" class="btn btn-soft" style="font-size:11px; padding:4px 12px;" onclick="alert('Full guide article loaded!'); return false;">Read Guide &rarr;</a>
-        </div>
+  <div class="page-owner">
+    <span class="owner-pill">Page Owner: Zi Xuan</span>
+  </div>
 
-        <div class="card">
-          <h3 style="font-size:16px; color:var(--teal-deep); margin-bottom:8px;">Understanding O/N-Level Diagnostic Papers</h3>
-          <p style="font-size:13px; color:var(--grey-dark); line-height:1.6; margin-bottom:12px;">
-            How our diagnostic paper pinpoints specific topic weaknesses in Mathematics and Science to tailor individual lesson plans.
-          </p>
-          <a href="#" class="btn btn-soft" style="font-size:11px; padding:4px 12px;" onclick="alert('Full guide article loaded!'); return false;">Read Guide &rarr;</a>
-        </div>
+  <div class="page-header">
+    <h1>Resources for Parents</h1>
+    <p>
+      Guidance articles, exam preparation tips,
+      and official MOE/SEAB syllabus links for parents.
+    </p>
+  </div>
 
-        <div class="card">
-          <h3 style="font-size:16px; color:var(--teal-deep); margin-bottom:8px;">Balancing Tuition &amp; Well-being</h3>
-          <p style="font-size:13px; color:var(--grey-dark); line-height:1.6; margin-bottom:12px;">
-            Practical tips for parents to prevent student burnout, maintain healthy study schedules, and build confidence.
-          </p>
-          <a href="#" class="btn btn-soft" style="font-size:11px; padding:4px 12px;" onclick="alert('Full guide article loaded!'); return false;">Read Guide &rarr;</a>
-        </div>
+  <section class="guides-section">
+
+    <h2 class="section-title">
+      📚 Parent Study &amp; Prep Guides
+    </h2>
+
+    <div class="grid-3">
+
+      <div class="card">
+
+        <h3 class="guide-title">
+          Preparing for Your First Online Session
+        </h3>
+
+        <p class="guide-text">
+          Set up a quiet study environment with webcams turned on,
+          digital notebooks ready, and stable Wi-Fi connectivity.
+        </p>
+
+        <a href="#"
+           class="btn btn-soft guide-btn"
+           data-guide="first-session">
+          Read Guide →
+        </a>
+
       </div>
-    </section>
 
-    <!-- Curated External Resource Links -->
-    <section class="card" style="margin-bottom:32px; background:#fff;">
-      <h3 style="color:var(--teal-deep); margin-bottom:12px;">🔗 Curated Official Resources</h3>
-      <ul style="list-style-type:square; padding-left:20px; font-size:14px; color:var(--charcoal); display:flex; flex-direction:column; gap:8px;">
-        <li><a href="https://www.seab.gov.sg" target="_blank" rel="noopener">SEAB Singapore Examinations and Assessment Board — Official O &amp; N-Level Syllabuses</a></li>
-        <li><a href="https://www.moe.gov.sg" target="_blank" rel="noopener">MOE Ministry of Education Singapore — Secondary School Curriculum Framework</a></li>
-        <li><a href="#" onclick="alert('Ten-Year-Series Digital Practice Bank opened.'); return false;">TutorBridge Ten-Year-Series (TYS) Digital Practice Papers Repository</a></li>
-      </ul>
-    </section>
+      <div class="card">
 
-    <!-- Got Questions FAQ Trigger Step -->
-    <div class="step-box" style="text-align:center; padding:24px;">
-      <h3 style="color:var(--teal-dark); margin-bottom:6px;">Got Questions About Tutor Verification or Trial Policies?</h3>
-      <p style="font-size:13px; color:var(--grey-dark); margin-bottom:16px;">Tap below to launch our interactive FAQ pop-up modal.</p>
-      <button class="btn btn-primary" onclick="openFAQModal()">
-        Got Questions? Launch FAQ Modal
-      </button>
+        <h3 class="guide-title">
+          Understanding O/N-Level Diagnostic Papers
+        </h3>
+
+        <p class="guide-text">
+          How our diagnostic paper pinpoints topic weaknesses
+          in Mathematics and Science.
+        </p>
+
+        <a href="#"
+           class="btn btn-soft guide-btn"
+           data-guide="diagnostic">
+          Read Guide →
+        </a>
+
+      </div>
+
+      <div class="card">
+
+        <h3 class="guide-title">
+          Balancing Tuition &amp; Well-being
+        </h3>
+
+        <p class="guide-text">
+          Practical tips to prevent burnout,
+          maintain healthy study schedules,
+          and build confidence.
+        </p>
+
+        <a href="#"
+           class="btn btn-soft guide-btn"
+           data-guide="wellbeing">
+          Read Guide →
+        </a>
+
+      </div>
+
     </div>
-  </main>
 
-  <div id="global-footer"></div>
+  </section>
 
-  <script src="../assets/javascript/tutors-data.js"></script>
-  <script src="../assets/javascript/main.js"></script>
+  <section class="card resources-card">
+
+    <h3 class="resources-title">
+      🔗 Curated Official Resources
+    </h3>
+
+    <ul class="resources-list">
+
+      <li>
+        <a href="https://www.seab.gov.sg"
+           target="_blank"
+           rel="noopener">
+          SEAB Singapore Examinations and Assessment Board
+        </a>
+      </li>
+
+      <li>
+        <a href="https://www.moe.gov.sg"
+           target="_blank"
+           rel="noopener">
+          MOE Ministry of Education Singapore
+        </a>
+      </li>
+
+      <li>
+        <a href="#"
+           id="tys-link">
+          TutorBridge Ten-Year-Series (TYS) Digital Practice Papers Repository
+        </a>
+      </li>
+
+    </ul>
+
+  </section>
+
+  <div class="step-box faq-box">
+
+    <h3>
+      Got Questions About Tutor Verification or Trial Policies?
+    </h3>
+
+    <p>
+      Tap below to launch our interactive FAQ pop-up modal.
+    </p>
+
+    <button
+      class="btn btn-primary"
+      id="faq-button">
+      Got Questions? Launch FAQ Modal
+    </button>
+
+  </div>
+
+</main>
+
+<div id="global-footer"></div>
+
+<script src="../assets/javascript/tutors-data.js"></script>
+<script src="../assets/javascript/main.js"></script>
+<script src="../assets/javascript/resourcesForParents.js"></script>
+
 </body>
 </html>
