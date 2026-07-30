@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TutorBridge — International Tutor-Matching Platform</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <div id="global-navbar"></div>
@@ -20,7 +20,7 @@
       <h1>Find affordable, quality tuition</h1>
       <p class="subline">Verified cross-border tutors delivering 1-on-1 Singapore O &amp; N-Level guidance at real savings.</p>
       
-      <form action="tutor-profile.html" method="GET" class="search-bar">
+      <form action="pages/tutorProfile.html" method="GET" class="search-bar">
         <select class="form-select" name="subject">
           <option value="">Select Subject (All)</option>
           <option value="emath">Elementary Mathematics</option>
@@ -51,7 +51,7 @@
         <!-- Javascript populated -->
       </div>
       <div style="text-align:center; margin-top:16px;">
-        <a href="tutor-profile.html" class="btn btn-soft">Swipe &amp; Browse All Tutors &rarr;</a>
+        <a href="pages/tutorProfile.html" class="btn btn-soft">Swipe &amp; Browse All Tutors &rarr;</a>
       </div>
     </section>
 
@@ -193,8 +193,8 @@
 
   <div id="global-footer"></div>
 
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
+  <script src="assets/javascript/tutors-data.js"></script>
+  <script src="assets/javascript/main.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // Render featured tutors
