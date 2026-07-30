@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Request a Tutor — TutorBridge</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
   <div id="global-navbar"></div>
@@ -20,8 +20,8 @@
     </div>
 
     <div class="card" style="max-width:640px; margin:0 auto 40px;">
-      <form id="tutor-request-form" novalidate onsubmit="handleRequestSubmit(event)">
-        
+      <form id="tutor-request-form" novalidate>
+
         <div class="form-group">
           <label class="form-label">Student / Parent Name *</label>
           <input type="text" id="req-name" class="form-input" placeholder="e.g. Tan Wei Ming" required>
@@ -89,55 +89,15 @@
             Submit Tutor Request
           </button>
         </div>
+
       </form>
     </div>
   </main>
 
   <div id="global-footer"></div>
 
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Pre-fill tutor from query param if arriving from shortlist
-      const urlParams = new URLSearchParams(window.location.search);
-      const requestedTutor = urlParams.get('tutor');
-      if (requestedTutor) {
-        const slotsInput = document.getElementById('req-slots');
-        if (slotsInput) slotsInput.value = `Requested Tutor: ${requestedTutor}`;
-      }
-    });
+  <script src="../assets/javascript/tutors-data.js"></script>
+  <script src="../assets/javascript/main.js"></script>
 
-    function handleRequestSubmit(e) {
-      e.preventDefault();
-      let isValid = true;
-
-      const fields = [
-        { id: 'req-name', errId: 'err-name' },
-        { id: 'req-email', errId: 'err-email' },
-        { id: 'req-phone', errId: 'err-phone' },
-        { id: 'req-level', errId: 'err-level' },
-        { id: 'req-subject', errId: 'err-subject' },
-      ];
-
-      fields.forEach(f => {
-        const el = document.getElementById(f.id);
-        const errEl = document.getElementById(f.errId);
-        if (!el.value.trim()) {
-          el.classList.add('field-error');
-          if (errEl) errEl.style.display = 'block';
-          isValid = false;
-        } else {
-          el.classList.remove('field-error');
-          if (errEl) errEl.style.display = 'none';
-        }
-      });
-
-      if (isValid) {
-        alert("🎉 Your tutor request has been submitted successfully! A TutorBridge learning coordinator will reach out via WhatsApp/Email within 24 hours.");
-        document.getElementById('tutor-request-form').reset();
-      }
-    }
-  </script>
 </body>
 </html>
