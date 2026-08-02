@@ -261,13 +261,13 @@ a:hover {
 
 .btn-primary:hover {
   background: var(--coral-hover);
-  color: #fff;
+  color: #f8f7f7;
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(255, 122, 89, 0.45);
 }
 
 .btn-ghost {
-  background: #fff;
+  background: #ffffff;
   color: var(--teal-deep);
   border: 2px solid var(--teal-deep);
 }
