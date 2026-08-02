@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="tutor-meta">${t.subject}</div>
         <span class="tutor-tag">${t.country}</span>
         <div class="tutor-rate">SGD $${t.rate} / hr</div>
-        <a href="tutor-profile.html" class="btn btn-soft btn-small">View Profile</a>
+        <a href="pages/tutorProfile.html" class="btn btn-soft btn-small">View Profile</a>
       </li>
     `).join('');
   }
