@@ -20,8 +20,8 @@
     </div>
 
     <div class="card" style="max-width:640px; margin:0 auto 40px;">
-      <form id="tutor-request-form" novalidate onsubmit="handleRequestSubmit(event)">
-        
+      <form id="tutor-request-form" novalidate>
+
         <div class="form-group">
           <label class="form-label">Student / Parent Name *</label>
           <input type="text" id="req-name" class="form-input" placeholder="e.g. Tan Wei Ming" required>
@@ -89,6 +89,7 @@
             Submit Tutor Request
           </button>
         </div>
+
       </form>
     </div>
   </main>
@@ -97,6 +98,7 @@
 
   <script src="../assets/javascript/tutors-data.js"></script>
   <script src="../assets/javascript/main.js"></script>
+<<<<<<< HEAD
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // Pre-fill tutor from query param if arriving from shortlist
@@ -107,37 +109,8 @@
         if (slotsInput) slotsInput.value = `Requested Tutor: ${requestedTutor}`;
       }
     });
+=======
+>>>>>>> 821bb69cdc38117f9fa50e6bb344385d82233761
 
-    function handleRequestSubmit(e) {
-      e.preventDefault();
-      let isValid = true;
-
-      const fields = [
-        { id: 'req-name', errId: 'err-name' },
-        { id: 'req-email', errId: 'err-email' },
-        { id: 'req-phone', errId: 'err-phone' },
-        { id: 'req-level', errId: 'err-level' },
-        { id: 'req-subject', errId: 'err-subject' },
-      ];
-
-      fields.forEach(f => {
-        const el = document.getElementById(f.id);
-        const errEl = document.getElementById(f.errId);
-        if (!el.value.trim()) {
-          el.classList.add('field-error');
-          if (errEl) errEl.style.display = 'block';
-          isValid = false;
-        } else {
-          el.classList.remove('field-error');
-          if (errEl) errEl.style.display = 'none';
-        }
-      });
-
-      if (isValid) {
-        alert("🎉 Your tutor request has been submitted successfully! A TutorBridge learning coordinator will reach out via WhatsApp/Email within 24 hours.");
-        document.getElementById('tutor-request-form').reset();
-      }
-    }
-  </script>
 </body>
 </html>

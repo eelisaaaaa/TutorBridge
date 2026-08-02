@@ -5,84 +5,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us — TutorBridge</title>
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/about.css">
 </head>
 <body>
-  <div id="global-navbar"></div>
+  <nav id="global-navbar"></nav>
 
   <main class="container">
-    <div style="text-align:right; margin-bottom:12px;">
+    <p class="owner-pill-wrap">
       <span class="owner-pill">Page Owner: Zi Xuan</span>
-    </div>
+    </p>
 
-    <div class="page-header">
+    <header class="page-header">
       <h1>Our Story</h1>
       <p>Bridging the educational gap in Singapore through accessible, cross-border 1-on-1 tuition.</p>
-    </div>
+    </header>
 
     <!-- Problem Statement Block -->
-    <section class="card" style="margin-bottom:32px; background:#fff; border-left:5px solid var(--teal-deep);">
-      <h2 style="font-size:22px; color:var(--teal-deep); margin-bottom:12px;">The Problem We Are Solving</h2>
-      <p style="font-size:15px; color:var(--charcoal); margin-bottom:14px; line-height:1.7;">
+    <section class="card problem-card">
+      <h2 class="problem-title">The Problem We Are Solving</h2>
+      <p class="problem-text">
         Private tuition costs in Singapore have escalated into a major financial hurdle for lower- and middle-income households, widening the educational achievement gap. Local physical tuition rates for Secondary O and N-Level subjects frequently exceed <strong>SGD $50 to $80 per hour</strong>.
       </p>
-      <p style="font-size:15px; color:var(--charcoal); line-height:1.7;">
-        Our team recognized that highly qualified, English-fluent educators based in neighboring countries with favorable exchange rates (such as Malaysia, the Philippines, and Indonesia) can teach the exact same Singapore Cambridge curriculum over Zoom at a fraction of local rates — starting at just <strong>SGD $15 to $22 per hour</strong>. TutorBridge was built to connect these dedicated tutors directly with Singapore students in need.
+
+      <p>
+        Our team recognized that highly qualified, English-fluent educators based
+        in neighboring countries with favorable exchange rates (such as Malaysia,
+        the Philippines, and Indonesia) can teach the exact same Singapore
+        Cambridge curriculum over Zoom at a fraction of local rates — starting
+        at just <strong>SGD $15 to $22 per hour</strong>. TutorBridge was built
+        to connect these dedicated tutors directly with Singapore students in need.
       </p>
     </section>
 
     <!-- Team Bios Grid -->
-    <section style="margin-bottom:40px;">
-      <h2 style="font-size:22px; color:var(--teal-deep); text-align:center; margin-bottom:24px;">Meet Our Project Team</h2>
-      <div class="grid-4">
-        
-        <div class="tutor-card">
+    <section class="team-section">
+      <h2 class="team-heading">Meet Our Project Team</h2>
+      <ul class="grid-4">
+
+        <li class="tutor-card">
           <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" class="tutor-avatar" alt="Elisa">
-          <div class="tutor-name">Elisa</div>
-          <div class="tutor-meta">P2530941</div>
+          <h3 class="tutor-name">Elisa</h3>
+          <p class="tutor-meta">P2530941</p>
           <span class="tutor-tag">Front-End Developer</span>
-          <p style="font-size:12px; color:var(--grey-dark); margin-top:8px;">
+          <p class="tutor-pages">
             <strong>Pages Owned:</strong> Home, Sessions (Chat &amp; Video), Profile &amp; Billing.
           </p>
-        </div>
+        </li>
 
-        <div class="tutor-card">
+        <li class="tutor-card">
           <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" class="tutor-avatar" alt="Zi Xuan">
-          <div class="tutor-name">Zi Xuan</div>
-          <div class="tutor-meta">P2618382</div>
+          <h3 class="tutor-name">Zi Xuan</h3>
+          <p class="tutor-meta">P2618382</p>
           <span class="tutor-tag">UX Designer &amp; Dev</span>
-          <p style="font-size:12px; color:var(--grey-dark); margin-top:8px;">
+          <p class="tutor-pages">
             <strong>Pages Owned:</strong> About Us, Tutor Profile (Swipe Deck), Resources for Parents.
           </p>
-        </div>
+        </li>
 
-        <div class="tutor-card">
+        <li class="tutor-card">
           <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80" class="tutor-avatar" alt="Shin">
-          <div class="tutor-name">Shin</div>
-          <div class="tutor-meta">P2639093</div>
+          <h3 class="tutor-name">Shin</h3>
+          <p class="tutor-meta">P2639093</p>
           <span class="tutor-tag">Interactive Logic Dev</span>
-          <p style="font-size:12px; color:var(--grey-dark); margin-top:8px;">
+          <p class="tutor-pages">
             <strong>Pages Owned:</strong> How It Works, Shortlist, Request a Tutor Sign-Up.
           </p>
-        </div>
+        </li>
 
-        <div class="tutor-card">
+        <li class="tutor-card">
           <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" class="tutor-avatar" alt="Kalai">
-          <div class="tutor-name">Kalai</div>
-          <div class="tutor-meta">P2600118</div>
+          <h3 class="tutor-name">Kalai</h3>
+          <p class="tutor-meta">P2600118</p>
           <span class="tutor-tag">Data &amp; Calculator Dev</span>
-          <p style="font-size:12px; color:var(--grey-dark); margin-top:8px;">
+          <p class="tutor-pages">
             <strong>Pages Owned:</strong> Pricing &amp; Savings Calculator, Testimonials, Contact Us.
           </p>
-        </div>
+        </li>
 
-      </div>
+      </ul>
     </section>
 
   </main>
 
-  <div id="global-footer"></div>
-
-  <script src="../assets/javascript/tutors-data.js"></script>
-  <script src="../assets/javascript/main.js"></script>
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>
