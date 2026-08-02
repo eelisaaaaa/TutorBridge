@@ -144,30 +144,24 @@ function sendChatMessage() {
   const userMsg = input.value.trim();
   input.value = '';
 
-  const msgDiv = document.createElement('div');
-  msgDiv.style.marginBottom = '10px';
-  msgDiv.style.textAlign = 'right';
-  msgDiv.innerHTML = `
-    <span style="background:var(--teal-deep); color:#fff; padding:6px 12px; border-radius:12px 12px 0 12px; font-size:12px; display:inline-block;">
-      ${userMsg}
-    </span>
-    <div style="font-size:9px; color:var(--grey-dark); margin-top:2px;">You &bull; Just now</div>
+  const msgItem = document.createElement('li');
+  msgItem.className = 'chat-bubble-row user';
+  msgItem.innerHTML = `
+    <span class="chat-bubble user">${userMsg}</span>
+    <p class="chat-timestamp">You &bull; Just now</p>
   `;
-  messagesBox.appendChild(msgDiv);
+  messagesBox.appendChild(msgItem);
   messagesBox.scrollTop = messagesBox.scrollHeight;
 
   // Tutor auto reply simulation
   setTimeout(() => {
-    const tutorMsgDiv = document.createElement('div');
-    tutorMsgDiv.style.marginBottom = '10px';
-    tutorMsgDiv.style.textAlign = 'left';
-    tutorMsgDiv.innerHTML = `
-      <span style="background:var(--grey-light); color:var(--charcoal); padding:6px 12px; border-radius:12px 12px 12px 0; font-size:12px; display:inline-block;">
-        Great question! Let's work through this O-Level problem on the shared whiteboard step by step.
-      </span>
-      <div style="font-size:9px; color:var(--grey-dark); margin-top:2px;">Aisha Rahman (Tutor) &bull; Just now</div>
+    const tutorMsgItem = document.createElement('li');
+    tutorMsgItem.className = 'chat-bubble-row tutor';
+    tutorMsgItem.innerHTML = `
+      <span class="chat-bubble tutor">Great question! Let's work through this O-Level problem on the shared whiteboard step by step.</span>
+      <p class="chat-timestamp">Aisha Rahman (Tutor) &bull; Just now</p>
     `;
-    messagesBox.appendChild(tutorMsgDiv);
+    messagesBox.appendChild(tutorMsgItem);
     messagesBox.scrollTop = messagesBox.scrollHeight;
   }, 1000);
 }
@@ -179,4 +173,14 @@ function endSessionSimulation() {
     }
     openFeedbackModal();
   }
+}
+
+function joinCustomRoomCode() {
+  const code = document.getElementById('join-room-input')?.value.trim();
+  if (!code) {
+    alert('Please enter a room code (e.g. TB-8842).');
+    return;
+  }
+  alert(`Connected to Room ${code}! Tutor Aisha Rahman has dialed into the virtual classroom.`);
+  startWebcamStream();
 }
