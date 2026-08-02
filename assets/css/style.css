@@ -1072,7 +1072,7 @@ a:hover {
   background: var(--coral-hover);
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(255, 122, 89, 0.45);
+  box-shadow: 0 6px 18px rgba(30, 111, 225, 0.45);
 }
 
 .btn-ghost {
