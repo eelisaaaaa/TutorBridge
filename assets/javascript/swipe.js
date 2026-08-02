@@ -18,15 +18,16 @@ function renderSwipeCards() {
 
   if (currentSwipeIndex >= TUTORS_DATA.length) {
     stackContainer.innerHTML = `
-      <div class="swipe-card top" style="justify-content:center; cursor:default; transform:none;">
-        <h3 style="color:var(--teal-deep); margin-bottom:8px;">All Tutors Reviewed!</h3>
-        <p style="font-size:13px; color:var(--grey-dark); margin-bottom:16px;">You have swiped through all available tutors in the directory.</p>
-        <div style="display:flex; gap:10px;">
-          <button class="btn btn-ghost" onclick="resetSwipeDeck()">Reset Deck</button>
+      <article class="swipe-card swipe-empty top">
+        <h3 class="swipe-empty-title">All Tutors Reviewed!</h3>
+        <p class="swipe-empty-text">You have swiped through all available tutors in the directory.</p>
+        <p class="swipe-empty-actions">
+          <button class="btn btn-ghost" id="reset-deck-btn">Reset Deck</button>
           <a href="shortlist.html" class="btn btn-primary">View Shortlist (${getShortlist().length})</a>
-        </div>
-      </div>
+        </p>
+      </article>
     `;
+    document.getElementById('reset-deck-btn').addEventListener('click', resetSwipeDeck);
     return;
   }
 
@@ -39,22 +40,22 @@ function renderSwipeCards() {
     if (offset === 2) stackClass = 'back-2';
 
     html += `
-      <div class="swipe-card ${stackClass}" id="swipe-card-${i}">
-        <div class="swipe-card-badge like">SHORTLIST</div>
-        <div class="swipe-card-badge nope">DISMISS</div>
+      <article class="swipe-card ${stackClass}" id="swipe-card-${i}">
+        <span class="swipe-card-badge like">SHORTLIST</span>
+        <span class="swipe-card-badge nope">DISMISS</span>
 
         <img src="${t.avatar}" class="tutor-avatar" alt="${t.name}">
-        <div>
+        <header class="tutor-info">
           <h3 class="tutor-name">${t.name}</h3>
           <p class="tutor-meta">${t.subject} · ${t.level}</p>
           <span class="tutor-tag">${t.country}</span>
-        </div>
+        </header>
         <div class="tutor-rate">SGD $${t.rate} / hr</div>
-        <p style="font-size:12px; color:var(--grey-dark); line-height:1.4;">"${t.bio}"</p>
-        <div style="font-size:11px; font-weight:600; color:var(--teal-deep); background:var(--teal-light); padding:4px 10px; border-radius:12px; margin-top:8px;">
+        <p class="swipe-card-bio">"${t.bio}"</p>
+        <p class="swipe-card-rating">
           ★ ${t.rating} (${t.reviewsCount} verified reviews)
-        </div>
-      </div>
+        </p>
+      </article>
     `;
   }
 
@@ -162,5 +163,11 @@ function resetSwipeDeck() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    initSwipeDeck();
+  initSwipeDeck();
+
+  // Static page buttons (see tutorprofile.html)
+  const dismissBtn = document.getElementById('dismiss-btn');
+  const shortlistBtn = document.getElementById('shortlist-btn');
+  if (dismissBtn) dismissBtn.addEventListener('click', () => handleSwipe('left'));
+  if (shortlistBtn) shortlistBtn.addEventListener('click', () => handleSwipe('right'));
 });

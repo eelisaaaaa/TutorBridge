@@ -11,63 +11,63 @@
 
 <body>
 
-  <div id="global-navbar"></div>
+  <nav id="global-navbar"></nav>
 
   <main class="container">
 
-    <div class="page-owner">
+    <p class="page-owner">
       <span class="owner-pill">Page Owner: Zi Xuan</span>
-    </div>
+    </p>
 
-    <div class="page-header">
+    <header class="page-header">
       <h1>Find Your Tutor</h1>
       <p>Swipe right to shortlist tutors or dismiss to see the next available profile.</p>
-    </div>
+    </header>
 
-    <div class="swipe-wrapper">
+    <section class="swipe-wrapper">
 
-      <div class="swipe-card-stack" id="swipe-stack">
+      <section class="swipe-card-stack" id="swipe-stack">
         <!-- JS renders cards -->
-      </div>
+      </section>
 
-      <div class="swipe-instructions">
+      <p class="swipe-instructions">
         <span>&larr; Swipe left (Dismiss)</span>
         <span>Swipe right (Shortlist) &rarr;</span>
-      </div>
+      </p>
 
-      <div class="swipe-controls">
+      <section class="swipe-controls">
 
         <button
           class="swipe-btn dismiss"
           title="Dismiss"
-          onclick="handleSwipe('left')">
+          id="dismiss-btn">
           &times;
         </button>
 
-        <div class="swipe-message">
+        <p class="swipe-message">
           Tap actions or drag card
-        </div>
+        </p>
 
         <button
           class="swipe-btn shortlist"
           title="Shortlist"
-          onclick="handleSwipe('right')">
+          id="shortlist-btn">
           &hearts;
         </button>
 
-      </div>
+      </section>
 
-      <div class="shortlist-container">
+      <p class="shortlist-container">
         <a href="../pages/shortlist.html" class="btn btn-ghost">
           View Your Shortlist &rarr;
         </a>
-      </div>
+      </p>
 
-    </div>
+    </section>
 
   </main>
 
-  <div id="global-footer"></div>
+  <footer id="global-footer"></footer>
 
   <script src="../assets/javascript/tutors-data.js"></script>
   <script src="../assets/javascript/main.js"></script>
