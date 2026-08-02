@@ -1076,7 +1076,7 @@ a:hover {
 }
 
 .btn-ghost {
-  background: #fff;
+  background: #3692dd;
   color: var(--teal-deep);
   border: 2px solid var(--teal-deep);
 }
