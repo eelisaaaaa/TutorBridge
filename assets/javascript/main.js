@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupGlobalModals();
 });
 
-// Render Global Top Navigation Bar with Chrome-Style Right-Side Hamburger Dropdown
+// Render Global Top Navigation Bar with Chrome-Satyle Right-Side Hamburger Dropdown
 function renderNavbar() {
   const navContainer = document.getElementById('global-navbar');
   if (!navContainer) return;
@@ -44,10 +44,10 @@ function renderNavbar() {
 
   navContainer.innerHTML = `
     <nav class="navbar">
-      <a href="${home}" class="brand">
-        <div class="brand-icon">TB</div>
-        TutorBridge
-      </a>
+    <a href="${home}" class="brand">
+    <img src="${base}assets/images/logo.png" alt="TutorBridge logo" class="brand-icon">
+   TutorBridge
+    </a>
       
       <!-- Right-side Container with Account Button and Chrome 3-line/dot Hamburger Icon -->
       <div class="nav-right-container">
@@ -103,7 +103,7 @@ function renderFooter() {
       <div class="footer-dark-inner">
         <div>
           <div class="footer-dark-brand">
-            <div class="brand-icon" style="width:30px; height:30px; font-size:15px;">TB</div>
+            <img src="${base}assets/images/logo.png" alt="TutorBridge logo" class="brand-icon" style="width:30px; height:30px;">
             TutorBridge
           </div>
           <p class="footer-dark-desc">
