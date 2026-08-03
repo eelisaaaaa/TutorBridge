@@ -2,7 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   // Step cards hover effect (optional JS enhancement)
-  const stepCards = document.querySelectorAll("main > div:nth-of-type(3) > div");
+  const stepCards = document.querySelectorAll("main > section");
   stepCards.forEach(card => {
     card.addEventListener("mouseenter", () => {
       card.style.transform = "translateY(-6px)";
