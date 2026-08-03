@@ -1,3 +1,35 @@
+/* ==========================
+   How It Works Page Styles
+   ========================== */
+
+/* Navigation Bar */
+.navbar {
+  background: #0f6b66; /* deep teal */
+  padding: 12px 20px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.nav-links a.active {
+  border-bottom: 2px solid #fff;
+}
+
 /* General page styling */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
@@ -11,6 +43,10 @@ main {
   max-width: 1000px;
   margin: 0 auto;
   padding: 40px 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 30px;
 }
 
 /* Headings */
@@ -32,14 +68,7 @@ p {
   font-size: 15px;
 }
 
-/* Steps grid */
-main {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-top: 30px;
-}
-
+/* Step cards */
 section {
   background: #fff;
   border: 1.5px solid #dcdcdc;
@@ -102,7 +131,7 @@ section > p:last-of-type {
 
 /* Footer container */
 footer#global-footer {
-  background: #0f6b66; /* deep teal */
+  background: #0f6b66;
   color: #fff;
   padding: 40px 20px;
   margin-top: 40px;
@@ -122,7 +151,7 @@ footer#global-footer h4 {
   font-size: 15px;
   font-weight: 700;
   margin-bottom: 12px;
-  color: #ffd54f; /* amber accent */
+  color: #ffd54f;
 }
 
 /* Footer links */
@@ -219,12 +248,17 @@ footer#global-footer .footer-note {
 
 .star-rating span:hover,
 .star-rating span.active {
-  color: #ffb400; /* gold stars */
+  color: #ffb400;
 }
 
 /* Responsive */
 @media (max-width: 800px) {
   main {
     grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
   }
 }
