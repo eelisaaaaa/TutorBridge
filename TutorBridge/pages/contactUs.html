@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us — TutorBridge</title>
-  <link rel="stylesheet" href="../assets/css/contactUs.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
   <div id="global-navbar"></div>
@@ -16,14 +16,14 @@
 
     <div class="page-header">
       <h1>Contact Us</h1>
-      <p>Got a question about how tutor vetting works, how payments are handled, or whether we cover your child's syllabus? Drop us a line below.</p>
+      <p>Have questions about tutor vetting, payments, or course syllabus matching? Send us a message!</p>
     </div>
 
     <div class="grid-2" style="max-width:960px; margin:0 auto 40px; align-items:start;">
       <!-- General Enquiry Form -->
       <div class="card">
         <h3 style="color:var(--teal-deep); margin-bottom:16px;">General Enquiry</h3>
-        <form id="contact-form" novalidate>
+        <form id="contact-form" novalidate onsubmit="handleContactSubmit(event)">
           <div class="form-group">
             <label class="form-label">Full Name *</label>
             <input type="text" id="contact-name" class="form-input" placeholder="Your name" required>
@@ -48,11 +48,9 @@
 
       <!-- Contact Details & Socials Block -->
       <div class="card" style="background:#f7faf9;">
-        <img src="../assets/images/contact-support-photo.jpg" alt="TutorBridge support team"
-             style="width:100%; height:140px; object-fit:cover; border-radius:var(--radius-sm); margin-bottom:16px;">
         <h3 style="color:var(--teal-deep); margin-bottom:16px;">Get In Touch</h3>
         <p style="font-size:14px; color:var(--charcoal); margin-bottom:16px; line-height:1.6;">
-          Our team is based here in Singapore and on hand Monday to Saturday, 9am–7pm (SGT), whenever you need us.
+          Our support team is based in Singapore and available Monday through Saturday from 9:00 AM to 7:00 PM (SGT).
         </p>
 
         <div style="font-size:13.5px; color:var(--charcoal); display:flex; flex-direction:column; gap:12px; margin-bottom:24px;">
@@ -73,9 +71,36 @@
 
   <div id="global-footer"></div>
 
-  <script src="../assets/javascript/contactUs.js"></script>
+  <script src="../assets/javascript/tutors-data.js"></script>
+  <script src="../assets/javascript/main.js"></script>
+  <script>
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      let isValid = true;
+      const fields = [
+        { id: 'contact-name', errId: 'c-err-name' },
+        { id: 'contact-email', errId: 'c-err-email' },
+        { id: 'contact-msg', errId: 'c-err-msg' }
+      ];
+
+      fields.forEach(f => {
+        const el = document.getElementById(f.id);
+        const err = document.getElementById(f.errId);
+        if (!el.value.trim()) {
+          el.classList.add('field-error');
+          if (err) err.style.display = 'block';
+          isValid = false;
+        } else {
+          el.classList.remove('field-error');
+          if (err) err.style.display = 'none';
+        }
+      });
+
+      if (isValid) {
+        alert("Message sent successfully! Our team will respond within 24 hours.");
+        document.getElementById('contact-form').reset();
+      }
+    }
+  </script>
 </body>
 </html>
- 
-     
-           

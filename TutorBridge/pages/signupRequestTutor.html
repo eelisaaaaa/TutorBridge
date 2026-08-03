@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request a Tutor — TutorBridge</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div id="global-navbar"></div>
+
+  <main class="container">
+    <div style="text-align:right; margin-bottom:12px;">
+      <span class="owner-pill">Page Owner: Shin</span>
+    </div>
+
+    <div class="page-header">
+      <h1>Request a Tutor / Sign-Up</h1>
+      <p>Fill in your learning requirements and we'll match you with the best international tutor for a free trial session.</p>
+    </div>
+
+    <div class="card" style="max-width:640px; margin:0 auto 40px;">
+      <form id="tutor-request-form" novalidate>
+
+        <div class="form-group">
+          <label class="form-label">Student / Parent Name *</label>
+          <input type="text" id="req-name" class="form-input" placeholder="e.g. Tan Wei Ming" required>
+          <span class="error-msg" id="err-name" style="display:none;">Please enter your full name.</span>
+        </div>
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label class="form-label">Email Address *</label>
+            <input type="email" id="req-email" class="form-input" placeholder="name@domain.com" required>
+            <span class="error-msg" id="err-email" style="display:none;">Valid email address required.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Phone / WhatsApp *</label>
+            <input type="tel" id="req-phone" class="form-input" placeholder="+65 9123 4567" required>
+            <span class="error-msg" id="err-phone" style="display:none;">Valid phone number required.</span>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label class="form-label">Grade Level (O/N) *</label>
+            <select id="req-level" class="form-select" required>
+              <option value="">Select Grade Level</option>
+              <option value="Sec 1 Express">Sec 1 Express</option>
+              <option value="Sec 2 Express">Sec 2 Express</option>
+              <option value="Sec 3 O-Level">Sec 3 O-Level</option>
+              <option value="Sec 4 O-Level">Sec 4 O-Level</option>
+              <option value="Sec 1-4 N-Level">Sec 1-4 N(A) Level</option>
+              <option value="Sec 5 N-Level">Sec 5 N(A) Level</option>
+            </select>
+            <span class="error-msg" id="err-level" style="display:none;">Please select a grade level.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Subject Required *</label>
+            <select id="req-subject" class="form-select" required>
+              <option value="">Select Subject</option>
+              <option value="Elementary Mathematics">Elementary Mathematics</option>
+              <option value="Additional Mathematics">Additional Mathematics</option>
+              <option value="Physics">Physics</option>
+              <option value="Chemistry">Chemistry</option>
+              <option value="Biology">Biology</option>
+              <option value="English Language">English Language</option>
+            </select>
+            <span class="error-msg" id="err-subject" style="display:none;">Please select a subject.</span>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label class="form-label">Hourly Budget (SGD)</label>
+            <input type="text" id="req-budget" class="form-input" placeholder="e.g. $15 - $25 / hr">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Preferred Time Slots</label>
+            <input type="text" id="req-slots" class="form-input" placeholder="e.g. Weekday evenings, Sat 2pm">
+          </div>
+        </div>
+
+        <div style="text-align:center; margin-top:24px;">
+          <button type="submit" class="btn btn-primary" style="width:100%; padding:12px; font-size:16px;">
+            Submit Tutor Request
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </main>
+
+  <div id="global-footer"></div>
+
+  <script src="../assets/javascript/tutors-data.js"></script>
+  <script src="../assets/javascript/main.js"></script>
+<<<<<<< HEAD
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Pre-fill tutor from query param if arriving from shortlist
+      const urlParams = new URLSearchParams(window.location.search);
+      const requestedTutor = urlParams.get('tutor');
+      if (requestedTutor) {
+        const slotsInput = document.getElementById('req-slots');
+        if (slotsInput) slotsInput.value = `Requested Tutor: ${requestedTutor}`;
+      }
+    });
+=======
+>>>>>>> 821bb69cdc38117f9fa50e6bb344385d82233761
+
+</body>
+</html>

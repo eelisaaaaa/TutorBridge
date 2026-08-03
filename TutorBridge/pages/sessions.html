@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Sessions — TutorBridge</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .sessions-split {
+      display: flex;
+      gap: 20px;
+    }
+    .session-list-col {
+      flex: 0 0 320px;
+    }
+    .video-room-col {
+      flex: 1;
+    }
+    .session-item {
+      background: #fff;
+      border: 1px solid var(--grey-mid);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .session-item.active {
+      border-color: var(--teal-deep);
+      background: var(--teal-light);
+    }
+    .video-screen {
+      background: #1e2229;
+      border-radius: var(--radius-md) var(--radius-md) 0 0;
+      height: 380px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+    .video-controls {
+      background: var(--charcoal);
+      padding: 12px 20px;
+      border-radius: 0 0 var(--radius-md) var(--radius-md);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .chat-box {
+      background: #fff;
+      border: 1px solid var(--grey-mid);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin-top: 16px;
+      height: 240px;
+      display: flex;
+      flex-direction: column;
+    }
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      margin-bottom: 12px;
+    }
+    .tutor-pip-box {
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      width: 140px;
+      height: 95px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 2px solid var(--teal-soft);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      z-index: 10;
+      background: #000;
+    }
+    @media (max-width: 850px) {
+      .sessions-split { flex-direction: column; }
+      .session-list-col { flex: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header id="global-navbar"></header>
+
+  <main class="container">
+    <p class="owner-tag-wrap">
+      <span class="owner-pill">Page Owner: Elisa</span>
+    </p>
+
+    <section class="page-header">
+      <h1>My Sessions &amp; Virtual Classroom</h1>
+      <p>Connect with your tutor live via in-browser camera stream or 1-click Google Meet dial-in.</p>
+    </section>
+
+    <section class="sessions-split">
+      <aside class="session-list-col">
+        <h3 class="sub-heading">Scheduled Sessions</h3>
+
+        <ul class="session-list">
+          <li class="session-item active">
+            <p class="session-item-title">Additional Mathematics</p>
+            <p class="session-item-meta">Tutor: Aisha Rahman (KL)</p>
+            <p class="session-item-live">🟢 LIVE NOW &bull; Session Code: <span id="session-room-code">TB-8842</span></p>
+          </li>
+        </ul>
+
+        <section class="card teacher-connect-card">
+          <h4>☎️ How Teacher &amp; Student Connect</h4>
+          <p>
+            <strong>Method A (Browser WebRTC):</strong> Share Room Code <strong style="color:var(--coral);">TB-8842</strong> with tutor. Tutor enters code below and taps "Connect".<br>
+            <strong>Method B (Google Meet):</strong> Tap "Launch Google Meet" to open a shared meeting room.
+          </p>
+
+          <p class="room-code-joiner">
+            <input type="text" id="join-room-input" class="form-input" placeholder="Enter Room Code (e.g. TB-8842)">
+            <button class="btn btn-soft btn-nowrap" onclick="joinCustomRoomCode()">Connect</button>
+          </p>
+
+          <a href="https://meet.google.com/new" target="_blank" rel="noopener" class="btn btn-ghost meet-link-btn">
+            🔗 Launch Google Meet Session
+          </a>
+        </section>
+
+        <h3 class="sub-heading spaced">Recorded Sessions</h3>
+        <ul id="downloads-container" class="session-list">
+          <li class="session-item">
+            <p class="session-item-title">E-Math: Vectors &amp; Matrices</p>
+            <p class="session-item-meta">Jul 24 &bull; 60 mins recorded</p>
+          </li>
+        </ul>
+      </aside>
+
+      <section class="video-room-col">
+        <section class="video-screen" id="video-screen-area">
+          <p id="record-status-badge" class="record-status-badge">RECORDING OFF</p>
+
+          <video id="user-webcam-feed" class="real-webcam-feed" autoplay playsinline muted style="display:none;"></video>
+
+          <section id="webcam-placeholder" class="webcam-placeholder">
+            <p class="webcam-placeholder-icon">📹</p>
+            <h3>Live Virtual Classroom</h3>
+            <p>Click "Turn On Camera &amp; Mic" below to start your live stream &amp; browser video recording.</p>
+            <button class="btn btn-primary" onclick="startWebcamStream()">Turn On Camera &amp; Mic</button>
+          </section>
+
+          <figure class="tutor-pip-box" title="Tutor Feed: Aisha Rahman">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" alt="Tutor Aisha">
+            <figcaption>Tutor Aisha</figcaption>
+          </figure>
+        </section>
+
+        <section class="video-controls">
+          <p class="video-controls-group">
+            <button id="cam-toggle-btn" class="btn btn-soft" onclick="startWebcamStream()">
+              📷 Camera: Off
+            </button>
+            <button id="rec-toggle-btn" class="btn btn-ghost" style="border-color:#fff; color:#fff;" onclick="toggleRealRecording()">
+              🔴 Record Session
+            </button>
+          </p>
+
+          <p class="video-controls-group">
+            <button class="btn btn-primary" onclick="endSessionSimulation()">
+              End Session &amp; Submit Rating
+            </button>
+          </p>
+        </section>
+
+        <p id="recording-download-box" class="highlight-box recording-download-box" style="display:none;">
+          🎉 <strong>Recording Ready!</strong> Your session recording has been encoded.<br>
+          <a id="download-video-btn" class="btn btn-primary" download="TutorBridge_Session.webm">
+            ⬇️ Download Recorded Video (.webm)
+          </a>
+        </p>
+
+        <section class="chat-box">
+          <p class="chat-box-header">💬 Session Live Chat</p>
+
+          <ul class="chat-messages" id="session-chat-messages">
+            <li class="chat-bubble-row tutor">
+              <span class="chat-bubble tutor">
+                Welcome to today's A-Math session! Session Code is <strong>TB-8842</strong>.
+              </span>
+              <p class="chat-timestamp">Aisha Rahman (Tutor) &bull; 5:01 PM</p>
+            </li>
+          </ul>
+
+          <p class="chat-input-row">
+            <input type="text" id="session-chat-input" class="form-input" placeholder="Type a message to your tutor..." onkeypress="if(event.key==='Enter') sendChatMessage()">
+            <button class="btn btn-primary" onclick="sendChatMessage()">Send</button>
+          </p>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <footer id="global-footer"></footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/sessions.js"></script>
+  <script>
+    function joinCustomRoomCode() {
+      const code = document.getElementById('join-room-input')?.value.trim();
+      if (!code) {
+        alert('Please enter a room code (e.g. TB-8842).');
+        return;
+      }
+      alert(`Connected to Room ${code}! Tutor Aisha Rahman has dialed into the virtual classroom.`);
+      startWebcamStream();
+    }
+  </script>
+</body>
+</html>
