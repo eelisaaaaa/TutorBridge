@@ -88,7 +88,7 @@ function renderNav() {
         TutorBridge
       </a>
       <div class="nav-right-container">
-        <a href="profile.html" class="btn btn-ghost" style="padding:6px 14px; font-size:12.5px; border-color:#fff; color:#fff;">Account</a>
+        <a href="profile.html" class="btn btn-ghost nav-account-btn">Account</a>
         <button class="hamburger-btn-icon" id="hamburger-toggle-btn" title="Open Navigation Menu" onclick="toggleNav(event)">☰</button>
       </div>
       <ul class="nav-dropdown-menu" id="nav-dropdown-panel">${linksHTML}</ul>
@@ -124,7 +124,7 @@ function renderFooter() {
       <div class="footer-dark-inner">
         <div>
           <div class="footer-dark-brand">
-            <div class="brand-icon" style="width:30px; height:30px; font-size:15px;">TB</div>
+            <div class="brand-icon">TB</div>
             TutorBridge
           </div>
           <p class="footer-dark-desc">Connecting Singapore secondary students with vetted tutors abroad, at a fraction of local rates.</p>
@@ -189,10 +189,10 @@ function renderShortlistPage() {
 
   if (shortlistedTutors.length === 0) {
     container.innerHTML = `
-      <div class="card" style="text-align:center; padding:48px 24px; max-width:540px; margin:0 auto;">
-        <div style="font-size:48px; margin-bottom:12px;">💔</div>
-        <h3 style="color:var(--teal-deep); margin-bottom:8px;">Nothing here yet</h3>
-        <p style="font-size:14px; color:var(--grey-dark); margin-bottom:24px;">Head over to the tutor directory and swipe right on anyone you'd like to save for later.</p>
+      <div class="card empty-state-card">
+        <div class="empty-state-icon">💔</div>
+        <h3 class="empty-state-title">Nothing here yet</h3>
+        <p class="empty-state-text">Head over to the tutor directory and swipe right on anyone you'd like to save for later.</p>
         <a href="tutorProfile.html" class="btn btn-primary">Browse Tutors &rarr;</a>
       </div>
     `;
@@ -200,24 +200,22 @@ function renderShortlistPage() {
   }
 
   container.innerHTML = `
-    <div style="font-size:13px; color:var(--grey-dark); text-align:center; margin-bottom:24px;">
+    <div class="shortlist-summary">
       ${shortlistedTutors.length} tutor${shortlistedTutors.length > 1 ? 's' : ''} saved — tap "Request" when you're ready to book a trial.
     </div>
     <div class="grid-2">
       ${shortlistedTutors.map(t => `
-        <div class="card" style="display:flex; gap:16px; align-items:center;">
+        <div class="card tutor-card-row">
           <img src="${t.avatar}" class="tutor-avatar" alt="${t.name}">
-          <div style="flex:1;">
-            <h3 style="font-size:16px; color:var(--teal-deep); margin-bottom:2px;">${t.name}</h3>
-            <div style="font-size:12px; color:var(--grey-dark); margin-bottom:4px;">${t.subject} &bull; ${t.level}</div>
-            <div style="font-size:11px; background:var(--teal-light); color:var(--teal-deep); padding:2px 8px; border-radius:10px; display:inline-block; margin-bottom:8px;">
-              ${t.country}
-            </div>
-            <div style="font-size:15px; font-weight:800; color:var(--coral);">SGD $${t.rate} / hr</div>
+          <div class="tutor-card-info">
+            <h3 class="tutor-card-name">${t.name}</h3>
+            <div class="tutor-card-meta">${t.subject} &bull; ${t.level}</div>
+            <div class="tutor-card-country">${t.country}</div>
+            <div class="tutor-card-rate">SGD $${t.rate} / hr</div>
           </div>
-          <div style="display:flex; flex-direction:column; gap:8px;">
-            <a href="signupRequestTutor.html?tutor=${encodeURIComponent(t.name)}" class="btn btn-primary" style="padding:6px 14px; font-size:12px;">Request</a>
-            <button class="btn btn-ghost" style="padding:4px 12px; font-size:11px; border-color:var(--grey-mid); color:var(--grey-dark);" onclick="removeAndRefresh('${t.id}')">Remove ✕</button>
+          <div class="tutor-card-actions">
+            <a href="signupRequestTutor.html?tutor=${encodeURIComponent(t.name)}" class="btn btn-primary btn-request">Request</a>
+            <button class="btn btn-ghost btn-remove" onclick="removeAndRefresh('${t.id}')">Remove ✕</button>
           </div>
         </div>
       `).join('')}
