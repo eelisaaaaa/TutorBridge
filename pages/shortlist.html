@@ -1,22 +1,22 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Shortlist — TutorBridge</title>
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/shortlist.css">
 </head>
 <body>
   <div id="global-navbar"></div>
 
   <main class="container">
     <div style="text-align:right; margin-bottom:12px;">
-      <span class="owner-pill">Page Owner: Shin</span>
+      <span class="owner-pill">Page Owner: Kalai</span>
     </div>
 
     <div class="page-header">
       <h1>Your Shortlist</h1>
-      <p>Review and request trial sessions with tutors you swiped right on.</p>
+      <p>Everyone you've saved while browsing tutors, all in one place — ready to request a trial lesson whenever you are.</p>
     </div>
 
     <div id="shortlist-content">
@@ -26,60 +26,6 @@
 
   <div id="global-footer"></div>
 
-  <script src="../assets/javascript/tutors-data.js"></script>
-  <script src="../assets/javascript/main.js"></script>
-  <script>
-    function renderShortlistPage() {
-      const container = document.getElementById('shortlist-content');
-      if (!container || typeof TUTORS_DATA === 'undefined') return;
-
-      const savedIds = getShortlist();
-      const shortlistedTutors = TUTORS_DATA.filter(t => savedIds.includes(t.id));
-
-      if (shortlistedTutors.length === 0) {
-        container.innerHTML = `
-          <div class="card" style="text-align:center; padding:48px 24px; max-width:540px; margin:0 auto;">
-            <div style="font-size:48px; margin-bottom:12px;">💔</div>
-            <h3 style="color:var(--teal-deep); margin-bottom:8px;">No Tutors Shortlisted Yet</h3>
-            <p style="font-size:14px; color:var(--grey-dark); margin-bottom:24px;">Explore our tutor directory and swipe right on tutors you want to save!</p>
-            <a href="tutor-profile.html" class="btn btn-primary">Go to Tutor Swipe Deck &rarr;</a>
-          </div>
-        `;
-        return;
-      }
-
-      container.innerHTML = `
-        <div style="font-size:13px; color:var(--grey-dark); text-align:center; margin-bottom:24px;">
-          Saved Tutors (${shortlistedTutors.length}) — Click "Request Tutor" to book a trial lesson.
-        </div>
-        <div class="grid-2">
-          ${shortlistedTutors.map(t => `
-            <div class="card" style="display:flex; gap:16px; align-items:center;">
-              <img src="${t.avatar}" class="tutor-avatar" style="width:70px; height:70px; margin-bottom:0;" alt="${t.name}">
-              <div style="flex:1;">
-                <h3 style="font-size:16px; color:var(--teal-deep); margin-bottom:2px;">${t.name}</h3>
-                <div style="font-size:12px; color:var(--grey-dark); margin-bottom:4px;">${t.subject} &bull; ${t.level}</div>
-                <div style="font-size:11px; background:var(--teal-light); color:var(--teal-deep); padding:2px 8px; border-radius:10px; display:inline-block; margin-bottom:8px;">
-                  ${t.country}
-                </div>
-                <div style="font-size:15px; font-weight:800; color:var(--coral);">SGD $${t.rate} / hr</div>
-              </div>
-              <div style="display:flex; flex-direction:column; gap:8px;">
-                <a href="request-tutor.html?tutor=${encodeURIComponent(t.name)}" class="btn btn-primary" style="padding:6px 14px; font-size:12px;">Request</a>
-                <button class="btn btn-ghost" style="padding:4px 12px; font-size:11px; border-color:var(--grey-mid); color:var(--grey-dark);" onclick="removeAndRefresh('${t.id}')">Remove ✕</button>
-              </div>
-            </div>
-          `).join('')}
-        </div>
-      `;
-    }
-
-    function removeAndRefresh(id) {
-      removeFromShortlist(id);
-      renderShortlistPage();
-    }
-
-    document.addEventListener('DOMContentLoaded', renderShortlistPage);
-  </script>
+  <script src="../assets/javascript/shortlist.js"></script>
 </body>
 </html>
