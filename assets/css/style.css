@@ -267,7 +267,7 @@ a:hover {
 }
 
 .btn-ghost {
-  background: #ffffff;
+  background: #ff7a59;
   color: var(--teal-deep);
   border: 2px solid var(--teal-deep);
 }
