@@ -1,0 +1,35 @@
+.calc-box {
+  background: #fff;
+  border: 2px solid var(--amber);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  box-shadow: var(--shadow-md);
+  max-width: 800px;
+  margin: 0 auto 32px;
+}
+.res-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+  text-align: center;
+}
+.res-card {
+  background: var(--off-white);
+  border: 1px solid var(--grey-mid);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+}
+.res-card.highlight {
+  background: var(--amber-light);
+  border-color: var(--amber);
+}
+.res-val {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--teal-deep);
+  margin-top: 4px;
+}
+.res-card.highlight .res-val {
+  color: var(--coral);
+}

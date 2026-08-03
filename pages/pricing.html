@@ -5,59 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pricing &amp; Currency Comparison — TutorBridge</title>
   <link rel="stylesheet" href="../assets/css/style.css">
-  <style>
-    .calc-box {
-      background: #fff;
-      border: 2px solid var(--amber);
-      border-radius: var(--radius-md);
-      padding: 32px;
-      box-shadow: var(--shadow-md);
-      max-width: 800px;
-      margin: 0 auto 32px;
-    }
-    .res-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 24px;
-      text-align: center;
-    }
-    .res-card {
-      background: var(--off-white);
-      border: 1px solid var(--grey-mid);
-      border-radius: var(--radius-sm);
-      padding: 16px;
-    }
-    .res-card.highlight {
-      background: var(--amber-light);
-      border-color: var(--amber);
-    }
-    .res-val {
-      font-size: 26px;
-      font-weight: 800;
-      color: var(--teal-deep);
-      margin-top: 4px;
-    }
-    .res-card.highlight .res-val {
-      color: var(--coral);
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/css/pricing.css">
 </head>
 <body>
-  <div id="global-navbar"></div>
+  <nav id="global-navbar"></nav>
 
   <main class="container">
-    <div style="text-align:right; margin-bottom:12px;">
-      <span class="owner-pill">Page Owner: Kalai</span>
-    </div>
+    <p class="page-owner" style="text-align:right; margin-bottom:12px;">
+      <span class="owner-pill">Page Owner: Zi Xuan</span>
+    </p>
 
-    <div class="page-header">
+    <header class="page-header">
       <h1>Pricing &amp; Currency Comparison</h1>
       <p>Compare local physical Singapore tuition rates against TutorBridge cross-border 1-on-1 rates.</p>
-    </div>
+    </header>
 
-    <!-- Live Calculator Widget -->
-    <div class="calc-box">
+    <section class="calc-box">
       <h2 style="font-size:20px; color:var(--teal-deep); text-align:center; margin-bottom:20px;">
         🧮 Interactive Tuition Savings Calculator
       </h2>
@@ -81,27 +44,26 @@
         </div>
       </div>
 
-      <div class="res-grid">
+      <dl class="res-grid">
         <div class="res-card">
-          <div style="font-size:12px; font-weight:700; color:var(--grey-dark);">LOCAL SG COST (MO)</div>
-          <div class="res-val" id="res-local-cost">$440</div>
+          <dt style="font-size:12px; font-weight:700; color:var(--grey-dark);">LOCAL SG COST (MO)</dt>
+          <dd class="res-val" id="res-local-cost">$440</dd>
         </div>
 
         <div class="res-card">
-          <div style="font-size:12px; font-weight:700; color:var(--teal-deep);">TUTORBRIDGE COST (MO)</div>
-          <div class="res-val" id="res-platform-cost">$144</div>
+          <dt style="font-size:12px; font-weight:700; color:var(--teal-deep);">TUTORBRIDGE COST (MO)</dt>
+          <dd class="res-val" id="res-platform-cost">$144</dd>
         </div>
 
         <div class="res-card highlight">
-          <div style="font-size:12px; font-weight:700; color:#7a5a20;">YOUR MONTHLY SAVINGS</div>
-          <div class="res-val" id="res-savings">$296</div>
-          <div style="font-size:11px; font-weight:700; color:var(--coral);" id="res-savings-pct">67% Saved</div>
+          <dt style="font-size:12px; font-weight:700; color:#7a5a20;">YOUR MONTHLY SAVINGS</dt>
+          <dd class="res-val" id="res-savings">$296</dd>
+          <dd style="font-size:11px; font-weight:700; color:var(--coral);" id="res-savings-pct">67% Saved</dd>
         </div>
-      </div>
-    </div>
+      </dl>
+    </section>
 
-    <!-- Detailed Explanation Text Below Calculator -->
-    <div class="card" style="max-width:800px; margin:0 auto 32px;">
+    <section class="card" style="max-width:800px; margin:0 auto 32px;">
       <h3 style="color:var(--teal-deep); margin-bottom:12px;">Why is TutorBridge so much more affordable?</h3>
       <p style="font-size:14px; color:var(--charcoal); line-height:1.7; margin-bottom:12px;">
         1. <strong>Exchange Rate Advantage:</strong> Tutors living in Malaysia, the Philippines, and Indonesia earn competitive local income when paid in SGD ($15 - $25 SGD/hr), allowing them to dedicate 100% of their energy to teaching high-quality lessons.
@@ -112,10 +74,10 @@
       <p style="font-size:14px; color:var(--charcoal); line-height:1.7;">
         3. <strong>Transparent SGD Billing:</strong> Parents are billed strictly in Singapore Dollars via PayNow or Credit Card. TutorBridge manages cross-border currency payouts seamlessly with zero hidden fees.
       </p>
-    </div>
+    </section>
   </main>
 
-  <div id="global-footer"></div>
+  <footer id="global-footer"></footer>
 
   <script src="../assets/javascript/tutors-data.js"></script>
   <script src="../assets/javascript/main.js"></script>
