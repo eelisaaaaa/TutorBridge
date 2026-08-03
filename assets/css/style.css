@@ -1234,11 +1234,12 @@ a:hover {
 .nav-account-btn {
   padding: 6px 14px;
   font-size: 12.5px;
-  background: coral;
-  color: var(--teal-deep);
+  background: var(--coral);
+  color: #fff;
   border: none;
 }
 .nav-account-btn:hover {
-  background: var(--teal-light);
+  background: #fff;
   color: var(--teal-deep);
+  transform: translateY(-2px);
 }
