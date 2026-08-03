@@ -1231,3 +1231,16 @@ a:hover {
   .hero h1 { font-size: 26px; }
   .search-bar { flex-direction: column; }
 }
+- Navbar "Account" button — was using .btn-ghost's white background with
+   inline color:#fff on top, making the text invisible. Dedicated class instead. --- */
+.nav-account-btn {
+  padding: 6px 14px;
+  font-size: 12.5px;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+.nav-account-btn:hover {
+  background: #fff;
+  color: var(--teal-deep);
+}
