@@ -1,7 +1,7 @@
 // about.js
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Tutor card hover effect (extra smooth)
+  // Tutor card hover effect
   const tutorCards = document.querySelectorAll(".tutor-card");
   tutorCards.forEach(card => {
     card.addEventListener("mouseenter", () => {
@@ -13,13 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
       card.style.transform = "translateY(0)";
       card.style.boxShadow = "var(--shadow-sm)";
     });
-  });
 
-  // Click tutor card to show more info (simple alert for demo)
-  tutorCards.forEach(card => {
+    // Click tutor card to show more info
     card.addEventListener("click", () => {
-      const name = card.querySelector(".tutor-name")?.textContent;
-      const role = card.querySelector(".tutor-tag")?.textContent;
+      const name = card.querySelector(".tutor-name")?.textContent.trim();
+      const role = card.querySelector(".tutor-tag")?.textContent.trim();
       if (name && role) {
         alert(`${name} — ${role}`);
       }
@@ -28,13 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Smooth scroll to Problem Section if link exists
   const problemLink = document.querySelector(".problem-link");
-  if (problemLink) {
+  const problemSection = document.querySelector(".problem-section");
+  if (problemLink && problemSection) {
     problemLink.addEventListener("click", e => {
       e.preventDefault();
-      const problemSection = document.querySelector(".problem-section");
-      if (problemSection) {
-        problemSection.scrollIntoView({ behavior: "smooth" });
-      }
+      problemSection.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   }
 });

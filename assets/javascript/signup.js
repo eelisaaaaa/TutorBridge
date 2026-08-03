@@ -4,11 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Pre-fill tutor from query param if arriving from shortlist
   const urlParams = new URLSearchParams(window.location.search);
   const requestedTutor = urlParams.get('tutor');
-  if (requestedTutor) {
-    const slotsInput = document.getElementById('req-slots');
-    if (slotsInput) {
-      slotsInput.value = `Preferred Tutor: ${requestedTutor}`;
-    }
+  const slotsInput = document.getElementById('req-slots');
+  if (requestedTutor && slotsInput) {
+    slotsInput.value = `Preferred Tutor: ${requestedTutor}`;
   }
 
   // Attach submit handler
@@ -33,10 +31,9 @@ function handleRequestSubmit(e) {
   fields.forEach(f => {
     const el = document.getElementById(f.id);
     const errEl = document.getElementById(f.errId);
-
     if (!el) return;
 
-    let value = el.value.trim();
+    const value = el.value.trim();
     let valid = true;
 
     // Extra validation for email and phone
@@ -44,7 +41,7 @@ function handleRequestSubmit(e) {
       const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
       valid = emailPattern.test(value);
     } else if (f.type === 'phone') {
-      const phonePattern = /^\+?\d{7,15}$/; // simple phone validation
+      const phonePattern = /^\+?\d{7,15}$/; // basic phone validation
       valid = phonePattern.test(value);
     } else {
       valid = value.length > 0;
