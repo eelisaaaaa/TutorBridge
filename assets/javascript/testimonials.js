@@ -66,7 +66,7 @@ function renderNav() {
         TutorBridge
       </a>
       <div class="nav-right-container">
-        <a href="profile.html" class="btn btn-ghost" style="padding:6px 14px; font-size:12.5px; border-color:#fff; color:#fff;">Account</a>
+        <a href="profile.html" class="btn btn-ghost nav-account-btn">Account</a>
         <button class="hamburger-btn-icon" id="hamburger-toggle-btn" title="Open Navigation Menu" onclick="toggleNav(event)">☰</button>
       </div>
       <ul class="nav-dropdown-menu" id="nav-dropdown-panel">${linksHTML}</ul>
@@ -102,7 +102,7 @@ function renderFooter() {
       <div class="footer-dark-inner">
         <div>
           <div class="footer-dark-brand">
-            <div class="brand-icon" style="width:30px; height:30px; font-size:15px;">TB</div>
+            <div class="brand-icon">TB</div>
             TutorBridge
           </div>
           <p class="footer-dark-desc">Connecting Singapore secondary students with vetted tutors abroad, at a fraction of local rates.</p>
@@ -157,10 +157,10 @@ function renderSlide() {
 
   box.innerHTML = `
     <div class="carousel-card">
-      <img src="${t.avatar}" style="width:70px; height:70px; border-radius:50%; object-fit:cover; margin-bottom:14px; border:3px solid var(--teal-light);" alt="${t.name}">
-      <p style="font-size:16px; color:var(--charcoal); font-style:italic; margin-bottom:16px; line-height:1.6;">"${t.quote}"</p>
-      <div style="font-weight:700; color:var(--teal-deep); font-size:15px;">${t.name}</div>
-      <div style="font-size:13px; color:var(--coral); font-weight:600; margin-top:4px;">${t.subject} &bull; ${t.improvement}</div>
+      <img src="${t.avatar}" class="testimonial-avatar" alt="${t.name}">
+      <p class="testimonial-quote">"${t.quote}"</p>
+      <div class="testimonial-name">${t.name}</div>
+      <div class="testimonial-meta">${t.subject} &bull; ${t.improvement}</div>
     </div>
   `;
 
