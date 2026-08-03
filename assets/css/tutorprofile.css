@@ -37,3 +37,16 @@
   border-radius: 12px;
   margin-top: 8px;
 }
+
+.swipe-instructions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 500px; /* match your card width */
+  margin: 0 auto;
+}
+
+.shortlist-container {
+  display: flex;
+  justify-content: center;
+}
