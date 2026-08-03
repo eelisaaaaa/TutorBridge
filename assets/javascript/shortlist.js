@@ -1,38 +1,60 @@
-/* TutorBridge — Testimonials / Success Stories page script (self-contained) */
+/* TutorBridge — Shortlist page script (self-contained) */
 
 /* Swap these avatar paths for your own uploaded photos in /assets/images/ */
-const TESTIMONIALS_DATA = [
+const TUTORS_DATA = [
   {
-    name: "Darren Koh (Sec 4 Express)",
-    subject: "Additional Mathematics",
-    improvement: "Jumped from E8 to A2 in 4 months",
-    quote: "My tutor explained calculus so clearly, and the rate was less than half what my old home tutor charged — that made a real difference for my family.",
-    avatar: "../assets/images/testimonial-darren.jpg",
+    id: "tutor-1",
+    name: "Aisha Rahman",
+    subject: "Elementary & Additional Mathematics",
+    level: "O-Level / N-Level",
+    country: "Malaysia (KL)",
+    rate: 18,
+    avatar: "../assets/images/tutor-aisha.jpg",
   },
   {
-    name: "Mrs. Sarah Lim (Parent of Sec 3 N-Level student)",
-    subject: "Combined Science (Physics/Chem)",
-    improvement: "Saved over $350/month in tuition fees",
-    quote: "TutorBridge has genuinely been a lifesaver. My daughter now gets 1-on-1 Zoom sessions with a highly qualified physics tutor for just $22/hr, and her confidence has grown so much.",
-    avatar: "../assets/images/testimonial-sarah.jpg",
+    id: "tutor-2",
+    name: "Dr. Mark Tan",
+    subject: "Pure & Combined Physics",
+    level: "O-Level",
+    country: "Philippines (Manila)",
+    rate: 22,
+    avatar: "../assets/images/tutor-mark.jpg",
   },
   {
-    name: "Siti Zulaiha (Sec 5 Normal Academic)",
-    subject: "O-Level English Language",
-    improvement: "Achieved a B3 grade at O-Levels",
-    quote: "Being able to try a free trial lesson first gave me real peace of mind. My tutor helped me structure my argumentative essays step-by-step — I'd recommend it to anyone.",
-    avatar: "../assets/images/testimonial-siti.jpg",
+    id: "tutor-3",
+    name: "Nurul Huda",
+    subject: "Pure & Combined Chemistry",
+    level: "O-Level / N-Level",
+    country: "Indonesia (Bandung)",
+    rate: 16,
+    avatar: "../assets/images/tutor-nurul.jpg",
+  },
+  {
+    id: "tutor-4",
+    name: "Rajesh Kumar",
+    subject: "English Language & Literature",
+    level: "O-Level / N-Level",
+    country: "India (Bengaluru)",
+    rate: 15,
+    avatar: "../assets/images/tutor-rajesh.jpg",
+  },
+  {
+    id: "tutor-5",
+    name: "Chloe Lee",
+    subject: "Biology & General Science",
+    level: "O-Level / N-Level",
+    country: "Malaysia (Penang)",
+    rate: 17,
+    avatar: "../assets/images/tutor-chloe.jpg",
   },
 ];
-
-let currentSlide = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
   renderNav();
   renderFooter();
   renderFAB();
   updateShortlistBadge();
-  renderSlide();
+  renderShortlistPage();
 });
 
 /* ---------- Navbar ---------- */
@@ -45,10 +67,10 @@ function renderNav() {
     { href: 'aboutus.html', label: 'About Us' },
     { href: 'howItWorks.html', label: 'How It Works' },
     { href: 'tutorProfile.html', label: 'Find Tutors' },
-    { href: 'shortlist.html', label: 'Shortlist', badge: true },
+    { href: 'shortlist.html', label: 'Shortlist', badge: true, active: true },
     { href: 'pricing.html', label: 'Pricing & Savings' },
     { href: 'signupRequestTutor.html', label: 'Request Tutor' },
-    { href: 'testimonials.html', label: 'Success Stories', active: true },
+    { href: 'testimonials.html', label: 'Success Stories' },
     { href: 'sessions.html', label: 'Sessions' },
     { href: 'resourcesForParents.html', label: 'Resources for Parents' },
     { href: 'contactUs.html', label: 'Contact' },
@@ -140,46 +162,68 @@ function renderFAB() {
   document.body.appendChild(fab);
 }
 
+/* ---------- Shortlist storage helpers ---------- */
+function getShortlist() {
+  return JSON.parse(localStorage.getItem('tb_shortlist') || '[]');
+}
+
+function removeFromShortlist(tutorId) {
+  const list = getShortlist().filter(id => id !== tutorId);
+  localStorage.setItem('tb_shortlist', JSON.stringify(list));
+  updateShortlistBadge();
+}
+
 function updateShortlistBadge() {
   const badge = document.getElementById('shortlist-count-badge');
   if (!badge) return;
-  const list = JSON.parse(localStorage.getItem('tb_shortlist') || '[]');
-  badge.textContent = list.length;
+  badge.textContent = getShortlist().length;
 }
 
-/* ---------- Carousel ---------- */
-function renderSlide() {
-  const box = document.getElementById('testimonial-slide-box');
-  const dotsBox = document.getElementById('carousel-dots-box');
-  if (!box) return;
+/* ---------- Page render ---------- */
+function renderShortlistPage() {
+  const container = document.getElementById('shortlist-content');
+  if (!container) return;
 
-  const t = TESTIMONIALS_DATA[currentSlide];
+  const savedIds = getShortlist();
+  const shortlistedTutors = TUTORS_DATA.filter(t => savedIds.includes(t.id));
 
-  box.innerHTML = `
-    <div class="carousel-card">
-      <img src="${t.avatar}" class="testimonial-avatar" alt="${t.name}">
-      <p class="testimonial-quote">"${t.quote}"</p>
-      <div class="testimonial-name">${t.name}</div>
-      <div class="testimonial-meta">${t.subject} &bull; ${t.improvement}</div>
+  if (shortlistedTutors.length === 0) {
+    container.innerHTML = `
+      <div class="card empty-state-card">
+        <div class="empty-state-icon">💔</div>
+        <h3 class="empty-state-title">Nothing here yet</h3>
+        <p class="empty-state-text">Head over to the tutor directory and swipe right on anyone you'd like to save for later.</p>
+        <a href="tutorProfile.html" class="btn btn-primary">Browse Tutors &rarr;</a>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = `
+    <div class="shortlist-summary">
+      ${shortlistedTutors.length} tutor${shortlistedTutors.length > 1 ? 's' : ''} saved — tap "Request" when you're ready to book a trial.
+    </div>
+    <div class="grid-2">
+      ${shortlistedTutors.map(t => `
+        <div class="card tutor-card-row">
+          <img src="${t.avatar}" class="tutor-avatar" alt="${t.name}">
+          <div class="tutor-card-info">
+            <h3 class="tutor-card-name">${t.name}</h3>
+            <div class="tutor-card-meta">${t.subject} &bull; ${t.level}</div>
+            <div class="tutor-card-country">${t.country}</div>
+            <div class="tutor-card-rate">SGD $${t.rate} / hr</div>
+          </div>
+          <div class="tutor-card-actions">
+            <a href="signupRequestTutor.html?tutor=${encodeURIComponent(t.name)}" class="btn btn-primary btn-request">Request</a>
+            <button class="btn btn-ghost btn-remove" onclick="removeAndRefresh('${t.id}')">Remove ✕</button>
+          </div>
+        </div>
+      `).join('')}
     </div>
   `;
-
-  dotsBox.innerHTML = TESTIMONIALS_DATA.map((_, idx) => `
-    <span class="dot ${idx === currentSlide ? 'active' : ''}" onclick="goToSlide(${idx})"></span>
-  `).join('');
 }
 
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % TESTIMONIALS_DATA.length;
-  renderSlide();
-}
-
-function prevSlide() {
-  currentSlide = (currentSlide - 1 + TESTIMONIALS_DATA.length) % TESTIMONIALS_DATA.length;
-  renderSlide();
-}
-
-function goToSlide(idx) {
-  currentSlide = idx;
-  renderSlide();
+function removeAndRefresh(id) {
+  removeFromShortlist(id);
+  renderShortlistPage();
 }

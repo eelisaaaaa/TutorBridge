@@ -10,7 +10,7 @@
   <div id="global-navbar"></div>
 
   <main class="container">
-    <div style="text-align:right; margin-bottom:12px;">
+    <div class="owner-pill-wrap">
       <span class="owner-pill">Page Owner: Kalai</span>
     </div>
 
@@ -19,53 +19,52 @@
       <p>Got a question about how tutor vetting works, how payments are handled, or whether we cover your child's syllabus? Drop us a line below.</p>
     </div>
 
-    <div class="grid-2" style="max-width:960px; margin:0 auto 40px; align-items:start;">
+    <div class="grid-2 contact-grid">
       <!-- General Enquiry Form -->
       <div class="card">
-        <h3 style="color:var(--teal-deep); margin-bottom:16px;">General Enquiry</h3>
+        <h3 class="card-title">General Enquiry</h3>
         <form id="contact-form" novalidate>
           <div class="form-group">
             <label class="form-label">Full Name *</label>
             <input type="text" id="contact-name" class="form-input" placeholder="Your name" required>
-            <span class="error-msg" id="c-err-name" style="display:none;">Name is required.</span>
+            <span class="error-msg" id="c-err-name">Name is required.</span>
           </div>
 
           <div class="form-group">
             <label class="form-label">Email Address *</label>
             <input type="email" id="contact-email" class="form-input" placeholder="name@domain.com" required>
-            <span class="error-msg" id="c-err-email" style="display:none;">Email is required.</span>
+            <span class="error-msg" id="c-err-email">Email is required.</span>
           </div>
 
           <div class="form-group">
             <label class="form-label">Message *</label>
             <textarea id="contact-msg" class="form-textarea" rows="4" placeholder="How can we help you?" required></textarea>
-            <span class="error-msg" id="c-err-msg" style="display:none;">Message is required.</span>
+            <span class="error-msg" id="c-err-msg">Message is required.</span>
           </div>
 
-          <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
+          <button type="submit" class="btn btn-primary btn-block">Send Message</button>
         </form>
       </div>
 
       <!-- Contact Details & Socials Block -->
-      <div class="card" style="background:#f7faf9;">
-        <img src="../assets/images/contact-support-photo.jpg" alt="TutorBridge support team"
-             style="width:100%; height:140px; object-fit:cover; border-radius:var(--radius-sm); margin-bottom:16px;">
-        <h3 style="color:var(--teal-deep); margin-bottom:16px;">Get In Touch</h3>
-        <p style="font-size:14px; color:var(--charcoal); margin-bottom:16px; line-height:1.6;">
+      <div class="card card-tint">
+        <img src="../assets/images/contact-support-photo.jpg" alt="TutorBridge support team" class="contact-photo">
+        <h3 class="card-title">Get In Touch</h3>
+        <p class="card-text">
           Our team is based here in Singapore and on hand Monday to Saturday, 9am–7pm (SGT), whenever you need us.
         </p>
 
-        <div style="font-size:13.5px; color:var(--charcoal); display:flex; flex-direction:column; gap:12px; margin-bottom:24px;">
+        <div class="contact-details-list">
           <div>📍 <strong>Address:</strong> 1 Venture Avenue, #08-01, Singapore 608521</div>
           <div>📧 <strong>Email:</strong> support@tutorbridge.sg</div>
           <div>📱 <strong>WhatsApp Support:</strong> +65 8123 9876</div>
         </div>
 
-        <h4 style="font-size:14px; color:var(--teal-deep); margin-bottom:8px;">Follow Us</h4>
-        <div style="display:flex; gap:12px;">
-          <a href="#" class="btn btn-soft" style="padding:6px 14px; font-size:12px;">Instagram</a>
-          <a href="#" class="btn btn-soft" style="padding:6px 14px; font-size:12px;">Facebook</a>
-          <a href="#" class="btn btn-soft" style="padding:6px 14px; font-size:12px;">LinkedIn</a>
+        <h4 class="card-subtitle">Follow Us</h4>
+        <div class="social-row">
+          <a href="#" class="btn btn-soft btn-sm">Instagram</a>
+          <a href="#" class="btn btn-soft btn-sm">Facebook</a>
+          <a href="#" class="btn btn-soft btn-sm">LinkedIn</a>
         </div>
       </div>
     </div>
@@ -77,5 +76,5 @@
 </body>
 </html>
  
+ 
      
-           

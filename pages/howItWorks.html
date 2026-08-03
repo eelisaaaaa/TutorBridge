@@ -4,88 +4,100 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>How It Works — TutorBridge</title>
-  <link rel="stylesheet" href="../assets/css/howItWorks.css">
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- How It Works Page Styles -->
+  <link rel="stylesheet" href="../assets/css/howitworks.css">
 </head>
 
 <body>
 
-  <main>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="brand">
+      <div class="brand-icon">TB</div>
+      TutorBridge
+    </div>
+    <div class="nav-right-container">
+      <button class="hamburger-btn-icon" onclick="toggleNavMenu()">☰</button>
+      <ul class="nav-dropdown-menu" id="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="howitworks.html" class="active">How It Works</a></li>
+        <li><a href="tutorProfile.html">Tutors</a></li>
+        <li><a href="signup.html">Request a Tutor</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <span>Page Owner: Shin</span>
+  <main class="container">
 
-    <h1>How It Works</h1>
-    <p>
-      Just four easy steps to connect with experienced international tutors for
-      Singapore O &amp; N-Levels. Hover over each block to explore!
-    </p>
+    <span class="owner-pill">Page Owner: Shin</span>
 
-    <!-- Step 1 -->
-    <section>
-      <span>①</span>
-      <h3>Explore Tutors</h3>
-      <p>
-        Browse our global tutor catalog by subject (E-Math, A-Math, Physics, Chemistry, Biology, English),
-        grade level (Sec 1–5 Express or Normal Academic), hourly rate, and tutor’s country of origin.
-      </p>
-      <p>
-        💡 <strong>Verified Expertise:</strong>
-        Every tutor completes full Singapore O/N-Level exam papers to ensure syllabus accuracy.
-      </p>
+    <header class="page-header">
+      <h1>How TutorBridge Works</h1>
+      <p>Follow these simple steps to connect with your ideal tutor.</p>
+    </header>
+
+    <!-- Step Cards -->
+    <section class="step-card">
+      <h2>Step 1: Explore Tutors</h2>
+      <p>Browse by subject, level, and hourly rate to find tutors that match your needs.</p>
     </section>
 
-    <!-- Step 2 -->
-    <section>
-      <span>②</span>
-      <h3>Shortlist Your Picks</h3>
-      <p>
-        Use our swipe deck or directory to save your favourite tutors with a single click.
-        Build your personal shortlist effortlessly.
-      </p>
-      <p>
-        💡 <strong>Smart Comparison:</strong>
-        Compare rates, qualifications, and student feedback side-by-side.
-      </p>
+    <section class="step-card">
+      <h2>Step 2: Shortlist Your Picks</h2>
+      <p>Save and compare tutors easily before making a decision.</p>
     </section>
 
-    <!-- Step 3 -->
-    <section>
-      <span>③</span>
-      <h3>Try a Free Session</h3>
-      <p>
-        Request a trial lesson via Zoom or Google Meet. Experience the tutor’s teaching style
-        with no upfront cost.
-      </p>
-      <p>
-        💡 <strong>Risk-Free:</strong>
-        Check video quality and communication before committing to regular lessons.
-      </p>
+    <section class="step-card">
+      <h2>Step 3: Try a Free Session</h2>
+      <p>Request a trial lesson with no cost to experience the teaching style.</p>
     </section>
 
-    <!-- Step 4 -->
-    <section>
-      <span>④</span>
-      <h3>Confirm &amp; Begin Learning</h3>
-      <p>
-        Once you’re happy, lock in your weekly slot. Pay securely in SGD using PayNow, Credit Card, or GrabPay,
-        with automatic live exchange rate conversion.
-      </p>
-      <p>
-        💡 <strong>Full Portal Access:</strong>
-        Get recordings for revision and live chat support in your Sessions portal.
-      </p>
+    <section class="step-card">
+      <h2>Step 4: Confirm & Begin Learning</h2>
+      <p>Lock in your slot and pay securely to start your learning journey.</p>
     </section>
 
-    <p style="text-align:center; margin-top:20px;">
-      <a href="tutorProfile.html" class="btn btn-primary" style="padding:12px 28px; font-size:15px;">
-        Start Browsing Tutors Now &rarr;
-      </a>
-    </p>
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3 class="faq-question">Is the first session really free?</h3>
+        <p class="faq-answer">Yes, your first trial session is completely free with no obligation.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-question">How do payments work?</h3>
+        <p class="faq-answer">Payments are made securely online after you confirm your tutor.</p>
+      </div>
+    </section>
+
+    <!-- Star Rating -->
+    <section class="star-rating">
+      <h2>Rate Your Experience</h2>
+      <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+    </section>
+
+    <!-- Feedback Section -->
+    <section class="feedback-section">
+      <h2>Leave Feedback</h2>
+      <textarea placeholder="Share your thoughts..."></textarea>
+      <button type="button">Submit Feedback</button>
+    </section>
 
   </main>
 
   <footer id="global-footer"></footer>
 
-  <script src="../assets/javascript/tutors-data.js"></script>
-  <script src="../assets/javascript/main.js"></script>
+  <script src="../assets/javascript/howItWorks.js"></script>
+  <script>
+    function toggleNavMenu() {
+      document.getElementById('nav-menu').classList.toggle('open');
+    }
+  </script>
 </body>
 </html>
