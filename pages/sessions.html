@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Sessions — TutorBridge</title>
   <link rel="stylesheet" href="../assets/css/style.css">
+<<<<<<< HEAD
   <link rel="stylesheet" href="../assets/css/sessions.css">
   <style>
     .sessions-split {
@@ -84,6 +85,8 @@
       .session-list-col { flex: 1; }
     }
   </style>
+=======
+>>>>>>> 0f284499450fa765f9fb1f3f6304aefeb877d7f9
 </head>
 <body>
   <header id="global-navbar"></header>
@@ -202,19 +205,8 @@
 
   <footer id="global-footer"></footer>
 
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/sessions.js"></script>
-  <script>
-    function joinCustomRoomCode() {
-      const code = document.getElementById('join-room-input')?.value.trim();
-      if (!code) {
-        alert('Please enter a room code (e.g. TB-8842).');
-        return;
-      }
-      alert(`Connected to Room ${code}! Tutor Aisha Rahman has dialed into the virtual classroom.`);
-      startWebcamStream();
-    }
-  </script>
+  <script src="../assets/javascript/tutors-data.js"></script>
+  <script src="../assets/javascript/main.js"></script>
+  <script src="../assets/javascript/sessions.js"></script>
 </body>
 </html>
