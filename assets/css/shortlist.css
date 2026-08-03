@@ -137,3 +137,24 @@ a:hover { color: var(--coral); }
   pointer-events: none;
   flex-shrink: 0;
 }
+
+/* Shortlist — page-specific layout classes (replacing former inline styles) */
+.owner-pill-wrap { text-align: right; margin-bottom: 12px; }
+.empty-state-card { text-align: center; padding: 48px 24px; max-width: 540px; margin: 0 auto; }
+.empty-state-icon { font-size: 48px; margin-bottom: 12px; }
+.empty-state-title { color: var(--teal-deep); margin-bottom: 8px; }
+.empty-state-text { font-size: 14px; color: var(--grey-dark); margin-bottom: 24px; }
+.shortlist-summary { font-size: 13px; color: var(--grey-dark); text-align: center; margin-bottom: 24px; }
+.tutor-card-row { display: flex; gap: 16px; align-items: center; }
+.tutor-card-info { flex: 1; }
+.tutor-card-name { font-size: 16px; color: var(--teal-deep); margin-bottom: 2px; }
+.tutor-card-meta { font-size: 12px; color: var(--grey-dark); margin-bottom: 4px; }
+.tutor-card-country { font-size: 11px; background: var(--teal-light); color: var(--teal-deep); padding: 2px 8px; border-radius: 10px; display: inline-block; margin-bottom: 8px; }
+.tutor-card-rate { font-size: 15px; font-weight: 800; color: var(--coral); }
+.tutor-card-actions { display: flex; flex-direction: column; gap: 8px; }
+.btn-request { padding: 6px 14px; font-size: 12px; }
+.btn-remove { padding: 4px 12px; font-size: 11px; border-color: var(--grey-mid); color: var(--grey-dark); }
+
+/* Navbar sub-elements (replacing former inline styles in the nav template) */
+.nav-account-btn { padding: 6px 14px; font-size: 12.5px; border-color: #fff; color: #fff; }
+.footer-dark-brand .brand-icon { width: 30px; height: 30px; font-size: 15px; }
