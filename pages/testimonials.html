@@ -4,60 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Success Stories — TutorBridge</title>
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <style>
-    .carousel-card {
-      background: #fff;
-      border: 1px solid var(--grey-mid);
-      border-radius: var(--radius-md);
-      padding: 36px 28px;
-      text-align: center;
-      box-shadow: var(--shadow-sm);
-      min-height: 240px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    .carousel-dots {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 20px;
-    }
-    .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--grey-mid);
-      cursor: pointer;
-      transition: var(--transition);
-    }
-    .dot.active {
-      background: var(--coral);
-      transform: scale(1.25);
-    }
-    .nav-arrow-btn {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: #fff;
-      border: 2px solid var(--teal-deep);
-      color: var(--teal-deep);
-      font-size: 20px;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      flex-shrink: 0;
-      transition: var(--transition);
-    }
-    .nav-arrow-btn:hover {
-      background: var(--teal-deep);
-      color: #fff;
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/css/testimonials.css">
 </head>
 <body>
   <div id="global-navbar"></div>
@@ -69,13 +16,13 @@
 
     <div class="page-header">
       <h1>Success Stories &amp; Testimonials</h1>
-      <p>Real stories from Singapore secondary school students and parents achieving academic excellence with TutorBridge.</p>
+      <p>Real students and parents share how affordable, 1-on-1 tutoring with TutorBridge changed their results.</p>
     </div>
 
     <div style="max-width:760px; margin:0 auto 40px; position:relative;">
       <div style="display:flex; align-items:center; gap:16px;">
         <button class="nav-arrow-btn" aria-label="Previous Slide" onclick="prevSlide()">←</button>
-        
+
         <div style="flex:1;">
           <div id="testimonial-slide-box">
             <!-- JS populated -->
@@ -91,58 +38,23 @@
     </div>
 
     <div class="highlight-box" style="max-width:760px; margin:0 auto; text-align:center;">
-      🌟 Join over 1,200 Singapore students who elevated their O &amp; N-Level results while saving on tuition!
+      🌟 Over 1,200 Singapore students have raised their O &amp; N-Level grades with us — while paying a lot less for it.
     </div>
   </main>
 
   <div id="global-footer"></div>
 
-  <script src="../assets/javascript/tutors-data.js"></script>
-  <script src="../assets/javascript/main.js"></script>
-  <script>
-    let currentSlide = 0;
-
-    function renderSlide() {
-      const box = document.getElementById('testimonial-slide-box');
-      const dotsBox = document.getElementById('carousel-dots-box');
-      if (!box || typeof TESTIMONIALS_DATA === 'undefined') return;
-
-      const t = TESTIMONIALS_DATA[currentSlide];
-
-      box.innerHTML = `
-        <div class="carousel-card">
-          <img src="${t.avatar}" style="width:70px; height:70px; border-radius:50%; object-fit:cover; margin-bottom:14px; border:3px solid var(--teal-light);" alt="${t.name}">
-          <p style="font-size:16px; color:var(--charcoal); font-style:italic; margin-bottom:16px; line-height:1.6;">
-            "${t.quote}"
-          </p>
-          <div style="font-weight:700; color:var(--teal-deep); font-size:15px;">${t.name}</div>
-          <div style="font-size:13px; color:var(--coral); font-weight:600; margin-top:4px;">
-            ${t.subject} &bull; ${t.improvement}
-          </div>
-        </div>
-      `;
-
-      dotsBox.innerHTML = TESTIMONIALS_DATA.map((_, idx) => `
-        <span class="dot ${idx === currentSlide ? 'active' : ''}" onclick="goToSlide(${idx})"></span>
-      `).join('');
-    }
-
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % TESTIMONIALS_DATA.length;
-      renderSlide();
-    }
-
-    function prevSlide() {
-      currentSlide = (currentSlide - 1 + TESTIMONIALS_DATA.length) % TESTIMONIALS_DATA.length;
-      renderSlide();
-    }
-
-    function goToSlide(idx) {
-      currentSlide = idx;
-      renderSlide();
-    }
-
-    document.addEventListener('DOMContentLoaded', renderSlide);
-  </script>
+  <script src="../assets/javascript/testimonials.js"></script>
 </body>
 </html>
+ 
+     
+    
+ 
+
+     
+ 
+
+  
+       
+   
