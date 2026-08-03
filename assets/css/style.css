@@ -1241,5 +1241,4 @@ a:hover {
 .nav-account-btn:hover {
   background: #fff;
   color: var(--teal-deep);
-  transform: translateY(-2px);
 }
