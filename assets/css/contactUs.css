@@ -92,7 +92,8 @@ a:hover { color: var(--coral); }
 .form-group { margin-bottom: 16px; text-align: left; }
 .form-label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--charcoal); }
 .field-error { border-color: var(--coral) !important; background-color: #fff5f2 !important; }
-.error-msg { color: var(--coral); font-size: 12px; margin-top: 4px; display: block; }
+.error-msg { color: var(--coral); font-size: 12px; margin-top: 4px; display: none; }
+.error-msg.show { display: block; }
 
 /* Cards & highlight box */
 .card { background: var(--paper); border: 1px solid var(--grey-mid); border-radius: var(--radius-md); padding: 24px; box-shadow: var(--shadow-sm); transition: var(--transition); }
@@ -127,3 +128,20 @@ a:hover { color: var(--coral); }
 @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } .hero h1 { font-size: 26px; } }
 
 /* Contact Us page — no additional page-specific styles needed */
+
+/* Contact Us — page-specific layout classes (replacing former inline styles) */
+.owner-pill-wrap { text-align: right; margin-bottom: 12px; }
+.contact-grid { max-width: 960px; margin: 0 auto 40px; align-items: start; }
+.card-title { color: var(--teal-deep); margin-bottom: 16px; }
+.card-subtitle { font-size: 14px; color: var(--teal-deep); margin-bottom: 8px; }
+.card-text { font-size: 14px; color: var(--charcoal); margin-bottom: 16px; line-height: 1.6; }
+.card-tint { background: #f7faf9; }
+.btn-block { width: 100%; }
+.btn-sm { padding: 6px 14px; font-size: 12px; }
+.contact-photo { width: 100%; height: 140px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 16px; }
+.contact-details-list { font-size: 13.5px; color: var(--charcoal); display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+.social-row { display: flex; gap: 12px; }
+
+/* Navbar sub-elements (replacing former inline styles in the nav template) */
+.nav-account-btn { padding: 6px 14px; font-size: 12.5px; border-color: #fff; color: #fff; }
+.footer-dark-brand .brand-icon { width: 30px; height: 30px; font-size: 15px; }
