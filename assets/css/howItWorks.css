@@ -33,14 +33,14 @@ p {
 }
 
 /* Steps grid */
-main > div:nth-of-type(3) {
+main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   margin-top: 30px;
 }
 
-main > div:nth-of-type(3) > div {
+section {
   background: #fff;
   border: 1.5px solid #dcdcdc;
   border-radius: 10px;
@@ -49,14 +49,14 @@ main > div:nth-of-type(3) > div {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-main > div:nth-of-type(3) > div:hover {
+section:hover {
   transform: translateY(-6px);
   box-shadow: 0 10px 20px rgba(15,107,102,0.15);
   border-color: #0f6b66;
 }
 
 /* Step number badge */
-main > div:nth-of-type(3) > div > div > div:first-child {
+section > span:first-child {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -70,13 +70,13 @@ main > div:nth-of-type(3) > div > div > div:first-child {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-main > div:nth-of-type(3) > div:hover > div > div:first-child {
+section:hover > span:first-child {
   background: #ff6f61;
   color: #fff;
 }
 
 /* Tips box */
-main > div:nth-of-type(3) > div > div:last-child {
+section > p:last-of-type {
   background: #fff8e1;
   border: 1px solid #fbc02d;
   border-radius: 6px;
@@ -101,7 +101,7 @@ main > div:nth-of-type(3) > div > div:last-child {
 }
 
 /* Footer container */
-#global-footer {
+footer#global-footer {
   background: #0f6b66; /* deep teal */
   color: #fff;
   padding: 40px 20px;
@@ -110,7 +110,7 @@ main > div:nth-of-type(3) > div > div:last-child {
 }
 
 /* Footer grid layout */
-#global-footer .footer-sections {
+footer#global-footer .footer-sections {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 30px;
@@ -118,7 +118,7 @@ main > div:nth-of-type(3) > div > div:last-child {
 }
 
 /* Footer headings */
-#global-footer h4 {
+footer#global-footer h4 {
   font-size: 15px;
   font-weight: 700;
   margin-bottom: 12px;
@@ -126,7 +126,7 @@ main > div:nth-of-type(3) > div > div:last-child {
 }
 
 /* Footer links */
-#global-footer a {
+footer#global-footer a {
   display: block;
   color: #e0f2f1;
   text-decoration: none;
@@ -134,12 +134,12 @@ main > div:nth-of-type(3) > div > div:last-child {
   transition: color 0.3s ease;
 }
 
-#global-footer a:hover {
+footer#global-footer a:hover {
   color: #fff;
 }
 
 /* Footer note */
-#global-footer .footer-note {
+footer#global-footer .footer-note {
   text-align: center;
   font-size: 12px;
   color: #cfd8dc;
@@ -224,7 +224,7 @@ main > div:nth-of-type(3) > div > div:last-child {
 
 /* Responsive */
 @media (max-width: 800px) {
-  main > div:nth-of-type(3) {
+  main {
     grid-template-columns: 1fr;
   }
 }
