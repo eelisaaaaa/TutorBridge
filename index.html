@@ -7,20 +7,18 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <div id="global-navbar"></div>
+  <header id="global-navbar"></header>
 
   <main class="container">
-    <!-- Page Ownership Header -->
-    <div style="text-align:right; margin-bottom:12px;">
+    <p class="owner-tag-wrap">
       <span class="owner-pill">Page Owner: Elisa</span>
-    </div>
+    </p>
 
-    <!-- Hero Banner -->
     <section class="hero">
       <h1>Find affordable, quality tuition</h1>
       <p class="subline">Verified cross-border tutors delivering 1-on-1 Singapore O &amp; N-Level guidance at real savings.</p>
       
-      <form action="pages/tutorProfile.html" method="GET" class="search-bar">
+      <form action="tutor-profile.html" method="GET" class="search-bar">
         <select class="form-select" name="subject">
           <option value="">Select Subject (All)</option>
           <option value="emath">Elementary Mathematics</option>
@@ -35,129 +33,119 @@
           <option value="O-Level">O-Level (Sec 3-5)</option>
           <option value="N-Level">N-Level (Sec 1-4)</option>
         </select>
-        <button type="submit" class="btn btn-primary" style="white-space:nowrap;">Find a Tutor</button>
+        <button type="submit" class="btn btn-primary btn-nowrap">Find a Tutor</button>
       </form>
     </section>
 
-    <!-- Savings Snapshot -->
-    <div class="highlight-box">
-      ⚡ Savings Snapshot — Save up to <span style="color:var(--coral); font-size:18px; font-weight:800;">65%</span> compared to physical Singapore local home tuition!
-    </div>
+    <p class="highlight-box">
+      ⚡ Savings Snapshot — Save up to <span class="savings-percent">65%</span> compared to physical Singapore local home tuition!
+    </p>
 
-    <!-- Featured Tutors Carousel -->
-    <section style="margin-bottom:32px;">
-      <h2 style="font-size:20px; color:var(--teal-deep); margin-bottom:16px;">Featured Tutors</h2>
-      <div class="grid-3" id="home-featured-tutors">
-        <!-- Javascript populated -->
-      </div>
-      <div style="text-align:center; margin-top:16px;">
+    <section class="featured-tutors">
+      <h2 class="section-heading">Featured Tutors</h2>
+      <ul class="grid-3" id="home-featured-tutors"></ul>
+      <p class="browse-all-wrap">
         <a href="pages/tutorProfile.html" class="btn btn-soft">Swipe &amp; Browse All Tutors &rarr;</a>
-      </div>
+      </p>
     </section>
 
-    <!-- Trust Strip -->
-    <section class="trust-strip">
-      <div class="trust-item">
+    <ul class="trust-strip">
+      <li class="trust-item">
         <h3>150+</h3>
         <p>Verified Tutors</p>
-      </div>
-      <div class="trust-item">
+      </li>
+      <li class="trust-item">
         <h3>1,200+</h3>
         <p>Singapore Students</p>
-      </div>
-      <div class="trust-item">
+      </li>
+      <li class="trust-item">
         <h3>$380/mo</h3>
         <p>Average Family Savings</p>
-      </div>
-    </section>
+      </li>
+    </ul>
 
-    <!-- Secondary Action Block with Expandable Forms -->
-    <div class="card" style="text-align:center; background:#fff; border:2px dashed var(--teal-soft); margin-bottom:40px; padding:32px 24px;">
-      <h3 style="font-size:20px; color:var(--teal-deep); margin-bottom:8px;">Want to give back or earn as a tutor?</h3>
-      <p style="font-size:14px; color:var(--grey-dark); margin-bottom:20px; max-width:540px; margin-left:auto; margin-right:auto;">
+    <section class="card cta-card">
+      <h3 class="cta-heading">Want to give back or earn as a tutor?</h3>
+      <p class="cta-sub">
         Tap either button below to expand the application form directly on the page!
       </p>
-      
-      <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+
+      <p class="cta-buttons">
         <button class="btn btn-primary" id="btn-vol-expand" onclick="toggleVolunteerExpand()">
           <span id="vol-expand-arrow">▼</span> Become a Volunteer
         </button>
         <button class="btn btn-ghost" id="btn-tutor-expand" onclick="toggleTutorAppExpand()">
           <span id="tutor-expand-arrow">▼</span> Apply to Tutor &amp; Earn
         </button>
-      </div>
+      </p>
 
-      <!-- Expandable Form 1: Become a Volunteer -->
-      <div class="expandable-panel" id="volunteer-expandable-section">
-        <div class="card" style="text-align:left; background:#f7faf9; border-color:var(--teal-soft); margin-top:16px;">
-          <div class="step-box" style="text-align:center; font-weight:700;">
-            ▾ Volunteer Application Form
-          </div>
+      <section class="expandable-panel" id="volunteer-expandable-section">
+        <section class="card vol-card">
+          <p class="step-box">▾ Volunteer Application Form</p>
 
-          <div class="tabs" id="volunteer-tabs">
-            <div class="tab active" onclick="switchVolTab('local')">Local Student</div>
-            <div class="tab" onclick="switchVolTab('foreign')">Foreign (Uni / Poly)</div>
-          </div>
+          <nav class="tabs" id="volunteer-tabs">
+            <button type="button" class="tab active" onclick="switchVolTab('local')">Local Student</button>
+            <button type="button" class="tab" onclick="switchVolTab('foreign')">Foreign (Uni / Poly)</button>
+          </nav>
 
           <form onsubmit="event.preventDefault(); alert('Volunteer application submitted successfully!'); toggleVolunteerExpand();">
-            <div id="vol-local-content">
-              <p style="font-size:13px; color:var(--grey-dark); margin-bottom:12px;">
+            <section id="vol-local-content">
+              <p class="form-note">
                 Local Singapore students: upload your previous GCE O/N-Level exam results to auto-tag qualifying subjects and levels.
               </p>
-              <div class="form-group">
+              <p class="form-group">
                 <label class="form-label">Full Name</label>
                 <input type="text" class="form-input" placeholder="e.g. Tan Ah Kow" required>
-              </div>
-              <div class="form-group">
+              </p>
+              <p class="form-group">
                 <label class="form-label">Upload Exam Transcript (PDF / Image)</label>
                 <input type="file" class="form-input">
-              </div>
-            </div>
+              </p>
+            </section>
 
-            <div id="vol-foreign-content" style="display:none;">
-              <div class="highlight-box" style="text-align:left; font-weight:normal; font-size:13px;">
+            <section id="vol-foreign-content" hidden>
+              <p class="highlight-box form-note">
                 <strong>Foreign Applicants:</strong> Complete our O/N-Level diagnostic paper — scored by topic, no full-pass needed. Only want to tutor one specific topic? Complete a short quiz from Ten-Year-Series (TYS).
-              </div>
-              <div class="form-group">
+              </p>
+              <p class="form-group">
                 <label class="form-label">University / Polytechnic &amp; Country</label>
                 <input type="text" class="form-input" placeholder="e.g. University of Malaya, Malaysia">
-              </div>
-              <div class="form-group">
+              </p>
+              <p class="form-group">
                 <label class="form-label">Preferred Topic</label>
                 <select class="form-select">
                   <option>Algebra &amp; Functions (Math)</option>
                   <option>Kinematics &amp; Dynamics (Physics)</option>
                   <option>Organic Chemistry (Chem)</option>
                 </select>
-              </div>
-            </div>
+              </p>
+            </section>
 
-            <button type="submit" class="btn btn-primary" style="margin-top:12px; width:100%;">Submit Volunteer Application</button>
+            <button type="submit" class="btn btn-primary btn-full">Submit Volunteer Application</button>
           </form>
-        </div>
-      </div>
+        </section>
+      </section>
 
-      <!-- Expandable Form 2: Apply to Tutor & Earn -->
-      <div class="expandable-panel" id="tutor-app-expandable-section">
-        <div class="card" style="text-align:left; background:#f7faf9; border-color:var(--amber); margin-top:16px;">
-          <div class="step-box" style="text-align:center; font-weight:700; background:var(--amber-light); border-color:var(--amber); color:#7a5a20;">
-            ▾ Paid Tutor Qualification Form
-          </div>
+      <section class="expandable-panel" id="tutor-app-expandable-section">
+        <section class="card tutor-qual-card">
+          <p class="step-box qualification-step">▾ Paid Tutor Qualification Form</p>
 
           <form onsubmit="event.preventDefault(); alert('Qualification test link dispatched to your email!'); toggleTutorAppExpand();">
-            <div class="grid-2">
-              <div class="form-group">
+            <fieldset class="grid-2">
+              <legend class="sr-only">Name and email</legend>
+              <p class="form-group">
                 <label class="form-label">Name</label>
                 <input type="text" class="form-input" placeholder="Your full name" required>
-              </div>
-              <div class="form-group">
+              </p>
+              <p class="form-group">
                 <label class="form-label">Email Address</label>
                 <input type="email" class="form-input" placeholder="email@domain.com" required>
-              </div>
-            </div>
+              </p>
+            </fieldset>
 
-            <div class="grid-2">
-              <div class="form-group">
+            <fieldset class="grid-2">
+              <legend class="sr-only">Subject and level</legend>
+              <p class="form-group">
                 <label class="form-label">Target Teaching Subject</label>
                 <select class="form-select" required>
                   <option value="">Select Subject</option>
@@ -168,100 +156,31 @@
                   <option>Biology</option>
                   <option>English Language</option>
                 </select>
-              </div>
-              <div class="form-group">
+              </p>
+              <p class="form-group">
                 <label class="form-label">Target Level</label>
                 <select class="form-select" required>
                   <option>O-Level (Express)</option>
                   <option>N-Level (Normal Academic)</option>
                 </select>
-              </div>
-            </div>
+              </p>
+            </fieldset>
 
-            <div class="highlight-box" style="margin:16px 0;">
+            <p class="highlight-box qualification-note">
               ⚠️ <strong>Qualification Requirement:</strong> Applicants must pass the <strong>full</strong> O/N-Level paper for the chosen subject to qualify as a paid tutor.
-            </div>
+            </p>
 
-            <button type="submit" class="btn btn-primary" style="width:100%;">Start Qualification Test</button>
+            <button type="submit" class="btn btn-primary btn-full">Start Qualification Test</button>
           </form>
-        </div>
-      </div>
-
-    </div>
-
+        </section>
+      </section>
+    </section>
   </main>
 
-  <div id="global-footer"></div>
+  <footer id="global-footer"></footer>
 
   <script src="assets/javascript/tutors-data.js"></script>
   <script src="assets/javascript/main.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Render featured tutors
-      const container = document.getElementById('home-featured-tutors');
-      if (container && typeof TUTORS_DATA !== 'undefined') {
-        container.innerHTML = TUTORS_DATA.slice(0, 3).map(t => `
-          <div class="tutor-card">
-            <img src="${t.avatar}" class="tutor-avatar" alt="${t.name}">
-            <div class="tutor-name">${t.name}</div>
-            <div class="tutor-meta">${t.subject}</div>
-            <span class="tutor-tag">${t.country}</span>
-            <div class="tutor-rate">SGD $${t.rate} / hr</div>
-            <a href="tutor-profile.html" class="btn btn-soft" style="font-size:12px; padding:6px 14px;">View Profile</a>
-          </div>
-        `).join('');
-      }
-    });
-
-    // Expandable Volunteer Form Toggle
-    function toggleVolunteerExpand() {
-      const section = document.getElementById('volunteer-expandable-section');
-      const arrow = document.getElementById('vol-expand-arrow');
-      const tutorSection = document.getElementById('tutor-app-expandable-section');
-      
-      // Close tutor app section if open
-      if (tutorSection && tutorSection.classList.contains('expanded')) {
-        tutorSection.classList.remove('expanded');
-        document.getElementById('tutor-expand-arrow').textContent = '▼';
-      }
-
-      if (section) {
-        section.classList.toggle('expanded');
-        if (arrow) arrow.textContent = section.classList.contains('expanded') ? '▲' : '▼';
-      }
-    }
-
-    // Expandable Tutor App Form Toggle
-    function toggleTutorAppExpand() {
-      const section = document.getElementById('tutor-app-expandable-section');
-      const arrow = document.getElementById('tutor-expand-arrow');
-      const volSection = document.getElementById('volunteer-expandable-section');
-
-      // Close volunteer section if open
-      if (volSection && volSection.classList.contains('expanded')) {
-        volSection.classList.remove('expanded');
-        document.getElementById('vol-expand-arrow').textContent = '▼';
-      }
-
-      if (section) {
-        section.classList.toggle('expanded');
-        if (arrow) arrow.textContent = section.classList.contains('expanded') ? '▲' : '▼';
-      }
-    }
-
-    function switchVolTab(type) {
-      const tabs = document.querySelectorAll('#volunteer-tabs .tab');
-      tabs.forEach(t => t.classList.remove('active'));
-      if (type === 'local') {
-        tabs[0].classList.add('active');
-        document.getElementById('vol-local-content').style.display = 'block';
-        document.getElementById('vol-foreign-content').style.display = 'none';
-      } else {
-        tabs[1].classList.add('active');
-        document.getElementById('vol-local-content').style.display = 'none';
-        document.getElementById('vol-foreign-content').style.display = 'block';
-      }
-    }
-  </script>
+  <script src="assets/javascript/home.js"></script>
 </body>
 </html>
