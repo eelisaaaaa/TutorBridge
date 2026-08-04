@@ -7,6 +7,32 @@ let isRecordingActive = false;
 let recordTimerInterval = null;
 let recordSeconds = 0;
 
+document.addEventListener('DOMContentLoaded', () => {
+  wireSessionsPageEvents();
+});
+
+function wireSessionsPageEvents() {
+  const camBtn = document.getElementById('cam-toggle-btn');
+  const webcamPlaceholderBtn = document.getElementById('webcam-placeholder-start-btn');
+  const recBtn = document.getElementById('rec-toggle-btn');
+  const endBtn = document.getElementById('end-session-btn');
+  const joinBtn = document.getElementById('join-room-btn');
+  const chatInput = document.getElementById('session-chat-input');
+  const sendBtn = document.getElementById('chat-send-btn');
+
+  if (camBtn) camBtn.addEventListener('click', startWebcamStream);
+  if (webcamPlaceholderBtn) webcamPlaceholderBtn.addEventListener('click', startWebcamStream);
+  if (recBtn) recBtn.addEventListener('click', toggleRealRecording);
+  if (endBtn) endBtn.addEventListener('click', endSessionSimulation);
+  if (joinBtn) joinBtn.addEventListener('click', joinCustomRoomCode);
+  if (sendBtn) sendBtn.addEventListener('click', sendChatMessage);
+  if (chatInput) {
+    chatInput.addEventListener('keypress', (event) => {
+      if (event.key === 'Enter') sendChatMessage();
+    });
+  }
+}
+
 // Start User Webcam Feed
 async function startWebcamStream() {
   const videoElement = document.getElementById('user-webcam-feed');
@@ -17,8 +43,8 @@ async function startWebcamStream() {
     // Stop stream if already running
     mediaStream.getTracks().forEach(track => track.stop());
     mediaStream = null;
-    if (videoElement) videoElement.style.display = 'none';
-    if (placeholder) placeholder.style.display = 'block';
+    if (videoElement) videoElement.hidden = true;
+    if (placeholder) placeholder.hidden = false;
     if (camBtn) {
       camBtn.textContent = '📷 Camera: Off';
       camBtn.classList.remove('btn-primary');
@@ -31,9 +57,9 @@ async function startWebcamStream() {
     mediaStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
     if (videoElement) {
       videoElement.srcObject = mediaStream;
-      videoElement.style.display = 'block';
+      videoElement.hidden = false;
     }
-    if (placeholder) placeholder.style.display = 'none';
+    if (placeholder) placeholder.hidden = true;
     if (camBtn) {
       camBtn.textContent = '📷 Camera: ON (Active)';
       camBtn.classList.remove('btn-soft');
@@ -47,17 +73,12 @@ async function startWebcamStream() {
 
 // Toggle Real MediaRecorder Browser Recording
 function toggleRealRecording() {
-  const badge = document.getElementById('record-status-badge');
-  const recBtn = document.getElementById('rec-toggle-btn');
-
   if (isRecordingActive) {
-    // Stop Recording
     stopRecording();
     return;
   }
 
   if (!mediaStream) {
-    // If no stream active, request webcam first or create fallback stream
     startWebcamStream().then(() => {
       if (mediaStream) startMediaRecorder();
     });
@@ -97,7 +118,7 @@ function startMediaRecorder() {
     if (downloadBtn && downloadBox) {
       downloadBtn.href = url;
       downloadBtn.download = `TutorBridge_Session_Record_${Date.now()}.webm`;
-      downloadBox.style.display = 'block';
+      downloadBox.hidden = false;
     }
   };
 
@@ -107,7 +128,7 @@ function startMediaRecorder() {
 
   if (recBtn) recBtn.textContent = '⏹ Stop Recording';
   if (badge) {
-    badge.style.background = '#e74c3c';
+    badge.classList.add('recording-active');
     badge.innerHTML = '🔴 REC <span id="rec-timer-count">00:00</span>';
   }
 
@@ -131,7 +152,7 @@ function stopRecording() {
   const recBtn = document.getElementById('rec-toggle-btn');
   if (recBtn) recBtn.textContent = '🔴 Record Session';
   if (badge) {
-    badge.style.background = '#7f8c8d';
+    badge.classList.remove('recording-active');
     badge.innerHTML = 'RECORDING OFF';
   }
 }

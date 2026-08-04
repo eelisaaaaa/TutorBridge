@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+  renderFeaturedTutors();
+  wireExpandButtons();
+  wireVolunteerTabs();
+  wireVolunteerForm();
+  wireTutorQualificationForm();
+});
+
+function renderFeaturedTutors() {
   const container = document.getElementById('home-featured-tutors');
   if (container && typeof TUTORS_DATA !== 'undefined') {
     container.innerHTML = TUTORS_DATA.slice(0, 3).map(t => `
@@ -12,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </li>
     `).join('');
   }
-});
+}
 
 function toggleVolunteerExpand() {
   const section = document.getElementById('volunteer-expandable-section');
@@ -46,6 +54,13 @@ function toggleTutorAppExpand() {
   }
 }
 
+function wireExpandButtons() {
+  const volBtn = document.getElementById('btn-vol-expand');
+  const tutorBtn = document.getElementById('btn-tutor-expand');
+  if (volBtn) volBtn.addEventListener('click', toggleVolunteerExpand);
+  if (tutorBtn) tutorBtn.addEventListener('click', toggleTutorAppExpand);
+}
+
 function switchVolTab(type) {
   const tabs = document.querySelectorAll('#volunteer-tabs .tab');
   tabs.forEach(t => t.classList.remove('active'));
@@ -61,4 +76,31 @@ function switchVolTab(type) {
     localContent.hidden = true;
     foreignContent.hidden = false;
   }
+}
+
+function wireVolunteerTabs() {
+  const tabs = document.querySelectorAll('#volunteer-tabs .tab');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => switchVolTab(tab.dataset.tab));
+  });
+}
+
+function wireVolunteerForm() {
+  const form = document.getElementById('volunteer-form');
+  if (!form) return;
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    alert('Volunteer application submitted successfully!');
+    toggleVolunteerExpand();
+  });
+}
+
+function wireTutorQualificationForm() {
+  const form = document.getElementById('tutor-qualification-form');
+  if (!form) return;
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    alert('Qualification test link dispatched to your email!');
+    toggleTutorAppExpand();
+  });
 }

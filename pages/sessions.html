@@ -11,6 +11,9 @@
   <header id="global-navbar"></header>
 
   <main class="container">
+    <p class="owner-tag-wrap">
+      <span class="owner-pill">Page Owner: Elisa</span>
+    </p>
 
     <section class="page-header">
       <h1>My Sessions &amp; Virtual Classroom</h1>
@@ -32,13 +35,13 @@
         <section class="card teacher-connect-card">
           <h4>☎️ How Teacher &amp; Student Connect</h4>
           <p>
-            <strong>Method A (Browser WebRTC):</strong> Share Room Code <strong style="color:var(--coral);">TB-8842</strong> with tutor. Tutor enters code below and taps "Connect".<br>
+            <strong>Method A (Browser WebRTC):</strong> Share Room Code <strong class="room-code-highlight">TB-8842</strong> with tutor. Tutor enters code below and taps "Connect".<br>
             <strong>Method B (Google Meet):</strong> Tap "Launch Google Meet" to open a shared meeting room.
           </p>
 
           <p class="room-code-joiner">
             <input type="text" id="join-room-input" class="form-input" placeholder="Enter Room Code (e.g. TB-8842)">
-            <button class="btn btn-soft btn-nowrap" onclick="joinCustomRoomCode()">Connect</button>
+            <button id="join-room-btn" class="btn btn-soft btn-nowrap">Connect</button>
           </p>
 
           <a href="https://meet.google.com/new" target="_blank" rel="noopener" class="btn btn-ghost meet-link-btn">
@@ -59,13 +62,13 @@
         <section class="video-screen" id="video-screen-area">
           <p id="record-status-badge" class="record-status-badge">RECORDING OFF</p>
 
-          <video id="user-webcam-feed" class="real-webcam-feed" autoplay playsinline muted style="display:none;"></video>
+          <video id="user-webcam-feed" class="real-webcam-feed" autoplay playsinline muted hidden></video>
 
           <section id="webcam-placeholder" class="webcam-placeholder">
             <p class="webcam-placeholder-icon">📹</p>
             <h3>Live Virtual Classroom</h3>
             <p>Click "Turn On Camera &amp; Mic" below to start your live stream &amp; browser video recording.</p>
-            <button class="btn btn-primary" onclick="startWebcamStream()">Turn On Camera &amp; Mic</button>
+            <button id="webcam-placeholder-start-btn" class="btn btn-primary">Turn On Camera &amp; Mic</button>
           </section>
 
           <figure class="tutor-pip-box" title="Tutor Feed: Aisha Rahman">
@@ -76,22 +79,22 @@
 
         <section class="video-controls">
           <p class="video-controls-group">
-            <button id="cam-toggle-btn" class="btn btn-soft" onclick="startWebcamStream()">
+            <button id="cam-toggle-btn" class="btn btn-soft">
               📷 Camera: Off
             </button>
-            <button id="rec-toggle-btn" class="btn btn-ghost" style="border-color:#fff; color:#fff;" onclick="toggleRealRecording()">
+            <button id="rec-toggle-btn" class="btn btn-ghost rec-toggle-btn">
               🔴 Record Session
             </button>
           </p>
 
           <p class="video-controls-group">
-            <button class="btn btn-primary" onclick="endSessionSimulation()">
+            <button id="end-session-btn" class="btn btn-primary">
               End Session &amp; Submit Rating
             </button>
           </p>
         </section>
 
-        <p id="recording-download-box" class="highlight-box recording-download-box" style="display:none;">
+        <p id="recording-download-box" class="highlight-box recording-download-box" hidden>
           🎉 <strong>Recording Ready!</strong> Your session recording has been encoded.<br>
           <a id="download-video-btn" class="btn btn-primary" download="TutorBridge_Session.webm">
             ⬇️ Download Recorded Video (.webm)
@@ -111,8 +114,8 @@
           </ul>
 
           <p class="chat-input-row">
-            <input type="text" id="session-chat-input" class="form-input" placeholder="Type a message to your tutor..." onkeypress="if(event.key==='Enter') sendChatMessage()">
-            <button class="btn btn-primary" onclick="sendChatMessage()">Send</button>
+            <input type="text" id="session-chat-input" class="form-input" placeholder="Type a message to your tutor...">
+            <button id="chat-send-btn" class="btn btn-primary">Send</button>
           </p>
         </section>
       </section>

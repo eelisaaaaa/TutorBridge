@@ -232,3 +232,14 @@
   .sessions-split { flex-direction: column; }
   .session-list-col { flex: 1; }
 }
+
+.room-code-highlight {
+  color: var(--coral);
+}
+.rec-toggle-btn {
+  border-color: #fff;
+  color: #fff;
+}
+.record-status-badge.recording-active {
+  background: #e74c3c;
+}

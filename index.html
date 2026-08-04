@@ -11,13 +11,15 @@
   <header id="global-navbar"></header>
 
   <main class="container">
-
+    <p class="owner-tag-wrap">
+      <span class="owner-pill">Page Owner: Elisa</span>
+    </p>
 
     <section class="hero">
       <h1>Find affordable, quality tuition</h1>
       <p class="subline">Verified cross-border tutors delivering 1-on-1 Singapore O &amp; N-Level guidance at real savings.</p>
-      
-      <form action="tutor-profile.html" method="GET" class="search-bar">
+
+      <form action="pages/tutorProfile.html" method="GET" class="search-bar">
         <select class="form-select" name="subject">
           <option value="">Select Subject (All)</option>
           <option value="emath">Elementary Mathematics</option>
@@ -70,10 +72,10 @@
       </p>
 
       <p class="cta-buttons">
-        <button class="btn btn-primary" id="btn-vol-expand" onclick="toggleVolunteerExpand()">
+        <button class="btn btn-primary" id="btn-vol-expand">
           <span id="vol-expand-arrow">▼</span> Become a Volunteer
         </button>
-        <button class="btn btn-ghost" id="btn-tutor-expand" onclick="toggleTutorAppExpand()">
+        <button class="btn btn-ghost" id="btn-tutor-expand">
           <span id="tutor-expand-arrow">▼</span> Apply to Tutor &amp; Earn
         </button>
       </p>
@@ -83,11 +85,11 @@
           <p class="step-box">▾ Volunteer Application Form</p>
 
           <nav class="tabs" id="volunteer-tabs">
-            <button type="button" class="tab active" onclick="switchVolTab('local')">Local Student</button>
-            <button type="button" class="tab" onclick="switchVolTab('foreign')">Foreign (Uni / Poly)</button>
+            <button type="button" class="tab active" data-tab="local">Local Student</button>
+            <button type="button" class="tab" data-tab="foreign">Foreign (Uni / Poly)</button>
           </nav>
 
-          <form onsubmit="event.preventDefault(); alert('Volunteer application submitted successfully!'); toggleVolunteerExpand();">
+          <form id="volunteer-form">
             <section id="vol-local-content">
               <p class="form-note">
                 Local Singapore students: upload your previous GCE O/N-Level exam results to auto-tag qualifying subjects and levels.
@@ -129,7 +131,7 @@
         <section class="card tutor-qual-card">
           <p class="step-box qualification-step">▾ Paid Tutor Qualification Form</p>
 
-          <form onsubmit="event.preventDefault(); alert('Qualification test link dispatched to your email!'); toggleTutorAppExpand();">
+          <form id="tutor-qualification-form">
             <fieldset class="grid-2">
               <legend class="sr-only">Name and email</legend>
               <p class="form-group">
