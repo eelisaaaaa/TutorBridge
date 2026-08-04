@@ -14,24 +14,8 @@
 
 <body>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="brand">
-      <div class="brand-icon">TB</div>
-      TutorBridge
-    </div>
-    <div class="nav-right-container">
-      <button class="hamburger-btn-icon" onclick="toggleNavMenu()">☰</button>
-      <ul class="nav-dropdown-menu" id="nav-menu">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="about.html" class="active">About Us</a></li>
-        <li><a href="howitworks.html">How It Works</a></li>
-        <li><a href="tutorProfile.html">Tutors</a></li>
-        <li><a href="signup.html">Request a Tutor</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+  <!-- Navigation Bar (rendered dynamically by main.js, same as tutorProfile.html) -->
+  <nav id="global-navbar"></nav>
 
   <main class="container">
 
@@ -121,10 +105,6 @@
 
   <script src="../assets/javascript/tutors-data.js"></script>
   <script src="../assets/javascript/aboutus.js"></script>
-  <script>
-    function toggleNavMenu() {
-      document.getElementById('nav-menu').classList.toggle('open');
-    }
-  </script>
+  <script src="../assets/javascript/main.js"></script>
 </body>
 </html>
