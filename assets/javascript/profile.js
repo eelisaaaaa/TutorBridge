@@ -1,3 +1,12 @@
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('profile-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Profile updated successfully!');
+  });
+
+  document.getElementById('avatar-input').addEventListener('change', previewAvatar);
+});
+
 function previewAvatar(event) {
   const input = event.target;
   if (input.files && input.files[0]) {
