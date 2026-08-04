@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-document.addEventListener('DOMContentLoaded', () => {
-  wireAvatarUpload();
-  wireProfileForm();
-=======
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('profile-form').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -10,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   document.getElementById('avatar-input').addEventListener('change', previewAvatar);
->>>>>>> 83b042a3a6fc9f404acb61efaa0f6ee3a1ba8c21
 });
 
 function previewAvatar(event) {
