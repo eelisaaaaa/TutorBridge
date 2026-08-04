@@ -5,134 +5,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile &amp; Billing — TutorBridge</title>
   <link rel="stylesheet" href="../assets/css/style.css">
-  <style>
-    .avatar-upload {
-      position: relative;
-      display: inline-block;
-      cursor: pointer;
-    }
-    .avatar-upload img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--teal-soft);
-    }
-    .avatar-upload-hint {
-      font-size: 10px;
-      color: var(--grey-dark);
-      margin-top: 4px;
-      text-align: center;
-    }
-    .tx-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 13px;
-      margin-top: 12px;
-    }
-    .tx-table th, .tx-table td {
-      border: 1px solid var(--grey-mid);
-      padding: 10px;
-      text-align: left;
-    }
-    .tx-table th {
-      background: var(--grey-light);
-      color: var(--teal-deep);
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/css/profile.css">
 </head>
 <body>
-  <div id="global-navbar"></div>
+  <header id="global-navbar"></header>
 
   <main class="container">
-    <div style="text-align:right; margin-bottom:12px;">
-     
-    </div>
+    <p class="owner-tag-wrap">
+      <span class="owner-pill">Page Owner: Elisa</span>
+    </p>
 
-    <div class="page-header">
+    <section class="page-header">
       <h1>My Profile &amp; Account Settings</h1>
       <p>Manage your account credentials, preferences, and integrated payment billing details.</p>
-    </div>
+    </section>
 
-    <div class="card" style="max-width:780px; margin:0 auto 32px;">
-      <h3 style="color:var(--teal-deep); margin-bottom:16px;">Personal Profile Information</h3>
-      
+    <section class="card profile-card">
+      <h3 class="card-heading">Personal Profile Information</h3>
+
       <form onsubmit="event.preventDefault(); alert('Profile updated successfully!');">
-        <div style="display:flex; gap:20px; align-items:center; margin-bottom:20px; flex-wrap:wrap;">
-          <div class="avatar-upload" onclick="document.getElementById('avatar-input').click()">
+        <section class="profile-avatar-row">
+          <label class="avatar-upload" for="avatar-input">
             <img id="avatar-preview" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Avatar">
-            <div class="avatar-upload-hint">📷 Tap to change</div>
-            <input type="file" id="avatar-input" style="display:none;" onchange="previewAvatar(event)">
-          </div>
+            <span class="avatar-upload-hint">📷 Tap to change</span>
+            <input type="file" id="avatar-input" class="hidden-file-input" onchange="previewAvatar(event)">
+          </label>
 
-          <div style="flex:1; min-width:260px;">
-            <div class="form-group">
+          <section class="profile-fields-col">
+            <p class="form-group">
               <label class="form-label">Full Name</label>
               <input type="text" class="form-input" value="Elisa Tan">
-            </div>
+            </p>
 
-            <div class="grid-2">
-              <div class="form-group">
+            <fieldset class="grid-2">
+              <legend class="sr-only">Email and phone number</legend>
+              <p class="form-group">
                 <label class="form-label">Email</label>
                 <input type="email" class="form-input" value="elisa.tan@student.edu.sg">
-              </div>
-
-              <div class="form-group">
+              </p>
+              <p class="form-group">
                 <label class="form-label">Phone Number</label>
                 <input type="tel" class="form-input" value="+65 9876 5432">
-              </div>
-            </div>
-          </div>
-        </div>
+              </p>
+            </fieldset>
+          </section>
+        </section>
 
-        <div class="grid-2" style="margin-bottom:16px;">
-          <div class="form-group">
+        <fieldset class="grid-2 profile-credentials-grid">
+          <legend class="sr-only">Password and notification preferences</legend>
+          <p class="form-group">
             <label class="form-label">Change Password</label>
             <input type="password" class="form-input" placeholder="Enter new password">
-          </div>
+          </p>
 
-          <div class="form-group">
+          <p class="form-group">
             <label class="form-label">Notification Preferences</label>
             <select class="form-select">
               <option>Email &amp; WhatsApp Notifications</option>
               <option>Email Only</option>
               <option>WhatsApp Only</option>
             </select>
-          </div>
-        </div>
+          </p>
+        </fieldset>
 
         <button type="submit" class="btn btn-primary">Save Changes</button>
       </form>
-    </div>
+    </section>
 
-    <!-- Integrated Payment & Billing Section (Merged in) -->
-    <div class="card" style="max-width:780px; margin:0 auto 40px;">
-      <div class="step-box" style="text-align:center; font-weight:700;">
+    <section class="card billing-card">
+      <p class="step-box billing-step-box">
         💳 Integrated Payment &amp; Billing Section
-      </div>
+      </p>
 
-      <div class="highlight-box" style="text-align:left; margin-bottom:20px;">
-        <h4 style="color:#7a5a20; margin-bottom:4px;">Upcoming Payment Summary</h4>
-        <p style="font-size:13px; font-weight:normal; margin:0;">
+      <section class="highlight-box billing-summary-box">
+        <h4 class="billing-summary-title">Upcoming Payment Summary</h4>
+        <p class="billing-summary-text">
           Session: <strong>Additional Mathematics (2 hrs) with Aisha Rahman</strong><br>
           Session Rate: <strong>SGD $18/hr &times; 2 hrs = SGD $36.00 total</strong> (No cross-border markup fee).
         </p>
-      </div>
+      </section>
 
-      <h4 style="color:var(--teal-deep); margin-bottom:10px;">Select Preferred Payment Method</h4>
-      <div style="display:flex; gap:12px; margin-bottom:20px; flex-wrap:wrap;">
-        <label style="background:var(--grey-light); padding:10px 16px; border-radius:8px; display:flex; align-items:center; gap:8px; cursor:pointer; font-size:13px; font-weight:600;">
+      <h4 class="card-subheading">Select Preferred Payment Method</h4>
+      <p class="payment-method-row">
+        <label class="payment-method-option">
           <input type="radio" name="pay-method" checked> PayNow (Singapore QR)
         </label>
-        <label style="background:var(--grey-light); padding:10px 16px; border-radius:8px; display:flex; align-items:center; gap:8px; cursor:pointer; font-size:13px; font-weight:600;">
+        <label class="payment-method-option">
           <input type="radio" name="pay-method"> Credit / Debit Card (Visa/Mastercard)
         </label>
-        <label style="background:var(--grey-light); padding:10px 16px; border-radius:8px; display:flex; align-items:center; gap:8px; cursor:pointer; font-size:13px; font-weight:600;">
+        <label class="payment-method-option">
           <input type="radio" name="pay-method"> GrabPay Wallet
         </label>
-      </div>
+      </p>
 
-      <h4 style="color:var(--teal-deep); margin-bottom:10px;">Transaction History</h4>
+      <h4 class="card-subheading">Transaction History</h4>
       <table class="tx-table">
         <thead>
           <tr>
@@ -149,35 +115,24 @@
             <td>Aisha Rahman (A-Math)</td>
             <td>1.5 hrs</td>
             <td>$27.00</td>
-            <td><span style="color:#27ae60; font-weight:700;">Paid</span></td>
+            <td><span class="status-paid">Paid</span></td>
           </tr>
           <tr>
             <td>17 Jul 2026</td>
             <td>Dr. Mark Tan (Physics)</td>
             <td>2.0 hrs</td>
             <td>$44.00</td>
-            <td><span style="color:#27ae60; font-weight:700;">Paid</span></td>
+            <td><span class="status-paid">Paid</span></td>
           </tr>
         </tbody>
       </table>
-    </div>
+    </section>
   </main>
 
-  <div id="global-footer"></div>
+  <footer id="global-footer"></footer>
 
   <script src="../assets/javascript/tutors-data.js"></script>
   <script src="../assets/javascript/main.js"></script>
-  <script>
-    function previewAvatar(event) {
-      const input = event.target;
-      if (input.files && input.files[0]) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-          document.getElementById('avatar-preview').src = e.target.result;
-        }
-        reader.readAsDataURL(input.files[0]);
-      }
-    }
-  </script>
+  <script src="../assets/javascript/profile.js"></script>
 </body>
 </html>
