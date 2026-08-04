@@ -5,33 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>How It Works — TutorBridge</title>
 
-  <!-- Global Styles -->
   <link rel="stylesheet" href="../assets/css/style.css">
-
-  <!-- How It Works Page Styles -->
   <link rel="stylesheet" href="../assets/css/howitworks.css">
 </head>
 
 <body>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="brand">
-      <div class="brand-icon">TB</div>
-      TutorBridge
-    </div>
-    <div class="nav-right-container">
-      <button class="hamburger-btn-icon" onclick="toggleNavMenu()">☰</button>
-      <ul class="nav-dropdown-menu" id="nav-menu">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="howitworks.html" class="active">How It Works</a></li>
-        <li><a href="tutorProfile.html">Tutors</a></li>
-        <li><a href="signup.html">Request a Tutor</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+  <!-- Navigation Bar (rendered dynamically by main.js, same as about.html) -->
+  <header id="global-navbar"></header>
 
   <main class="container">
 
@@ -91,11 +72,8 @@
 
   <footer id="global-footer"></footer>
 
+  <script src="../assets/javascript/tutors-data.js"></script>
+  <script src="../assets/javascript/main.js"></script>
   <script src="../assets/javascript/howItWorks.js"></script>
-  <script>
-    function toggleNavMenu() {
-      document.getElementById('nav-menu').classList.toggle('open');
-    }
-  </script>
 </body>
 </html>

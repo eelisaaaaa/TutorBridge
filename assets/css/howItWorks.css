@@ -229,3 +229,11 @@ footer#global-footer .footer-note {
     grid-template-columns: 1fr;
   }
 }
+
+.nav-account-btn {
+  padding: 6px 14px;
+  font-size: 12.5px;
+  background: var(--coral);
+  color: #fff;
+  border: none;
+}
