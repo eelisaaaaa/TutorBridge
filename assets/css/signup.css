@@ -2,117 +2,6 @@
    Request a Tutor Page Styles
    ========================== */
 
-/* Navigation Bar */
-.navbar {
-  background: var(--teal-deep);
-  color: #fff;
-  padding: 14px 24px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 18px rgba(15, 107, 102, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #fff;
-  font-family: 'Outfit', sans-serif;
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-}
-
-.brand-icon {
-  width: 36px;
-  height: 36px;
-  background: linear-gradient(135deg, var(--coral), var(--amber));
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: 900;
-  font-size: 18px;
-  box-shadow: 0 2px 8px rgba(255, 122, 89, 0.4);
-}
-
-.nav-right-container {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.hamburger-btn-icon {
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #fff;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.hamburger-btn-icon:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.05);
-}
-
-.nav-dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 24px;
-  width: 280px;
-  background: var(--paper);
-  border: 1px solid var(--grey-mid);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
-  padding: 12px;
-  list-style: none;
-  z-index: 1001;
-  transform-origin: top right;
-  animation: dropdownSlide 0.25s ease forwards;
-}
-
-@keyframes dropdownSlide {
-  from { opacity: 0; transform: scale(0.95) translateY(-8px); }
-  to { opacity: 1; transform: scale(1) translateY(0); }
-}
-
-.nav-dropdown-menu.open {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.nav-dropdown-menu a {
-  color: var(--charcoal);
-  font-size: 13.5px;
-  font-weight: 600;
-  padding: 10px 14px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  transition: var(--transition);
-}
-
-.nav-dropdown-menu a:hover,
-.nav-dropdown-menu a.active {
-  color: var(--teal-deep);
-  background: var(--teal-light);
-}
-
 /* General page styling */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
@@ -131,7 +20,7 @@ main.container {
 /* Page header */
 .page-header h1 {
   font-size: 2rem;
-  color: #0f6b66;
+  color: var(--teal-deep);
   margin-bottom: 10px;
 }
 
@@ -145,9 +34,9 @@ main.container {
 .card {
   background: #fff;
   border: 1px solid #ddd;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   padding: 24px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: var(--shadow-sm);
 }
 
 /* Form labels and inputs */
@@ -155,7 +44,7 @@ main.container {
   display: block;
   font-weight: 600;
   margin-bottom: 6px;
-  color: #0f6b66;
+  color: var(--teal-deep);
 }
 
 .form-input,
@@ -163,7 +52,7 @@ main.container {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   font-size: 14px;
   margin-bottom: 12px;
   transition: border-color 0.3s ease;
@@ -171,20 +60,21 @@ main.container {
 
 .form-input:focus,
 .form-select:focus {
-  border-color: #0f6b66;
+  border-color: var(--teal-deep);
   outline: none;
 }
 
 /* Error messages */
 .error-msg {
   font-size: 13px;
-  color: #d32f2f;
+  color: var(--coral);
   margin-bottom: 10px;
   display: block;
 }
 
 .field-error {
-  border-color: #d32f2f !important;
+  border-color: var(--coral) !important;
+  background-color: #fff5f2 !important;
 }
 
 /* Grid layout */
@@ -202,32 +92,32 @@ main.container {
 
 /* Button */
 .btn.btn-primary {
-  background: #0f6b66;
+  background: var(--teal-deep);
   color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   font-weight: 600;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
 .btn.btn-primary:hover {
-  background: #0c4f4b;
+  background: var(--teal-dark);
 }
 
 /* Owner pill */
 .owner-pill {
-  background: #e0f2f1;
-  color: #0f6b66;
+  background: var(--teal-light);
+  color: var(--teal-deep);
   padding: 4px 10px;
-  border-radius: 20px;
+  border-radius: var(--radius-pill);
   font-size: 13px;
   font-weight: 600;
 }
 
 /* Footer */
 footer#global-footer {
-  background: #0f6b66;
+  background: var(--teal-deep);
   color: #fff;
   padding: 30px 20px;
   font-size: 14px;
