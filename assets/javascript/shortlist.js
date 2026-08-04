@@ -9,7 +9,7 @@ const TUTORS_DATA = [
     level: "O-Level / N-Level",
     country: "Malaysia (KL)",
     rate: 18,
-    avatar: "../assets/images/tutor-aisha.jpg",
+    avatar: "../assets/images/zixuan.jpg",
   },
   {
     id: "tutor-2",
