@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile &amp; Billing — TutorBridge</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/profile.css">
+</head>
+<body>
+  <header id="global-navbar"></header>
+
+  <main class="container">
+
+    <section class="page-header">
+      <h1>My Profile &amp; Account Settings</h1>
+      <p>Manage your account credentials, preferences, and integrated payment billing details.</p>
+    </section>
+
+    <section class="card profile-card">
+      <h3 class="card-heading">Personal Profile Information</h3>
+
+    <form id="profile-form">
+      <section class="profile-avatar-row">
+        <label class="avatar-upload" for="avatar-input">
+          <img id="avatar-preview" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Avatar">
+          <span class="avatar-upload-hint">📷 Tap to change</span>
+          <input type="file" id="avatar-input" class="hidden-file-input">
+        </label>
+
+          <section class="profile-fields-col">
+            <p class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-input" value="Elisa Tan">
+            </p>
+
+            <fieldset class="grid-2">
+              <legend class="sr-only">Email and phone number</legend>
+              <p class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-input" value="elisa.tan@student.edu.sg">
+              </p>
+              <p class="form-group">
+                <label class="form-label">Phone Number</label>
+                <input type="tel" class="form-input" value="+65 9876 5432">
+              </p>
+            </fieldset>
+          </section>
+        </section>
+
+        <fieldset class="grid-2 profile-credentials-grid">
+          <legend class="sr-only">Password and notification preferences</legend>
+          <p class="form-group">
+            <label class="form-label">Change Password</label>
+            <input type="password" class="form-input" placeholder="Enter new password">
+          </p>
+
+          <p class="form-group">
+            <label class="form-label">Notification Preferences</label>
+            <select class="form-select">
+              <option>Email &amp; WhatsApp Notifications</option>
+              <option>Email Only</option>
+              <option>WhatsApp Only</option>
+            </select>
+          </p>
+        </fieldset>
+
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+      </form>
+    </section>
+
+    <section class="card billing-card">
+      <p class="step-box billing-step-box">
+        💳 Integrated Payment &amp; Billing Section
+      </p>
+
+      <section class="highlight-box billing-summary-box">
+        <h4 class="billing-summary-title">Upcoming Payment Summary</h4>
+        <p class="billing-summary-text">
+          Session: <strong>Additional Mathematics (2 hrs) with Aisha Rahman</strong><br>
+          Session Rate: <strong>SGD $18/hr &times; 2 hrs = SGD $36.00 total</strong> (No cross-border markup fee).
+        </p>
+      </section>
+
+      <h4 class="card-subheading">Select Preferred Payment Method</h4>
+      <p class="payment-method-row">
+        <label class="payment-method-option">
+          <input type="radio" name="pay-method" checked> PayNow (Singapore QR)
+        </label>
+        <label class="payment-method-option">
+          <input type="radio" name="pay-method"> Credit / Debit Card (Visa/Mastercard)
+        </label>
+        <label class="payment-method-option">
+          <input type="radio" name="pay-method"> GrabPay Wallet
+        </label>
+      </p>
+
+      <h4 class="card-subheading">Transaction History</h4>
+      <table class="tx-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Tutor &amp; Subject</th>
+            <th>Hours</th>
+            <th>Amount (SGD)</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>24 Jul 2026</td>
+            <td>Aisha Rahman (A-Math)</td>
+            <td>1.5 hrs</td>
+            <td>$27.00</td>
+            <td><span class="status-paid">Paid</span></td>
+          </tr>
+          <tr>
+            <td>17 Jul 2026</td>
+            <td>Dr. Mark Tan (Physics)</td>
+            <td>2.0 hrs</td>
+            <td>$44.00</td>
+            <td><span class="status-paid">Paid</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer id="global-footer"></footer>
+
+  <script src="../assets/javascript/tutors-data.js"></script>
+  <script src="../assets/javascript/main.js"></script>
+  <script src="../assets/javascript/profile.js"></script>
+</body>
+</html>

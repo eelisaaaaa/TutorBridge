@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TutorBridge — International Tutor-Matching Platform</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header id="global-navbar"></header>
+
+  <main class="container">
+
+    <section class="hero">
+      <h1>Find affordable, quality tuition</h1>
+      <p class="subline">Verified cross-border tutors delivering 1-on-1 Singapore O &amp; N-Level guidance at real savings.</p>
+      
+      <form action="pages/tutorProfile.html" method="GET" class="search-bar">
+        <select class="form-select" name="subject">
+          <option value="">Select Subject (All)</option>
+          <option value="emath">Elementary Mathematics</option>
+          <option value="amath">Additional Mathematics</option>
+          <option value="physics">Physics (Pure / Combined)</option>
+          <option value="chem">Chemistry (Pure / Combined)</option>
+          <option value="bio">Biology (Pure / Combined)</option>
+          <option value="english">English Language</option>
+        </select>
+        <select class="form-select" name="level">
+          <option value="">Level: All</option>
+          <option value="O-Level">O-Level (Sec 3-5)</option>
+          <option value="N-Level">N-Level (Sec 1-4)</option>
+        </select>
+        <button type="submit" class="btn btn-primary btn-nowrap">Find a Tutor</button>
+      </form>
+    </section>
+
+    <p class="highlight-box">
+      ⚡ Savings Snapshot — Save up to <span class="savings-percent">65%</span> compared to physical Singapore local home tuition!
+    </p>
+
+    <section class="featured-tutors">
+      <h2 class="section-heading">Featured Tutors</h2>
+      <ul class="grid-3" id="home-featured-tutors"></ul>
+      <p class="browse-all-wrap">
+        <a href="pages/tutorProfile.html" class="btn btn-soft">Swipe &amp; Browse All Tutors &rarr;</a>
+      </p>
+    </section>
+
+    <ul class="trust-strip">
+      <li class="trust-item">
+        <h3>150+</h3>
+        <p>Verified Tutors</p>
+      </li>
+      <li class="trust-item">
+        <h3>1,200+</h3>
+        <p>Singapore Students</p>
+      </li>
+      <li class="trust-item">
+        <h3>$380/mo</h3>
+        <p>Average Family Savings</p>
+      </li>
+    </ul>
+
+    <section class="card cta-card">
+      <h3 class="cta-heading">Want to give back or earn as a tutor?</h3>
+      <p class="cta-sub">
+        Tap either button below to expand the application form directly on the page!
+      </p>
+
+      <p class="cta-buttons">
+        <button class="btn btn-primary" id="btn-vol-expand">
+          <span id="vol-expand-arrow">▼</span> Become a Volunteer
+        </button>
+        <button class="btn btn-ghost" id="btn-tutor-expand">
+          <span id="tutor-expand-arrow">▼</span> Apply to Tutor &amp; Earn
+        </button>
+      </p>
+
+      <section class="expandable-panel" id="volunteer-expandable-section">
+        <section class="card vol-card">
+          <p class="step-box">▾ Volunteer Application Form</p>
+
+          <nav class="tabs" id="volunteer-tabs">
+            <button type="button" class="tab active" data-tab="local">Local Student</button>
+            <button type="button" class="tab" data-tab="foreign">Foreign (Uni / Poly)</button>
+          </nav>
+
+          <form id="volunteer-form">
+            <section id="vol-local-content">
+              <p class="form-note">
+                Local Singapore students: upload your previous GCE O/N-Level exam results to auto-tag qualifying subjects and levels.
+              </p>
+              <p class="form-group">
+                <label class="form-label">Full Name</label>
+                <input type="text" class="form-input" placeholder="e.g. Tan Ah Kow" required>
+              </p>
+              <p class="form-group">
+                <label class="form-label">Upload Exam Transcript (PDF / Image)</label>
+                <input type="file" class="form-input">
+              </p>
+            </section>
+
+            <section id="vol-foreign-content" hidden>
+              <p class="highlight-box form-note">
+                <strong>Foreign Applicants:</strong> Complete our O/N-Level diagnostic paper — scored by topic, no full-pass needed. Only want to tutor one specific topic? Complete a short quiz from Ten-Year-Series (TYS).
+              </p>
+              <p class="form-group">
+                <label class="form-label">University / Polytechnic &amp; Country</label>
+                <input type="text" class="form-input" placeholder="e.g. University of Malaya, Malaysia">
+              </p>
+              <p class="form-group">
+                <label class="form-label">Preferred Topic</label>
+                <select class="form-select">
+                  <option>Algebra &amp; Functions (Math)</option>
+                  <option>Kinematics &amp; Dynamics (Physics)</option>
+                  <option>Organic Chemistry (Chem)</option>
+                </select>
+              </p>
+            </section>
+
+            <button type="submit" class="btn btn-primary btn-full">Submit Volunteer Application</button>
+          </form>
+        </section>
+      </section>
+
+      <section class="expandable-panel" id="tutor-app-expandable-section">
+        <section class="card tutor-qual-card">
+          <p class="step-box qualification-step">▾ Paid Tutor Qualification Form</p>
+
+          <form id="tutor-qualification-form">
+            <fieldset class="grid-2">
+              <legend class="sr-only">Name and email</legend>
+              <p class="form-group">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-input" placeholder="Your full name" required>
+              </p>
+              <p class="form-group">
+                <label class="form-label">Email Address</label>
+                <input type="email" class="form-input" placeholder="email@domain.com" required>
+              </p>
+            </fieldset>
+
+            <fieldset class="grid-2">
+              <legend class="sr-only">Subject and level</legend>
+              <p class="form-group">
+                <label class="form-label">Target Teaching Subject</label>
+                <select class="form-select" required>
+                  <option value="">Select Subject</option>
+                  <option>Elementary Mathematics</option>
+                  <option>Additional Mathematics</option>
+                  <option>Physics</option>
+                  <option>Chemistry</option>
+                  <option>Biology</option>
+                  <option>English Language</option>
+                </select>
+              </p>
+              <p class="form-group">
+                <label class="form-label">Target Level</label>
+                <select class="form-select" required>
+                  <option>O-Level (Express)</option>
+                  <option>N-Level (Normal Academic)</option>
+                </select>
+              </p>
+            </fieldset>
+
+            <p class="highlight-box qualification-note">
+              ⚠️ <strong>Qualification Requirement:</strong> Applicants must pass the <strong>full</strong> O/N-Level paper for the chosen subject to qualify as a paid tutor.
+            </p>
+
+            <button type="submit" class="btn btn-primary btn-full">Start Qualification Test</button>
+          </form>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <footer id="global-footer"></footer>
+
+  <script src="assets/javascript/tutors-data.js"></script>
+  <script src="assets/javascript/main.js"></script>
+  <script src="assets/javascript/index.js"></script>
+</body>
+</html>

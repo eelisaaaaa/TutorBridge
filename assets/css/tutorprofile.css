@@ -1,0 +1,52 @@
+.swipe-empty {
+  justify-content: center;
+  cursor: default;
+  transform: none;
+}
+
+.swipe-empty-title {
+  color: var(--teal-deep);
+  margin-bottom: 8px;
+}
+
+.swipe-empty-text {
+  font-size: 13px;
+  color: var(--grey-dark);
+  margin-bottom: 16px;
+}
+
+.swipe-empty-actions {
+  display: flex;
+  gap: 10px;
+  margin: 0;
+}
+
+.swipe-card-bio {
+  font-size: 12px;
+  color: var(--grey-dark);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.swipe-card-rating {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--teal-deep);
+  background: var(--teal-light);
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-top: 8px;
+}
+
+.swipe-instructions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 500px; /* match your card width */
+  margin: 0 auto;
+}
+
+.shortlist-container {
+  display: flex;
+  justify-content: center;
+}
