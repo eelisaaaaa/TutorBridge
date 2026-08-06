@@ -37,11 +37,11 @@ function renderNav() {
   target.innerHTML = `
     <nav class="navbar">
       <a href="../index.html" class="brand">
-        <div class="brand-icon">TB</div>
+        <img src="../assets/images/logo.png" alt="TutorBridge logo" class="brand-icon">
         TutorBridge
       </a>
       <div class="nav-right-container">
-        <a href="profile.html" class="btn btn-ghost nav-account-btn">Account</a>
+        <a href="profile.html" class="btn nav-account-btn">Account</a>
         <button class="hamburger-btn-icon" id="hamburger-toggle-btn" title="Open Navigation Menu" onclick="toggleNav(event)">☰</button>
       </div>
       <ul class="nav-dropdown-menu" id="nav-dropdown-panel">${linksHTML}</ul>
@@ -77,7 +77,7 @@ function renderFooter() {
       <div class="footer-dark-inner">
         <div>
           <div class="footer-dark-brand">
-            <div class="brand-icon">TB</div>
+            <img src="../assets/images/logo.png" alt="TutorBridge logo" class="brand-icon">
             TutorBridge
           </div>
           <p class="footer-dark-desc">Connecting Singapore secondary students with vetted tutors abroad, at a fraction of local rates.</p>
