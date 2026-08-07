@@ -1,21 +1,6 @@
 // howItWorks.js
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Step card hover effect
-  const stepCards = document.querySelectorAll(".step-card");
-  stepCards.forEach(card => {
-    card.addEventListener("mouseenter", () => {
-      card.style.transform = "translateY(-6px)";
-      card.style.transition = "transform 0.3s ease, box-shadow 0.3s ease";
-      card.style.boxShadow = "0 10px 20px rgba(15,107,102,0.15)";
-    });
-
-    card.addEventListener("mouseleave", () => {
-      card.style.transform = "translateY(0)";
-      card.style.boxShadow = "0 4px 10px rgba(0,0,0,0.05)";
-    });
-  });
-
   // Star rating interaction
   const stars = document.querySelectorAll(".star-rating span");
   stars.forEach((star, index) => {
