@@ -9,7 +9,7 @@ const TUTORS_DATA = [
     level: "O-Level / N-Level",
     country: "Malaysia (KL)",
     rate: 18,
-    avatar: "../assets/images/tutor-aisha.jpg",
+    avatar: "../assets/images/zixuan.jpg",
   },
   {
     id: "tutor-2",
@@ -84,11 +84,11 @@ function renderNav() {
   target.innerHTML = `
     <nav class="navbar">
       <a href="../index.html" class="brand">
-        <img src="../assets/images/logo.png" alt="TutorBridge logo" class="brand-icon">
+        <div class="brand-icon">TB</div>
         TutorBridge
       </a>
       <div class="nav-right-container">
-        <a href="profile.html" class="btn nav-account-btn">Account</a>
+        <a href="profile.html" class="btn btn-ghost nav-account-btn">Account</a>
         <button class="hamburger-btn-icon" id="hamburger-toggle-btn" title="Open Navigation Menu" onclick="toggleNav(event)">☰</button>
       </div>
       <ul class="nav-dropdown-menu" id="nav-dropdown-panel">${linksHTML}</ul>
@@ -124,7 +124,7 @@ function renderFooter() {
       <div class="footer-dark-inner">
         <div>
           <div class="footer-dark-brand">
-            <img src="../assets/images/logo.png" alt="TutorBridge logo" class="brand-icon">
+            <div class="brand-icon">TB</div>
             TutorBridge
           </div>
           <p class="footer-dark-desc">Connecting Singapore secondary students with vetted tutors abroad, at a fraction of local rates.</p>
@@ -199,13 +199,11 @@ function renderShortlistPage() {
     return;
   }
 
-  const gridClass = shortlistedTutors.length === 1 ? 'grid-single' : 'grid-2';
-
   container.innerHTML = `
     <div class="shortlist-summary">
       ${shortlistedTutors.length} tutor${shortlistedTutors.length > 1 ? 's' : ''} saved — tap "Request" when you're ready to book a trial.
     </div>
-    <div class="${gridClass}">
+    <div class="grid-2">
       ${shortlistedTutors.map(t => `
         <div class="card tutor-card-row">
           <img src="${t.avatar}" class="tutor-avatar" alt="${t.name}">
