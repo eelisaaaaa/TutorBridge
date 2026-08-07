@@ -27,6 +27,32 @@
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Dark Mode — overrides the surface/text variables above. Toggled by
+   adding data-theme="dark" to <html> (see main.js / toggleDarkMode()). */
+html[data-theme="dark"] {
+  --off-white: #12181a;
+  --paper: #1b2226;
+  --charcoal: #e8ecec;
+  --grey-light: #232b2e;
+  --grey-mid: #3a4448;
+  --grey-dark: #9aa5a2;
+  --teal-light: #12302e;
+  --amber-light: #332a17;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.55);
+}
+
+/* The amber-toned text below was hand-tuned for the light --amber-light
+   background and goes muddy against the darker dark-mode version, so
+   lighten it whenever dark mode is active. */
+html[data-theme="dark"] .highlight-box,
+html[data-theme="dark"] .tutor-tag,
+html[data-theme="dark"] .qualification-step,
+html[data-theme="dark"] .billing-summary-title {
+  color: #e8c37a;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -267,7 +293,7 @@ a:hover {
 }
 
 .btn-ghost {
-  background: #fff;
+  background: var(--paper);
   color: var(--teal-deep);
   border: 2px solid var(--teal-deep);
 }
@@ -333,7 +359,7 @@ a:hover {
   border-radius: var(--radius-sm);
   font-size: 14px;
   font-family: inherit;
-  background-color: #fff;
+  background-color: var(--paper);
   color: var(--charcoal);
   outline: none;
   transition: var(--transition);
@@ -408,7 +434,7 @@ a:hover {
   justify-content: space-around;
   align-items: center;
   padding: 20px;
-  background: #fff;
+  background: var(--paper);
   border: 1px solid var(--grey-mid);
   border-radius: var(--radius-md);
   margin-bottom: 32px;
@@ -449,7 +475,7 @@ a:hover {
 
 /* Tutor Card */
 .tutor-card {
-  background: #fff;
+  background: var(--paper);
   border: 1px solid var(--grey-mid);
   border-radius: var(--radius-md);
   padding: 20px;
@@ -519,7 +545,7 @@ a:hover {
 .swipe-card {
   width: 100%;
   height: 360px;
-  background: #fff;
+  background: var(--paper);
   border: 1px solid var(--grey-mid);
   border-radius: var(--radius-md);
   padding: 24px;
@@ -610,7 +636,7 @@ a:hover {
 }
 
 .swipe-btn.dismiss {
-  background: #fff;
+  background: var(--paper);
   border: 2px solid var(--grey-mid);
   color: var(--grey-dark);
 }
@@ -655,7 +681,7 @@ a:hover {
 }
 
 .modal-card {
-  background: #fff;
+  background: var(--paper);
   border-radius: var(--radius-md);
   padding: 28px;
   width: 90%;
@@ -843,7 +869,7 @@ a:hover {
 
 .cta-card {
   text-align: center;
-  background: #fff;
+  background: var(--paper);
   border: 2px dashed var(--teal-soft);
   margin-bottom: 40px;
   padding: 32px 24px;
@@ -1041,8 +1067,10 @@ fieldset.grid-2 {
   color: var(--teal-deep);
 }
 
-/* --- Navbar "Account" button — was using .btn-ghost's white background with
-   inline color:#fff on top, making the text invisible. Dedicated class instead. --- */
+/* Navbar circular "Back to Top" icon button, styled to match the round
+   hamburger icon and the floating profile FAB. */
+/* Navbar "Account" button — dedicated class so it doesn't inherit
+   .btn-ghost's white background with white text on top of it. */
 .nav-account-btn {
   padding: 6px 14px;
   font-size: 12.5px;
@@ -1055,9 +1083,29 @@ fieldset.grid-2 {
   color: var(--teal-deep);
 }
 
+/* Navbar circular Dark Mode toggle button */
+.nav-theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.nav-theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
 #global-navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
   width: 100%;
-} 
+}

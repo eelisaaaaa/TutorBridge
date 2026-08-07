@@ -15,7 +15,7 @@
   padding: 0;
 }
 .session-item {
-  background: #fff;
+  background: var(--paper);
   border: 1px solid var(--grey-mid);
   border-radius: var(--radius-sm);
   padding: 12px;
@@ -53,7 +53,7 @@
 .teacher-connect-card {
   padding: 16px;
   margin-bottom: 16px;
-  background: #fff;
+  background: var(--paper);
   border-color: var(--teal-soft);
 }
 .teacher-connect-card h4 {
@@ -171,7 +171,7 @@
   margin-top: 14px;
 }
 .chat-box {
-  background: #fff;
+  background: var(--paper);
   border: 1px solid var(--grey-mid);
   border-radius: var(--radius-md);
   padding: 16px;

@@ -1,5 +1,9 @@
 /* TutorBridge Global JavaScript Engine */
 
+// Apply any saved theme immediately (before DOMContentLoaded) so dark mode
+// is set as early as possible, minimizing the light-mode flash on load.
+applyStoredTheme();
+
 document.addEventListener('DOMContentLoaded', () => {
   renderNavbar();
   renderFooter();
@@ -7,6 +11,34 @@ document.addEventListener('DOMContentLoaded', () => {
   updateShortlistBadge();
   setupGlobalModals();
 });
+
+// Dark Mode Helpers
+function applyStoredTheme() {
+  const saved = localStorage.getItem('tb_theme');
+  if (saved === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+}
+
+function toggleDarkMode() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  if (isDark) {
+    document.documentElement.removeAttribute('data-theme');
+    localStorage.setItem('tb_theme', 'light');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('tb_theme', 'dark');
+  }
+  updateThemeToggleIcon();
+}
+
+function updateThemeToggleIcon() {
+  const btn = document.getElementById('nav-theme-toggle-btn');
+  if (!btn) return;
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  btn.textContent = isDark ? '☀️' : '🌙';
+  btn.title = isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+}
 
 // Render Global Top Navigation Bar with Chrome-Satyle Right-Side Hamburger Dropdown
 function renderNavbar() {
@@ -49,10 +81,14 @@ function renderNavbar() {
    TutorBridge
     </a>
       
-      <!-- Right-side Container with Account Button and Chrome 3-line/dot Hamburger Icon -->
+      <!-- Right-side Container with Dark Mode Toggle, Account Button, and Chrome 3-line/dot Hamburger Icon -->
       <div class="nav-right-container">
+        <button class="nav-theme-toggle-btn" id="nav-theme-toggle-btn" title="Switch to Dark Mode" onclick="toggleDarkMode()">
+          🌙
+        </button>
+
         <a href="${base}profile.html" class="btn nav-account-btn">Account</a>
-        
+
         <button class="hamburger-btn-icon" id="hamburger-toggle-btn" title="Open Navigation Menu" onclick="toggleDropdownNav(event)">
           ☰
         </button>
@@ -65,6 +101,8 @@ function renderNavbar() {
     </nav>
   `;
 
+  updateThemeToggleIcon();
+
   // Close dropdown menu when clicking outside
   document.addEventListener('click', (e) => {
     const panel = document.getElementById('nav-dropdown-panel');
@@ -76,6 +114,10 @@ function renderNavbar() {
       }
     }
   });
+}
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function toggleDropdownNav(e) {
@@ -139,18 +181,14 @@ function renderFooter() {
   `;
 }
 
-// Floating Profile FAB Button
+// Floating Back-to-Top FAB Button
 function renderFAB() {
   if (document.querySelector('.fab-profile')) return;
-  const inPages = window.location.pathname.includes('/pages/');
-  const base = inPages ? '' : 'pages/';
   const fab = document.createElement('div');
   fab.className = 'fab-profile';
-  fab.title = 'My Profile & Billing';
-  fab.innerHTML = `<svg viewBox="0 0 24 24" width="22" height="22" fill="#ffffff"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>`;
-  fab.addEventListener('click', () => {
-    window.location.href = `${base}profile.html`;
-  });
+  fab.title = 'Back to Top';
+  fab.innerHTML = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>`;
+  fab.addEventListener('click', scrollToTop);
   document.body.appendChild(fab);
 }
 
