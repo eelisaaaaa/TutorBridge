@@ -49,7 +49,7 @@ function renderNavbar() {
   // deeper inside /pages/, so links need a different base depending on where
   // the navbar is actually being rendered.
   const inPages = window.location.pathname.includes('/pages/');
-  const base = inPages ? '' : 'pages/';
+  const base = inPages ? '../' : '';
   const home = inPages ? '../index.html' : 'index.html';
 
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
