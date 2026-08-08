@@ -1,23 +1,6 @@
-/* ==========================
-   Request a Tutor Page Styles
-   ========================== */
+/* signup.css */
 
-/* General page styling */
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: #f9fafb;
-  color: #333;
-  margin: 0;
-  padding: 0;
-}
-
-main.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-/* Page header */
+/* Page Header */
 .page-header h1 {
   font-size: 2rem;
   color: var(--teal-deep);
@@ -69,7 +52,7 @@ main.container {
   font-size: 13px;
   color: var(--coral);
   margin-bottom: 10px;
-  display: block;
+  display: none; /* hidden until validation fails */
 }
 
 .field-error {
@@ -103,26 +86,6 @@ main.container {
 
 .btn.btn-primary:hover {
   background: var(--teal-dark);
-}
-
-/* Owner pill */
-.owner-pill {
-  background: var(--teal-light);
-  color: var(--teal-deep);
-  padding: 4px 10px;
-  border-radius: var(--radius-pill);
-  font-size: 13px;
-  font-weight: 600;
-}
-
-/* Footer */
-footer#global-footer {
-  background: var(--teal-deep);
-  color: #fff;
-  padding: 30px 20px;
-  font-size: 14px;
-  text-align: center;
-  margin-top: 40px;
 }
 
 /* Responsive */

@@ -1,4 +1,4 @@
-// requestTutor.js
+// signup.js
 
 document.addEventListener('DOMContentLoaded', () => {
   // Pre-fill tutor from query param if arriving from shortlist

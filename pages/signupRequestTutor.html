@@ -7,55 +7,34 @@
 
   <!-- Global Styles -->
   <link rel="stylesheet" href="../assets/css/style.css">
-
-  <!-- Sign Up Page Styles -->
+  <!-- Page-specific Styles -->
   <link rel="stylesheet" href="../assets/css/signup.css">
 </head>
 <body>
-
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="brand">
-      <div class="brand-icon">TB</div>
-      TutorBridge
-    </div>
-    <div class="nav-right-container">
-      <button class="hamburger-btn-icon" onclick="toggleNavMenu()">☰</button>
-      <ul class="nav-dropdown-menu" id="nav-menu">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="howitworks.html">How It Works</a></li>
-        <li><a href="tutorProfile.html">Tutors</a></li>
-        <li><a href="signup.html" class="active">Request a Tutor</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+  <!-- Global Navigation Bar -->
+  <nav id="global-navbar"></nav>
 
   <main class="container">
-
     <header class="page-header">
       <h1>Request a Tutor / Sign Up</h1>
       <p>Share your learning needs and we’ll connect you with the right international tutor for a free trial session.</p>
     </header>
 
     <form id="tutor-request-form" class="card" style="max-width:640px; margin:0 auto 40px;" novalidate>
-      
       <label class="form-label">Student / Parent Name *</label>
       <input type="text" id="req-name" class="form-input" placeholder="e.g. Tan Wei Ming" required>
-      <span class="error-msg" id="err-name" style="display:none;">Please enter your full name.</span>
+      <span class="error-msg" id="err-name">Please enter your full name.</span>
 
       <section class="grid-2">
         <article>
           <label class="form-label">Email Address *</label>
           <input type="email" id="req-email" class="form-input" placeholder="name@domain.com" required>
-          <span class="error-msg" id="err-email" style="display:none;">Please provide a valid email address.</span>
+          <span class="error-msg" id="err-email">Please provide a valid email address.</span>
         </article>
-
         <article>
           <label class="form-label">Phone / WhatsApp *</label>
           <input type="tel" id="req-phone" class="form-input" placeholder="+65 9123 4567" required>
-          <span class="error-msg" id="err-phone" style="display:none;">Please provide a valid phone number.</span>
+          <span class="error-msg" id="err-phone">Please provide a valid phone number.</span>
         </article>
       </section>
 
@@ -68,12 +47,11 @@
             <option value="Sec 2 Express">Sec 2 Express</option>
             <option value="Sec 3 O-Level">Sec 3 O-Level</option>
             <option value="Sec 4 O-Level">Sec 4 O-Level</option>
-            <option value="Sec 1-4 N-Level">Sec 1–4 N(A) Level</option>
-            <option value="Sec 5 N-Level">Sec 5 N(A) Level</option>
+            <option value="Sec 1–4 N(A) Level">Sec 1–4 N(A) Level</option>
+            <option value="Sec 5 N(A) Level">Sec 5 N(A) Level</option>
           </select>
-          <span class="error-msg" id="err-level" style="display:none;">Please select a grade level.</span>
+          <span class="error-msg" id="err-level">Please select a grade level.</span>
         </article>
-
         <article>
           <label class="form-label">Subject *</label>
           <select id="req-subject" class="form-select" required>
@@ -85,7 +63,7 @@
             <option value="Biology">Biology</option>
             <option value="English Language">English Language</option>
           </select>
-          <span class="error-msg" id="err-subject" style="display:none;">Please select a subject.</span>
+          <span class="error-msg" id="err-subject">Please select a subject.</span>
         </article>
       </section>
 
@@ -94,7 +72,6 @@
           <label class="form-label">Hourly Budget (SGD)</label>
           <input type="text" id="req-budget" class="form-input" placeholder="e.g. $15–$25 per hour">
         </article>
-
         <article>
           <label class="form-label">Preferred Time Slots</label>
           <input type="text" id="req-slots" class="form-input" placeholder="e.g. Weekday evenings, Sat 2pm">
@@ -107,14 +84,12 @@
     </form>
   </main>
 
+  <!-- Global Footer -->
   <footer id="global-footer"></footer>
 
+  <!-- Scripts -->
   <script src="../assets/javascript/tutors-data.js"></script>
+  <script src="../assets/javascript/main.js"></script>
   <script src="../assets/javascript/signup.js"></script>
-  <script>
-    function toggleNavMenu() {
-      document.getElementById('nav-menu').classList.toggle('open');
-    }
-  </script>
 </body>
 </html>
