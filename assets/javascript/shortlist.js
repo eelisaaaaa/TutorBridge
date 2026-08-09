@@ -18,7 +18,7 @@ if (typeof TUTORS_DATA === 'undefined') {
       level: "O-Level",
       country: "Philippines (Manila)",
       rate: 22,
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=350&q=80",
+      avatar: "../assets/images/tutor-mark.jpg ",
     },
     {
       id: "tutor-3",
