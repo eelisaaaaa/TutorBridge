@@ -50,6 +50,7 @@ function renderNavbar() {
   // the navbar is actually being rendered.
   const inPages = window.location.pathname.includes('/pages/');
   const base = inPages ? '' : 'pages/';
+  const assetBase = inPages ? '../' : '';
   const home = inPages ? '../index.html' : 'index.html';
 
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
@@ -77,7 +78,7 @@ function renderNavbar() {
   navContainer.innerHTML = `
     <nav class="navbar">
     <a href="${home}" class="brand">
-    <img src="${base}assets/images/logo.png" alt="TutorBridge logo" class="brand-icon">
+    <img src="${assetBase}assets/images/logo.png" alt="TutorBridge logo" class="brand-icon">
    TutorBridge
     </a>
       
