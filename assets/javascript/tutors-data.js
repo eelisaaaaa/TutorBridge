@@ -12,7 +12,7 @@ const TUTORS_DATA = [
     qualifications: "B.Sc. Pure Mathematics (University of Malaya), 5+ yrs tuition experience",
     rating: 4.9,
     reviewsCount: 38,
-    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=350&q=80",
+    avatar: "../assets/images/zixuan.jpg",
     bio: "Specializes in algebra, calculus, and trigonometry for Sec 1-5. Helps students improve from C/D grades to A1/A2 through structured step-by-step techniques."
   },
   {
@@ -26,7 +26,7 @@ const TUTORS_DATA = [
     qualifications: "Ph.D. Applied Physics (Ateneo de Manila), Ex-High School Teacher",
     rating: 5.0,
     reviewsCount: 52,
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=350&q=80",
+    avatar: "../assets/images/tutor-mark.jpg",
     bio: "Passionate about making physics simple and visual. Focuses on O-Level TYS topical mastery and exam phrasing tips."
   },
   {
@@ -79,21 +79,21 @@ const TESTIMONIALS_DATA = [
     subject: "Additional Mathematics",
     improvement: "Jumped from E8 to A2 in 4 months",
     quote: "My tutor Aisha explained calculus so clearly! The rates were less than half of what my previous home tutor charged, which really helped my family.",
-    avatar: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=200&q=80"
+    avatar: "../assets/images/testimonial-darren.jpg"
   },
   {
     name: "Mrs. Sarah Lim (Parent of Sec 3 N-Level student)",
     subject: "Combined Science (Physics/Chem)",
     improvement: "Saved over $350/month in tuition fees",
     quote: "TutorBridge has been a lifesaver. My daughter gets 1-on-1 Zoom sessions with a highly qualified physics doctor for just $22/hr. Her confidence has skyrocketed!",
-    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80"
+    avatar: "../assets/images/testimonial-sarah.jpg"
   },
   {
     name: "Siti Zulaiha (Sec 5 Normal Academic)",
     subject: "O-Level English Language",
     improvement: "Achieved B3 grade in O-Levels",
     quote: "The trial lesson feature gave me peace of mind. Rajesh helped me structure my argumentative essays step-by-step. Highly recommended!",
-    avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80"
+    avatar: "../assets/images/testimonial-siti.jpg"
   }
 ];
 
