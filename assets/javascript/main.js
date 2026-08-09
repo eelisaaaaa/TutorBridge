@@ -145,7 +145,7 @@ function renderFooter() {
       <div class="footer-dark-inner">
         <div>
           <div class="footer-dark-brand">
-            <img src="src="${inPages ? '../' : ''}assets/images/logo.png"" alt="TutorBridge logo" class="brand-icon" style="width:30px; height:30px;">
+            <img src="${inPages ? '../' : ''}assets/images/logo.png" alt="TutorBridge logo" class="brand-icon" style="width:30px; height:30px;">
             TutorBridge
           </div>
           <p class="footer-dark-desc">
