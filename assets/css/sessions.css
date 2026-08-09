@@ -1,14 +1,8 @@
 /* TutorBridge Sessions Page Stylesheet */
-.sessions-split {
-  display: flex;
-  gap: 20px;
-}
-.session-list-col {
-  flex: 0 0 320px;
-}
-.video-room-col {
-  flex: 1;
-}
+/* .sessions-split's 2-column layout is now handled by Bootstrap's
+   row/col-lg-4/col-lg-8 grid classes in sessions.html, so the old
+   custom flex rules were removed to avoid the two systems fighting
+   over width. */
 .session-list {
   list-style: none;
   margin: 0;
@@ -228,10 +222,9 @@
   display: flex;
   gap: 8px;
 }
-@media (max-width: 850px) {
-  .sessions-split { flex-direction: column; }
-  .session-list-col { flex: 1; }
-}
+/* Bootstrap's col-12/col-lg-4/col-lg-8 grid classes on .sessions-split
+   already stack the columns on smaller screens, so no custom media
+   query is needed for that anymore. */
 
 .room-code-highlight {
   color: var(--coral);
