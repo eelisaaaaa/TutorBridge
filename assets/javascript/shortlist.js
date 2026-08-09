@@ -1,53 +1,54 @@
 /* TutorBridge — Shortlist page script (self-contained) */
 
-/* Swap these avatar paths for your own uploaded photos in /assets/images/ */
-const TUTORS_DATA = [
-  {
-    id: "tutor-1",
-    name: "Aisha Rahman",
-    subject: "Elementary & Additional Mathematics",
-    level: "O-Level / N-Level",
-    country: "Malaysia (KL)",
-    rate: 18,
-    avatar: "../assets/images/zixuan.jpg",
-  },
-  {
-    id: "tutor-2",
-    name: "Dr. Mark Tan",
-    subject: "Pure & Combined Physics",
-    level: "O-Level",
-    country: "Philippines (Manila)",
-    rate: 22,
-    avatar: "../assets/images/tutor-mark.jpg",
-  },
-  {
-    id: "tutor-3",
-    name: "Nurul Huda",
-    subject: "Pure & Combined Chemistry",
-    level: "O-Level / N-Level",
-    country: "Indonesia (Bandung)",
-    rate: 16,
-    avatar: "../assets/images/tutor-nurul.jpg",
-  },
-  {
-    id: "tutor-4",
-    name: "Rajesh Kumar",
-    subject: "English Language & Literature",
-    level: "O-Level / N-Level",
-    country: "India (Bengaluru)",
-    rate: 15,
-    avatar: "../assets/images/tutor-rajesh.jpg",
-  },
-  {
-    id: "tutor-5",
-    name: "Chloe Lee",
-    subject: "Biology & General Science",
-    level: "O-Level / N-Level",
-    country: "Malaysia (Penang)",
-    rate: 17,
-    avatar: "../assets/images/tutor-chloe.jpg",
-  },
-];
+if (typeof TUTORS_DATA === 'undefined') {
+  var TUTORS_DATA = [
+    {
+      id: "tutor-1",
+      name: "Aisha Rahman",
+      subject: "Elementary & Additional Mathematics",
+      level: "O-Level / N-Level",
+      country: "Malaysia (KL)",
+      rate: 18,
+      avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=350&q=80",
+    },
+    {
+      id: "tutor-2",
+      name: "Dr. Mark Tan",
+      subject: "Pure & Combined Physics",
+      level: "O-Level",
+      country: "Philippines (Manila)",
+      rate: 22,
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=350&q=80",
+    },
+    {
+      id: "tutor-3",
+      name: "Nurul Huda",
+      subject: "Pure & Combined Chemistry",
+      level: "O-Level / N-Level",
+      country: "Indonesia (Bandung)",
+      rate: 16,
+      avatar: "../assets/images/tutor-nurul.jpg",
+    },
+    {
+      id: "tutor-4",
+      name: "Rajesh Kumar",
+      subject: "English Language & Literature",
+      level: "O-Level / N-Level",
+      country: "India (Bengaluru)",
+      rate: 15,
+      avatar: "../assets/images/tutor-rajesh.jpg",
+    },
+    {
+      id: "tutor-5",
+      name: "Chloe Lee",
+      subject: "Biology & General Science",
+      level: "O-Level / N-Level",
+      country: "Malaysia (Penang)",
+      rate: 17,
+      avatar: "../assets/images/tutor-chloe.jpg",
+    },
+  ];
+}
 
 // Apply any saved theme immediately (before DOMContentLoaded) so dark mode
 // is set as early as possible, minimizing the light-mode flash on load.
