@@ -1,61 +1,95 @@
 /* TutorBridge — Shortlist page script (self-contained) */
 
-/* Swap these avatar paths for your own uploaded photos in /assets/images/ */
-const TUTORS_DATA = [
-  {
-    id: "tutor-1",
-    name: "Aisha Rahman",
-    subject: "Elementary & Additional Mathematics",
-    level: "O-Level / N-Level",
-    country: "Malaysia (KL)",
-    rate: 18,
-    avatar: "../assets/images/zixuan.jpg",
-  },
-  {
-    id: "tutor-2",
-    name: "Dr. Mark Tan",
-    subject: "Pure & Combined Physics",
-    level: "O-Level",
-    country: "Philippines (Manila)",
-    rate: 22,
-    avatar: "../assets/images/tutor-mark.jpg",
-  },
-  {
-    id: "tutor-3",
-    name: "Nurul Huda",
-    subject: "Pure & Combined Chemistry",
-    level: "O-Level / N-Level",
-    country: "Indonesia (Bandung)",
-    rate: 16,
-    avatar: "../assets/images/tutor-nurul.jpg",
-  },
-  {
-    id: "tutor-4",
-    name: "Rajesh Kumar",
-    subject: "English Language & Literature",
-    level: "O-Level / N-Level",
-    country: "India (Bengaluru)",
-    rate: 15,
-    avatar: "../assets/images/tutor-rajesh.jpg",
-  },
-  {
-    id: "tutor-5",
-    name: "Chloe Lee",
-    subject: "Biology & General Science",
-    level: "O-Level / N-Level",
-    country: "Malaysia (Penang)",
-    rate: 17,
-    avatar: "../assets/images/tutor-chloe.jpg",
-  },
-];
+if (typeof TUTORS_DATA === 'undefined') {
+  var TUTORS_DATA = [
+    {
+      id: "tutor-1",
+      name: "Aisha Rahman",
+      subject: "Elementary & Additional Mathematics",
+      level: "O-Level / N-Level",
+      country: "Malaysia (KL)",
+      rate: 18,
+      avatar: "../assets/images/zixuan.jpg",
+    },
+    {
+      id: "tutor-2",
+      name: "Dr. Mark Tan",
+      subject: "Pure & Combined Physics",
+      level: "O-Level",
+      country: "Philippines (Manila)",
+      rate: 22,
+      avatar: "../assets/images/tutor-mark.jpg",
+    },
+    {
+      id: "tutor-3",
+      name: "Nurul Huda",
+      subject: "Pure & Combined Chemistry",
+      level: "O-Level / N-Level",
+      country: "Indonesia (Bandung)",
+      rate: 16,
+      avatar: "../assets/images/tutor-nurul.jpg",
+    },
+    {
+      id: "tutor-4",
+      name: "Rajesh Kumar",
+      subject: "English Language & Literature",
+      level: "O-Level / N-Level",
+      country: "India (Bengaluru)",
+      rate: 15,
+      avatar: "../assets/images/tutor-rajesh.jpg",
+    },
+    {
+      id: "tutor-5",
+      name: "Chloe Lee",
+      subject: "Biology & General Science",
+      level: "O-Level / N-Level",
+      country: "Malaysia (Penang)",
+      rate: 17,
+      avatar: "../assets/images/tutor-chloe.jpg",
+    },
+  ];
+}
+
+// Apply any saved theme immediately (before DOMContentLoaded) so dark mode
+// is set as early as possible, minimizing the light-mode flash on load.
+applyStoredTheme();
 
 document.addEventListener('DOMContentLoaded', () => {
   renderNav();
   renderFooter();
   renderFAB();
   updateShortlistBadge();
+  updateThemeToggleIcon();
   renderShortlistPage();
 });
+
+/* ---------- Dark Mode ---------- */
+function applyStoredTheme() {
+  const saved = localStorage.getItem('tb_theme');
+  if (saved === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+}
+
+function toggleDarkMode() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  if (isDark) {
+    document.documentElement.removeAttribute('data-theme');
+    localStorage.setItem('tb_theme', 'light');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('tb_theme', 'dark');
+  }
+  updateThemeToggleIcon();
+}
+
+function updateThemeToggleIcon() {
+  const btn = document.getElementById('nav-theme-toggle-btn');
+  if (!btn) return;
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  btn.textContent = isDark ? '☀️' : '🌙';
+  btn.title = isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+}
 
 /* ---------- Navbar ---------- */
 function renderNav() {
@@ -88,6 +122,7 @@ function renderNav() {
         TutorBridge
       </a>
       <div class="nav-right-container">
+        <button class="nav-theme-toggle-btn" id="nav-theme-toggle-btn" title="Switch to Dark Mode" onclick="toggleDarkMode()">🌙</button>
         <a href="profile.html" class="btn btn-ghost nav-account-btn">Account</a>
         <button class="hamburger-btn-icon" id="hamburger-toggle-btn" title="Open Navigation Menu" onclick="toggleNav(event)">☰</button>
       </div>

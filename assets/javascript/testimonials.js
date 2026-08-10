@@ -27,13 +27,46 @@ const TESTIMONIALS_DATA = [
 
 let currentSlide = 0;
 
+// Apply any saved theme immediately (before DOMContentLoaded) so dark mode
+// is set as early as possible, minimizing the light-mode flash on load.
+applyStoredTheme();
+
 document.addEventListener('DOMContentLoaded', () => {
   renderNav();
   renderFooter();
   renderFAB();
   updateShortlistBadge();
+  updateThemeToggleIcon();
   renderSlide();
 });
+
+/* ---------- Dark Mode ---------- */
+function applyStoredTheme() {
+  const saved = localStorage.getItem('tb_theme');
+  if (saved === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+}
+
+function toggleDarkMode() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  if (isDark) {
+    document.documentElement.removeAttribute('data-theme');
+    localStorage.setItem('tb_theme', 'light');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('tb_theme', 'dark');
+  }
+  updateThemeToggleIcon();
+}
+
+function updateThemeToggleIcon() {
+  const btn = document.getElementById('nav-theme-toggle-btn');
+  if (!btn) return;
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  btn.textContent = isDark ? '☀️' : '🌙';
+  btn.title = isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+}
 
 /* ---------- Navbar ---------- */
 function renderNav() {
@@ -66,6 +99,7 @@ function renderNav() {
         TutorBridge
       </a>
       <div class="nav-right-container">
+        <button class="nav-theme-toggle-btn" id="nav-theme-toggle-btn" title="Switch to Dark Mode" onclick="toggleDarkMode()">🌙</button>
         <a href="profile.html" class="btn btn-ghost nav-account-btn">Account</a>
         <button class="hamburger-btn-icon" id="hamburger-toggle-btn" title="Open Navigation Menu" onclick="toggleNav(event)">☰</button>
       </div>

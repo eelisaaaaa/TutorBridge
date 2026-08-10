@@ -1,46 +1,24 @@
-/* ==========================
-   How It Works Page Styles
-   ========================== */
+/* howitworks.css */
 
-/* General page styling */
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: #f9fafb;
-  color: #333;
-  margin: 0;
-  padding: 0;
+/* Page Header */
+.page-header {
+  margin-bottom: 24px;
+  text-align: center;
 }
 
-main {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-top: 30px;
-}
-
-/* Headings */
-h1 {
+.page-header h1 {
   font-size: 2.2rem;
   color: var(--teal-deep);
   margin-bottom: 12px;
 }
 
-h3 {
-  font-size: 1.2rem;
-  color: var(--teal-deep);
-  margin-bottom: 8px;
-}
-
-/* Intro text */
-p {
-  line-height: 1.6;
+.page-header p {
   font-size: 15px;
+  color: var(--charcoal);
+  line-height: 1.6;
 }
 
-/* Step cards */
+/* Step Cards */
 .step-card {
   background: #fff;
   border: 1.5px solid #dcdcdc;
@@ -48,6 +26,7 @@ p {
   padding: 22px 18px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  margin-bottom: 20px;
 }
 
 .step-card:hover {
@@ -56,115 +35,63 @@ p {
   border-color: var(--teal-deep);
 }
 
-/* Step number badge */
-.step-card > span:first-child {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--teal-light);
-  color: var(--teal-deep);
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 12px;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.step-card:hover > span:first-child {
-  background: var(--coral);
-  color: #fff;
-}
-
-/* Tips box */
-.step-card > p:last-of-type {
-  background: var(--amber-light);
-  border: 1px solid var(--amber);
-  border-radius: 6px;
-  padding: 10px 12px;
-  font-size: 13px;
-  color: #7a5a20;
-  margin-top: 12px;
-}
-
-/* Call-to-action button */
-.btn.btn-primary {
-  background: var(--teal-deep);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: background 0.3s ease;
-}
-
-.btn.btn-primary:hover {
-  background: var(--teal-dark);
-}
-
-/* Footer container */
-footer#global-footer {
-  background: var(--teal-deep);
-  color: #fff;
-  padding: 40px 20px;
-  margin-top: 40px;
-  font-size: 14px;
-}
-
-/* Footer grid layout */
-footer#global-footer .footer-sections {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 30px;
-  margin-bottom: 30px;
-}
-
-/* Footer headings */
-footer#global-footer h4 {
-  font-size: 15px;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: var(--amber);
-}
-
-/* Footer links */
-footer#global-footer a {
-  display: block;
-  color: var(--teal-light);
-  text-decoration: none;
-  margin-bottom: 8px;
-  transition: color 0.3s ease;
-}
-
-footer#global-footer a:hover {
-  color: #fff;
-}
-
-/* Footer note */
-footer#global-footer .footer-note {
-  text-align: center;
-  font-size: 12px;
-  color: var(--grey-dark);
-  border-top: 1px solid rgba(255,255,255,0.2);
-  padding-top: 15px;
-}
-
-/* FAQ section */
+/* FAQ Section */
 .faq-section {
   margin: 40px 0;
 }
 
-.faq-section h2 {
+.faq-box {
+  background: #fff;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.faq-box h2 {
   font-size: 1.4rem;
   color: var(--teal-deep);
-  margin-bottom: 10px;
+  margin-bottom: 16px;
+  text-align: center;
 }
 
-.faq-section p {
+.faq-item {
+  margin-bottom: 18px;
+}
+
+.faq-question {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--teal-deep);
+  margin-bottom: 6px;
+}
+
+.faq-answer {
   font-size: 14px;
   color: #555;
+  line-height: 1.6;
 }
 
-/* Feedback section */
+/* Star Rating */
+.star-rating {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.star-rating span {
+  font-size: 20px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.star-rating span:hover,
+.star-rating span.active {
+  color: #ffb400;
+}
+
+/* Feedback Section */
 .feedback-section {
   margin: 40px 0;
   background: #f9fafb;
@@ -204,36 +131,9 @@ footer#global-footer .footer-note {
   background: var(--teal-dark);
 }
 
-/* Star rating */
-.star-rating {
-  display: flex;
-  gap: 6px;
-  margin-bottom: 12px;
-}
-
-.star-rating span {
-  font-size: 20px;
-  cursor: pointer;
-  color: #ccc;
-  transition: color 0.3s ease;
-}
-
-.star-rating span:hover,
-.star-rating span.active {
-  color: #ffb400;
-}
-
 /* Responsive */
 @media (max-width: 800px) {
   main {
     grid-template-columns: 1fr;
   }
-}
-
-.nav-account-btn {
-  padding: 6px 14px;
-  font-size: 12.5px;
-  background: var(--coral);
-  color: #fff;
-  border: none;
 }

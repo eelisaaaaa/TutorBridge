@@ -35,7 +35,7 @@
 
 /* Problem Statement */
 .problem-section {
-  background: #fff;
+  background: var(--paper);
   border-left: 5px solid var(--teal-deep);
   padding: 24px;
   margin-bottom: 32px;
@@ -84,7 +84,7 @@
 
 /* Team Cards */
 .tutor-card {
-  background: #fff;
+  background: var(--paper);
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-sm);
   padding: 18px;

@@ -1,13 +1,10 @@
-// about.js
+// aboutus.js
 
 document.addEventListener("DOMContentLoaded", () => {
-  const tutorCards = document.querySelectorAll(".tutor-card");
-
-  tutorCards.forEach(card => {
-    // Hover effect
+  // Hover + click on tutor cards
+  document.querySelectorAll(".tutor-card").forEach(card => {
     card.addEventListener("mouseenter", () => {
       card.style.transform = "translateY(-6px)";
-      card.style.transition = "transform 0.3s ease, box-shadow 0.3s ease";
       card.style.boxShadow = "0 8px 16px rgba(0,0,0,0.15)";
     });
 
@@ -16,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
       card.style.boxShadow = "var(--shadow-sm)";
     });
 
-    // Click to show info
     card.addEventListener("click", () => {
       const name = card.querySelector(".tutor-name")?.textContent.trim();
       const role = card.querySelector(".tutor-tag")?.textContent.trim();
@@ -26,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Smooth scroll to Problem Section
+  // Smooth scroll to Problem Section (if link exists)
   const problemLink = document.querySelector(".problem-link");
   const problemSection = document.querySelector(".problem-section");
   if (problemLink && problemSection) {
