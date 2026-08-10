@@ -53,6 +53,22 @@ html[data-theme="dark"] .billing-summary-title {
   color: #e8c37a;
 }
 
+/* Navbar background and page-header heading color, in dark mode, matched
+   to the lighter teal accent used for headings/values on the pricing page
+   (see pricing.css dark-mode overrides — #5fb3a3) instead of staying the
+   same deep teal used in light mode. Light mode is untouched. */
+html[data-theme="dark"] .navbar {
+  background: #5fb3a3;
+}
+
+html[data-theme="dark"] .page-header h1 {
+  color: #5fb3a3;
+}
+
+html[data-theme="dark"] .brand {
+  color: #000;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
