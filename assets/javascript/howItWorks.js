@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   stepCards.forEach(card => {
     card.addEventListener("mouseenter", () => {
       card.style.transform = "translateY(-6px)";
-      card.style.transition = "transform 0.3s ease, box-shadow 0.3s ease";
       card.style.boxShadow = "0 10px 20px rgba(15,107,102,0.15)";
     });
 

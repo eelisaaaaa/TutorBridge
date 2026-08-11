@@ -1,24 +1,30 @@
-/* signup.css */
+/* ==========================
+   Sign Up Page Styles
+   ========================== */
 
 /* Page Header */
 .page-header h1 {
   font-size: 2rem;
-  color: var(--teal-deep);
+  color: var(--teal-deep); /* light mode */
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .page-header p {
   font-size: 15px;
   line-height: 1.6;
-  color: #555;
+  color: var(--charcoal);
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 20px;
 }
 
 /* Card (form wrapper) */
 .card {
-  background: #fff;
-  border: 1px solid #ddd;
+  background: var(--paper);
+  border: 2px solid var(--grey-mid);
   border-radius: var(--radius-md);
-  padding: 24px;
+  padding: 28px;
   box-shadow: var(--shadow-sm);
 }
 
@@ -34,17 +40,18 @@
 .form-select {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--grey-mid);
   border-radius: var(--radius-sm);
   font-size: 14px;
   margin-bottom: 12px;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-input:focus,
 .form-select:focus {
   border-color: var(--teal-deep);
   outline: none;
+  box-shadow: 0 0 6px rgba(15,107,102,0.25);
 }
 
 /* Error messages */
@@ -81,11 +88,37 @@
   border-radius: var(--radius-sm);
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .btn.btn-primary:hover {
   background: var(--teal-dark);
+  transform: translateY(-2px);
+}
+
+/* ==========================
+   Dark Mode Overrides
+   ========================== */
+html[data-theme="dark"] .page-header h1,
+html[data-theme="dark"] .form-label {
+  color: #5fb3a3; /* lighter teal accent */
+}
+
+html[data-theme="dark"] .page-header p {
+  color: var(--charcoal); /* overridden to light grey in master stylesheet */
+}
+
+html[data-theme="dark"] .card {
+  background-color: var(--paper);
+  border-color: #5fb3a3;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+html[data-theme="dark"] .form-input,
+html[data-theme="dark"] .form-select {
+  background-color: var(--paper);
+  color: var(--charcoal);
+  border-color: #5fb3a3;
 }
 
 /* Responsive */
