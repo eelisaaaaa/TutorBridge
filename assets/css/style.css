@@ -92,6 +92,28 @@ html[data-theme="dark"] .btn-soft {
   color: #5fb3a3;
 }
 
+/* Native <option> dropdown lists are rendered by the browser/OS and
+   mostly ignore our custom background-color, staying white regardless
+   of theme. In dark mode --charcoal (the text color) flips to a light
+   color for the rest of the page, so it becomes invisible against that
+   still-white option list. Force option text back to a fixed dark
+   color here so it stays readable when the dropdown is opened. */
+html[data-theme="dark"] .form-select option {
+  color: #2b2f36;
+  background-color: #ffffff;
+}
+
+/* .vol-card and .tutor-qual-card both hardcode a light background
+   (#f7faf9) instead of using var(--paper), so it never switches to
+   dark. Meanwhile labels/notes inside them use var(--charcoal) and
+   var(--grey-dark), which DO flip to light colors in dark mode —
+   light text on a background stuck light means it disappears. Force
+   both cards onto the theme-aware paper background in dark mode. */
+html[data-theme="dark"] .vol-card,
+html[data-theme="dark"] .tutor-qual-card {
+  background: var(--paper);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
