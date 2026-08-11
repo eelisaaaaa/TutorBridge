@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       ratingMessage.textContent = `✅ You rated ${index + 1} star${index > 0 ? "s" : ""}`;
     });
-    // Tooltip on hover
     star.setAttribute("title", `Rate ${index + 1} star${index > 0 ? "s" : ""}`);
   });
 
@@ -43,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (feedbackBtn && feedbackTextarea) {
     const feedbackMessage = document.createElement("p");
-    feedbackMessage.className = "text-success";
     feedbackMessage.style.marginTop = "10px";
     feedbackBtn.parentNode.appendChild(feedbackMessage);
 
@@ -51,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const feedback = feedbackTextarea.value.trim();
       if (feedback) {
         feedbackMessage.textContent = "✅ Thank you for your feedback!";
+        feedbackMessage.className = "text-success";
         feedbackTextarea.value = "";
       } else {
         feedbackMessage.textContent = "⚠️ Please enter your feedback before submitting.";

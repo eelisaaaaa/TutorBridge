@@ -59,7 +59,7 @@ function handleRequestSubmit(e) {
 
   if (isValid) {
     // Show neat confirmation instead of only alert
-    alert("✅ Your request has been submitted! A TutorBridge coordinator will contact you via WhatsApp or email within 24 hours to arrange your free trial session.");
+    alert("✅  All set! We have got your request. A TutorBridge coordinator will hit you up on WhatsApp or email within 24 hours to lock in your free trial session.");
     e.target.reset();
   }
 }

@@ -81,8 +81,8 @@ a:hover { color: var(--coral); }
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 22px; font-size: 14px; font-weight: 600; border-radius: var(--radius-full); border: none; cursor: pointer; transition: var(--transition); text-decoration: none; }
 .btn-primary { background: var(--coral); color: #fff; box-shadow: 0 4px 14px rgba(255, 122, 89, 0.35); }
 .btn-primary:hover { background: var(--coral-hover); color: #fff; transform: translateY(-2px); box-shadow: 0 6px 18px rgba(255, 122, 89, 0.45); }
-.btn-ghost { background: #fff; color: var(--teal-deep); border: 2px solid var(--teal-deep); }
-.btn-ghost:hover { background: var(--teal-deep); color: #fff; }
+
+
 .btn-soft { background: var(--teal-light); color: var(--teal-deep); }
 .btn-soft:hover { background: var(--teal-soft); color: #fff; }
 
@@ -168,5 +168,5 @@ html[data-theme="dark"] .btn-remove {
 }
 
 /* Navbar sub-elements (replacing former inline styles in the nav template) */
-.nav-account-btn { padding: 6px 14px; font-size: 12.5px; border-color: #fff; color: #fff; }
+
 .footer-dark-brand .brand-icon { width: 30px; height: 30px; font-size: 15px; }
