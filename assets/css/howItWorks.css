@@ -10,7 +10,7 @@
 
 .page-header h1 {
   font-size: 2.2rem;
-  color: var(--teal-deep); /* light mode */
+  color: var(--teal-deep);
   margin-bottom: 12px;
 }
 
@@ -85,7 +85,7 @@
 }
 
 .faq-question:hover {
-  color: #5fb3a3; /* highlight on hover */
+  color: #5fb3a3;
 }
 
 .faq-answer {
@@ -108,21 +108,28 @@
 
 .star-rating {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   justify-content: center;
 }
 
 .star-rating span {
-  font-size: 26px;
+  font-size: 30px;
   cursor: pointer;
-  color: var(--grey-mid);
+  color: #666; /* visible in light mode */
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .star-rating span:hover,
 .star-rating span.active {
-  color: #ffb400;
+  color: #ffb400; /* gold highlight */
   transform: scale(1.2);
+}
+
+/* Instruction text under stars */
+.star-instruction {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #555; /* visible in light mode */
 }
 
 /* Feedback Section */
@@ -178,14 +185,14 @@ html[data-theme="dark"] .faq-box h2,
 html[data-theme="dark"] .faq-question,
 html[data-theme="dark"] .feedback-section h2,
 html[data-theme="dark"] .star-rating-section h2 {
-  color: #5fb3a3; /* lighter teal accent */
+  color: #5fb3a3;
 }
 
 html[data-theme="dark"] .page-header p,
 html[data-theme="dark"] .step-card p,
 html[data-theme="dark"] .faq-answer,
 html[data-theme="dark"] .feedback-section textarea {
-  color: var(--charcoal); /* overridden to light grey in master stylesheet */
+  color: var(--charcoal);
 }
 
 html[data-theme="dark"] .step-card,
@@ -197,12 +204,16 @@ html[data-theme="dark"] .feedback-section {
 }
 
 html[data-theme="dark"] .star-rating span {
-  color: var(--grey-mid);
+  color: #ccc; /* visible grey in dark mode */
 }
 
 html[data-theme="dark"] .star-rating span.active,
 html[data-theme="dark"] .star-rating span:hover {
   color: #ffb400;
+}
+
+html[data-theme="dark"] .star-instruction {
+  color: #aaa; /* visible instruction text in dark mode */
 }
 
 /* Responsive */
