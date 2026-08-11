@@ -135,7 +135,7 @@ a:hover { color: var(--coral); }
 .card-title { color: var(--teal-deep); margin-bottom: 16px; }
 .card-subtitle { font-size: 14px; color: var(--teal-deep); margin-bottom: 8px; }
 .card-text { font-size: 14px; color: var(--charcoal); margin-bottom: 16px; line-height: 1.6; }
-.card-tint { background: #f7faf9; }
+.card-tint { background: var(--teal-light); }
 .btn-block { width: 100%; }
 .btn-sm { padding: 6px 14px; font-size: 12px; }
 
