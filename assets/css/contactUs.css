@@ -143,5 +143,6 @@ a:hover { color: var(--coral); }
 .social-row { display: flex; gap: 12px; }
 
 /* Navbar sub-elements (replacing former inline styles in the nav template) */
-.nav-account-btn { padding: 6px 14px; font-size: 12.5px; border-color: #fff; color: #fff; }
+.nav-account-btn { padding: 6px 14px; font-size: 12.5px; background: var(--coral); color: #fff; border: none; }
+.nav-account-btn:hover { background: #fff; color: var(--teal-deep); }
 .footer-dark-brand .brand-icon { width: 30px; height: 30px; font-size: 15px; }

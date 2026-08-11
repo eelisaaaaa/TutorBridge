@@ -33,3 +33,120 @@
 .res-card.highlight .res-val {
   color: var(--coral);
 }
+
+.calc-box-title {
+  font-size: 20px;
+  color: var(--teal-deep);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.res-label {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.res-label-local {
+  color: var(--grey-dark);
+}
+
+.res-label-platform {
+  color: var(--teal-deep);
+}
+
+.res-label-savings {
+  color: #7a5a20;
+}
+
+.res-savings-pct {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--coral);
+}
+
+.explainer-card {
+  max-width: 800px;
+  margin: 0 auto 32px;
+}
+
+.explainer-title {
+  color: var(--teal-deep);
+  margin-bottom: 12px;
+}
+
+.explainer-text {
+  font-size: 14px;
+  color: var(--charcoal);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.explainer-text-last {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Dark mode — whole page, including the calc box, now goes dark instead of
+   the calc box staying white. Colors below are hardcoded to match the dark
+   navy/charcoal page background visible in the screenshot; swap these for
+   your real dark-theme variables from style.css if you'd rather stay
+   consistent with values your teammates already defined there.
+   ========================================================================== */
+
+[data-theme="dark"] .calc-box {
+  background: #16232b;
+  border-color: var(--amber);
+}
+
+[data-theme="dark"] .calc-box-title {
+  color: #e8e8e8;
+}
+
+[data-theme="dark"] .calc-box .form-label {
+  color: #b8c2c9;
+}
+
+[data-theme="dark"] .calc-box .form-select,
+[data-theme="dark"] .calc-box .form-input {
+  background: #0f181d;
+  color: #eeeeee;
+  border: 1px solid #33424a;
+}
+
+[data-theme="dark"] .res-card {
+  background: #0f181d;
+  border-color: #33424a;
+}
+
+[data-theme="dark"] .res-label-local {
+  color: #9aa5ab;
+}
+
+[data-theme="dark"] .res-label-platform {
+  color: #5fb3a3;
+}
+
+[data-theme="dark"] .res-val {
+  color: #5fb3a3;
+}
+
+[data-theme="dark"] .res-card.highlight {
+  background: #3a2f1a;
+  border-color: var(--amber);
+}
+
+[data-theme="dark"] .res-label-savings {
+  color: #d9a441;
+}
+
+[data-theme="dark"] .res-card.highlight .res-val {
+  color: #ff8a65;
+}
+
+[data-theme="dark"] .explainer-title {
+  color: #5fb3a3;
+}
+
+[data-theme="dark"] .explainer-text {
+  color: #cfd6da;
+}
