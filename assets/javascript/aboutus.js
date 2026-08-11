@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     card.addEventListener("mouseenter", () => {
       card.style.transform = "translateY(-6px)";
       card.style.boxShadow = "0 8px 16px rgba(0,0,0,0.15)";
+      // Name hover color handled in CSS
     });
 
     card.addEventListener("mouseleave", () => {
@@ -29,6 +30,15 @@ document.addEventListener("DOMContentLoaded", () => {
     problemLink.addEventListener("click", e => {
       e.preventDefault();
       problemSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+
+  // Back to Top button tooltip + scroll
+  const backToTopBtn = document.querySelector(".back-to-top");
+  if (backToTopBtn) {
+    backToTopBtn.setAttribute("title", "Back to Top");
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
 });

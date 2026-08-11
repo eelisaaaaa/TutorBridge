@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   stepCards.forEach(card => {
     card.addEventListener("mouseenter", () => {
       card.style.transform = "translateY(-6px)";
-      card.style.transition = "transform 0.3s ease, box-shadow 0.3s ease";
       card.style.boxShadow = "0 10px 20px rgba(15,107,102,0.15)";
     });
 
@@ -18,12 +17,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Star rating interaction
   const stars = document.querySelectorAll(".star-rating span");
+  const ratingMessage = document.createElement("p");
+  ratingMessage.className = "text-success";
+  ratingMessage.style.marginTop = "10px";
+
+  const starSection = document.querySelector(".star-rating-section");
+  if (starSection) {
+    starSection.appendChild(ratingMessage);
+  }
+
   stars.forEach((star, index) => {
     star.addEventListener("click", () => {
       stars.forEach((s, i) => {
         s.classList.toggle("active", i <= index);
       });
+      ratingMessage.textContent = `✅ You rated ${index + 1} star${index > 0 ? "s" : ""}`;
     });
+    // Tooltip on hover
+    star.setAttribute("title", `Rate ${index + 1} star${index > 0 ? "s" : ""}`);
   });
 
   // Feedback submission
@@ -31,14 +42,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const feedbackTextarea = document.querySelector(".feedback-section textarea");
 
   if (feedbackBtn && feedbackTextarea) {
+    const feedbackMessage = document.createElement("p");
+    feedbackMessage.className = "text-success";
+    feedbackMessage.style.marginTop = "10px";
+    feedbackBtn.parentNode.appendChild(feedbackMessage);
+
     feedbackBtn.addEventListener("click", () => {
       const feedback = feedbackTextarea.value.trim();
       if (feedback) {
-        alert("✅ Thank you for your feedback!");
+        feedbackMessage.textContent = "✅ Thank you for your feedback!";
         feedbackTextarea.value = "";
       } else {
-        alert("⚠️ Please enter your feedback before submitting.");
+        feedbackMessage.textContent = "⚠️ Please enter your feedback before submitting.";
+        feedbackMessage.className = "text-danger";
       }
+    });
+  }
+
+  // Back to Top button tooltip + scroll
+  const backToTopBtn = document.querySelector(".back-to-top");
+  if (backToTopBtn) {
+    backToTopBtn.setAttribute("title", "Back to Top");
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
 });
