@@ -230,7 +230,7 @@
   color: var(--coral);
 }
 .rec-toggle-btn {
-  border-color: #fff;
+  border-color: #f5bcbc;
   color: #fff;
 }
 .record-status-badge.recording-active {
