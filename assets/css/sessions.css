@@ -236,3 +236,14 @@
 .record-status-badge.recording-active {
   background: #e74c3c;
 }
+
+/* Dark mode: --teal-deep stays a very dark near-black teal even when the
+   card background goes dark, so these headings become nearly invisible.
+   Lighten them here, matching the teal accent used on the pricing page
+   dark-mode overrides (#5fb3a3). */
+html[data-theme="dark"] .session-item-title,
+html[data-theme="dark"] .sub-heading,
+html[data-theme="dark"] .teacher-connect-card h4,
+html[data-theme="dark"] .chat-box-header {
+  color: #5fb3a3;
+}
