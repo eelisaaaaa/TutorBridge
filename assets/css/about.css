@@ -2,87 +2,55 @@
    About Us Page Styles
    ========================== */
 
-/* Page Owner Pill */
-.owner-pill {
-  display: inline-block;
-  background: var(--teal-light);
-  color: var(--teal-deep);
-  font-size: 13px;
-  font-weight: 600;
-  padding: 6px 12px;
-  border-radius: var(--radius-pill);
-  margin-bottom: 12px;
-  float: right;
-}
-
 /* Page Header */
-.page-header {
-  margin-bottom: 24px;
-  text-align: center;
-}
-
 .page-header h1 {
   font-size: 26px;
-  color: var(--teal-deep);
+  color: var(--teal-deep); /* light mode */
   margin-bottom: 10px;
-}
-
-.page-header p {
-  font-size: 15px;
-  color: var(--charcoal);
-  line-height: 1.6;
 }
 
 /* Problem Statement */
 .problem-section {
   background: var(--paper);
-  border-left: 5px solid var(--teal-deep);
-  padding: 24px;
-  margin-bottom: 32px;
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-sm);
+  border: 2px solid var(--teal-deep);   /* stronger border */
+  padding: 36px;                        /* roomy padding */
+  margin: 40px auto;                    /* space around */
+  border-radius: var(--radius-md);      /* smoother corners */
+  box-shadow: var(--shadow-md);         /* visible shadow */
+  max-width: 900px;                     /* centered tidy width */
 }
 
 .problem-section h2 {
-  font-size: 22px;
-  margin-bottom: 12px;
-  color: var(--teal-deep);
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--teal-deep); /* light mode */
+  text-align: left;
 }
 
 .problem-section p {
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 16px;
+  line-height: 1.8;
   color: var(--charcoal);
-  margin-bottom: 14px;
-}
-
-.problem-section p:last-child {
-  margin-bottom: 0;
+  margin-bottom: 18px;
+  text-align: justify;
 }
 
 /* Team Section */
-.team-section {
-  margin-bottom: 40px;
-}
-
 .team-section h2 {
   text-align: center;
   font-size: 22px;
   margin-bottom: 24px;
-  color: var(--teal-deep);
+  color: var(--teal-deep); /* light mode */
 }
 
-/* Team Grid */
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.tutor-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--teal-deep); /* light mode */
+  margin-bottom: 6px;
+  transition: color 0.3s ease;
 }
 
-/* Team Cards */
 .tutor-card {
   background: var(--paper);
   border-radius: var(--radius-sm);
@@ -90,6 +58,7 @@
   padding: 18px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .tutor-card:hover {
@@ -97,42 +66,36 @@
   box-shadow: var(--shadow-md);
 }
 
-.tutor-avatar {
-  width: 120px;       
-  height: 120px;      
-  object-fit: cover;  
-  border-radius: 50%; 
-  margin-bottom: 12px;
+.tutor-card:hover .tutor-name {
+  color: #5fb3a3; /* highlight teal accent in both modes */
 }
 
-.tutor-name {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--teal-deep);
-  margin-bottom: 6px;
+/* ==========================
+   Dark Mode Overrides
+   ========================== */
+
+html[data-theme="dark"] .page-header h1,
+html[data-theme="dark"] .problem-section h2,
+html[data-theme="dark"] .team-section h2,
+html[data-theme="dark"] .tutor-name {
+  color: #5fb3a3; /* lighter teal accent */
 }
 
-.tutor-meta {
-  font-size: 13px;
-  color: var(--grey-dark);
-  margin-bottom: 6px;
+html[data-theme="dark"] .problem-section {
+  background-color: var(--paper);
+  border: 2px solid #5fb3a3;   /* teal accent border */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
 }
 
-.tutor-tag {
-  display: inline-block;
-  background: var(--teal-light);
-  color: var(--teal-deep);
-  font-size: 12px;
-  font-weight: 600;
-  padding: 4px 10px;
-  border-radius: var(--radius-pill);
-  margin-bottom: 10px;
+html[data-theme="dark"] .problem-section p,
+html[data-theme="dark"] .page-header p,
+html[data-theme="dark"] .tutor-card p {
+  color: var(--charcoal); /* overridden to light grey in master stylesheet */
 }
 
-.tutor-card p:last-child {
-  font-size: 12px;
-  color: var(--grey-dark);
-  margin-top: 8px;
+html[data-theme="dark"] .tutor-tag {
+  background-color: var(--teal-deep);
+  color: #5fb3a3;
 }
 
 /* Responsive */

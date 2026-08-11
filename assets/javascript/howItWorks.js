@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
         s.classList.toggle("active", i <= index);
       });
     });
+    // Tooltip on hover
+    star.setAttribute("title", `Rate ${index + 1} star${index > 0 ? "s" : ""}`);
   });
 
   // Feedback submission
@@ -39,6 +41,15 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         alert("⚠️ Please enter your feedback before submitting.");
       }
+    });
+  }
+
+  // Back to Top button tooltip + scroll
+  const backToTopBtn = document.querySelector(".back-to-top");
+  if (backToTopBtn) {
+    backToTopBtn.setAttribute("title", "Back to Top");
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
 });
