@@ -75,6 +75,14 @@
 
 /* ===== Dark mode ===== */
 
+/* Section heading ("📚 Parent Study & Prep Guides") defaults to the fixed
+   dark teal (--teal-deep), which disappears against the dark page
+   background in dark mode. Lighten to the same teal accent used
+   elsewhere on the site in dark mode. */
+html[data-theme="dark"] .section-title {
+    color: #5fb3a3;
+}
+
 /* Guide card titles default to the fixed dark teal (--teal-deep), which
    disappears against the dark .card background in dark mode. Lighten to
    the same teal accent used elsewhere on the site in dark mode. */
@@ -138,4 +146,251 @@ html[data-theme="dark"] .faq-box p {
 html[data-theme="dark"] .faq-modal-title,
 html[data-theme="dark"] .faq-question-btn {
   color: #5fb3a3;
+}
+
+/* ============================================================
+   Cuter FAQ Modal — scoped to #faq-modal-overlay so it only
+   affects the FAQ popup, not the feedback modal or anything else.
+   Append this block to modals.css.
+   ============================================================ */
+
+#faq-modal-overlay .modal-card {
+  background: linear-gradient(180deg, var(--teal-light) 0%, var(--paper) 140px);
+  border-radius: 28px;
+  border: 2px solid var(--teal-soft);
+  padding: 32px 28px 28px;
+  position: relative;
+  overflow: visible;
+}
+
+/* Little decorative badge floating above the card, like a friendly sticker */
+#faq-modal-overlay .modal-card::before {
+  content: "💬";
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 48px;
+  background: var(--coral);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  box-shadow: 0 6px 16px rgba(255, 122, 89, 0.4);
+  border: 3px solid var(--paper);
+}
+
+#faq-modal-overlay .faq-modal-title {
+  text-align: center;
+  font-size: 22px;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+#faq-modal-overlay .faq-modal-subtitle {
+  text-align: center;
+  font-size: 13px;
+  color: var(--grey-dark);
+  margin-bottom: 20px;
+}
+
+#faq-modal-overlay .modal-close {
+  background: var(--paper);
+  border: 1.5px solid var(--grey-mid);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  top: 14px;
+  right: 14px;
+}
+
+#faq-modal-overlay .modal-close:hover {
+  background: var(--coral);
+  color: #fff;
+  border-color: var(--coral);
+}
+
+#faq-modal-overlay .faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#faq-modal-overlay .faq-item {
+  background: var(--paper);
+  border: 1.5px solid var(--grey-mid);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+#faq-modal-overlay .faq-item:hover {
+  border-color: var(--teal-soft);
+  box-shadow: var(--shadow-sm);
+}
+
+#faq-modal-overlay .faq-question-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: left;
+}
+
+#faq-modal-overlay .faq-question-category {
+  background: var(--amber-light);
+  color: #8a641a;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+#faq-modal-overlay .faq-answer {
+  padding: 0 16px 16px;
+  font-size: 13px;
+  color: var(--grey-dark);
+  line-height: 1.6;
+}
+
+#faq-modal-overlay .faq-modal-close-btn {
+  width: 100%;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+/* Dark mode */
+html[data-theme="dark"] #faq-modal-overlay .modal-card {
+  background: linear-gradient(180deg, #12302e 0%, #1b2226 140px);
+  border-color: #5fb3a3;
+}
+
+html[data-theme="dark"] #faq-modal-overlay .faq-modal-title {
+  color: #5fb3a3;
+}
+
+html[data-theme="dark"] #faq-modal-overlay .faq-modal-subtitle {
+  color: #9aa5a2;
+}
+
+html[data-theme="dark"] #faq-modal-overlay .faq-item {
+  background: #16232b;
+  border-color: #33424a;
+}
+
+html[data-theme="dark"] #faq-modal-overlay .faq-item:hover {
+  border-color: #5fb3a3;
+}
+
+html[data-theme="dark"] #faq-modal-overlay .faq-question-btn {
+  color: #e8ecec;
+}
+
+html[data-theme="dark"] #faq-modal-overlay .faq-question-category {
+  color: #e8c37a;
+  background: #332a17;
+}
+
+html[data-theme="dark"] #faq-modal-overlay .faq-answer {
+  color: #9aa5a2;
+}
+
+html[data-theme="dark"] #faq-modal-overlay .modal-close {
+  background: #16232b;
+  border-color: #33424a;
+  color: #e8ecec;
+}
+
+/* ============================================================
+   FAQ MODAL — Keep popup on screen when answers expand
+   ============================================================ */
+
+/* Keep badge visible while limiting popup size */
+#faq-modal-overlay .modal-card {
+    max-height: 85vh;
+    overflow: visible;
+}
+
+
+/* Only FAQ content scrolls */
+#faq-modal-overlay .faq-accordion {
+    max-height: 55vh;
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+
+/* Keep FAQ cards from shrinking */
+#faq-modal-overlay .faq-item {
+    flex-shrink: 0;
+}
+
+
+/* FAQ scrollbar */
+#faq-modal-overlay .faq-accordion::-webkit-scrollbar {
+    width: 6px;
+}
+
+#faq-modal-overlay .faq-accordion::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#faq-modal-overlay .faq-accordion::-webkit-scrollbar-thumb {
+    background: var(--teal-soft);
+    border-radius: 10px;
+}
+
+#faq-modal-overlay .faq-accordion::-webkit-scrollbar-thumb:hover {
+    background: var(--teal-deep);
+}
+
+
+/* Dark mode scrollbar */
+html[data-theme="dark"] #faq-modal-overlay .faq-accordion::-webkit-scrollbar-thumb {
+    background: #5fb3a3;
+}
+
+/* Keep the FAQ cards from being squashed */
+#faq-modal-overlay .faq-item {
+    flex-shrink: 0;
+}
+
+/* FAQ scrollbar */
+#faq-modal-overlay .faq-accordion::-webkit-scrollbar {
+    width: 6px;
+}
+
+#faq-modal-overlay .faq-accordion::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#faq-modal-overlay .faq-accordion::-webkit-scrollbar-thumb {
+    background: var(--teal-soft);
+    border-radius: 10px;
+}
+
+#faq-modal-overlay .faq-accordion::-webkit-scrollbar-thumb:hover {
+    background: var(--teal-deep);
+}
+
+/* Dark mode scrollbar */
+html[data-theme="dark"] #faq-modal-overlay .faq-accordion::-webkit-scrollbar-thumb {
+    background: #5fb3a3;
 }
