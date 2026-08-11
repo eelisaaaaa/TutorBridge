@@ -158,6 +158,15 @@
   padding: 12px;
   font-size: 14px;
   margin-bottom: 16px;
+  color: var(--charcoal);          /* ✅ visible text in light mode */
+  background-color: var(--paper);  /* ✅ consistent background */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feedback-section textarea:focus {
+  border-color: var(--teal-deep);
+  box-shadow: 0 0 6px rgba(15,107,102,0.25);
+  outline: none;
 }
 
 .feedback-section button {
@@ -176,6 +185,14 @@
   transform: translateY(-2px);
 }
 
+/* Footer */
+footer {
+  padding: 30px 20px;
+  background-color: var(--grey-light);
+  color: var(--charcoal);
+  text-align: center;
+}
+
 /* ==========================
    Dark Mode Overrides
    ========================== */
@@ -192,13 +209,13 @@ html[data-theme="dark"] .page-header p,
 html[data-theme="dark"] .step-card p,
 html[data-theme="dark"] .faq-answer,
 html[data-theme="dark"] .feedback-section textarea {
-  color: var(--charcoal);
+  color: #eee; /* ✅ light text for visibility */
 }
 
 html[data-theme="dark"] .step-card,
 html[data-theme="dark"] .faq-box,
 html[data-theme="dark"] .feedback-section {
-  background-color: var(--paper);
+  background-color: #222;
   border-color: #5fb3a3;
   box-shadow: 0 8px 20px rgba(0,0,0,0.6);
 }
@@ -214,6 +231,11 @@ html[data-theme="dark"] .star-rating span:hover {
 
 html[data-theme="dark"] .star-instruction {
   color: #aaa; /* visible instruction text in dark mode */
+}
+
+html[data-theme="dark"] footer {
+  background-color: #29574e; /* ✅ your chosen dark green */
+  color: #eee;               /* ✅ light text for contrast */
 }
 
 /* Responsive */
