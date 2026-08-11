@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pricing &amp; Currency Comparison — TutorBridge</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/pricing.css">
 </head>
@@ -25,14 +26,20 @@
       <div class="grid-2">
         <div class="form-group">
           <label class="form-label">Select Subject</label>
-          <select id="calc-subject" class="form-select">
-            <option value="emath">Elementary Mathematics ($18/hr)</option>
-            <option value="amath">Additional Mathematics ($20/hr)</option>
-            <option value="physics">Pure / Combined Physics ($22/hr)</option>
-            <option value="chem">Pure / Combined Chemistry ($18/hr)</option>
-            <option value="bio">Pure / Combined Biology ($17/hr)</option>
-            <option value="english">English Language ($15/hr)</option>
-          </select>
+
+          <!-- Custom dropdown: options only open when the arrow button
+               is clicked, not the box itself. Built/filled by
+               setupSubjectDropdown() in calculator.js from
+               SUBJECT_BASE_RATES, so no <option> list is needed here. -->
+          <div class="cs-select" id="subjectSelect">
+            <div class="cs-select-box">
+              <span class="cs-select-value"></span>
+              <button type="button" class="cs-select-arrow-btn" aria-label="Toggle options">
+                <svg viewBox="0 0 12 8" fill="none"><path d="M1 1L6 6L11 1" stroke="#333333" stroke-width="2"/></svg>
+              </button>
+            </div>
+            <ul class="cs-select-options"></ul>
+          </div>
         </div>
 
         <div class="form-group">
@@ -60,22 +67,36 @@
       </dl>
     </section>
 
-    <section class="card explainer-card">
-      <h3 class="explainer-title">Why is TutorBridge so much more affordable?</h3>
-      <p class="explainer-text">
-        1. <strong>Exchange Rate Advantage:</strong> Tutors living in Malaysia, the Philippines, and Indonesia earn competitive local income when paid in SGD ($15 - $25 SGD/hr), allowing them to dedicate 100% of their energy to teaching high-quality lessons.
-      </p>
-      <p class="explainer-text">
-        2. <strong>Zero Physical Center Overhead:</strong> Traditional Singapore tuition centers charge premium rates to cover expensive shopping mall rent. Online 1-on-1 Zoom sessions pass those savings directly back to lower- and middle-income families.
-      </p>
-      <p class="explainer-text explainer-text-last">
-        3. <strong>Transparent SGD Billing:</strong> Parents are billed strictly in Singapore Dollars via PayNow or Credit Card. TutorBridge manages cross-border currency payouts seamlessly with zero hidden fees.
-      </p>
+    <h2 class="explainer-heading">Why is TutorBridge so much more affordable?</h2>
+
+    <section class="explainer-grid">
+      <div class="explainer-item">
+        <h3 class="explainer-item-title">Exchange Rate Advantage</h3>
+        <p class="explainer-text">
+          Tutors living in Malaysia, the Philippines, and Indonesia earn competitive local income when paid in SGD ($15 - $25 SGD/hr), allowing them to dedicate 100% of their energy to teaching high-quality lessons.
+        </p>
+      </div>
+
+      <div class="explainer-item">
+        <h3 class="explainer-item-title">Zero Physical Center Overhead</h3>
+        <p class="explainer-text">
+          Traditional Singapore tuition centers charge premium rates to cover expensive shopping mall rent. Online 1-on-1 Zoom sessions pass those savings directly back to lower- and middle-income families.
+        </p>
+      </div>
+
+      <div class="explainer-item">
+        <h3 class="explainer-item-title">Transparent SGD Billing</h3>
+        <p class="explainer-text explainer-text-last">
+          Parents are billed strictly in Singapore Dollars via PayNow or Credit Card. TutorBridge manages cross-border currency payouts seamlessly with zero hidden fees.
+        </p>
+      </div>
     </section>
+
   </main>
 
   <footer id="global-footer"></footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/javascript/tutors-data.js"></script>
   <script src="../assets/javascript/main.js"></script>
   <script src="../assets/javascript/calculator.js"></script>

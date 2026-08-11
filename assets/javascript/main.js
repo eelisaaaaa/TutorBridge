@@ -229,10 +229,10 @@ function setupGlobalModals() {
     faqModal.innerHTML = `
       <div class="modal-card">
         <button class="modal-close" onclick="closeFAQModal()">&times;</button>
-        <h3 style="text-align:center; color:var(--teal-deep); margin-bottom:4px;">Frequently Asked Questions</h3>
-        <p style="text-align:center; font-size:12px; color:var(--grey-dark); margin-bottom:16px;">Tap any question to expand details</p>
-        <div id="faq-accordion-container" style="display:flex; flex-direction:column; gap:10px;"></div>
-        <button class="btn btn-ghost" style="width:100%; margin-top:20px;" onclick="closeFAQModal()">Close FAQ</button>
+        <h3 class="faq-modal-title">Frequently Asked Questions</h3>
+        <p class="faq-modal-subtitle">Tap any question to expand details</p>
+        <div id="faq-accordion-container" class="faq-accordion"></div>
+        <button class="btn btn-ghost faq-modal-close-btn" onclick="closeFAQModal()">Close FAQ</button>
       </div>
     `;
     document.body.appendChild(faqModal);
@@ -278,12 +278,12 @@ function openFAQModal() {
   const container = document.getElementById('faq-accordion-container');
   if (container && typeof FAQ_DATA !== 'undefined') {
     container.innerHTML = FAQ_DATA.map((item, index) => `
-      <div style="border:1px solid var(--grey-mid); border-radius:8px; overflow:hidden;">
-        <button style="width:100%; padding:12px; text-align:left; background:var(--grey-light); border:none; font-weight:600; font-size:13px; color:var(--teal-deep); cursor:pointer; display:flex; justify-content:space-between; align-items:center;" onclick="toggleFAQItem(${index})">
+      <div class="faq-item">
+        <button class="faq-question-btn" onclick="toggleFAQItem(${index})">
           <span>▸ ${item.question}</span>
-          <span style="font-size:10px; color:var(--coral); font-weight:700;">${item.category}</span>
+          <span class="faq-question-category">${item.category}</span>
         </button>
-        <div id="faq-ans-${index}" style="display:none; padding:12px; font-size:12.5px; color:var(--charcoal); background:#fff; border-top:1px solid var(--grey-mid);">
+        <div id="faq-ans-${index}" class="faq-answer" style="display:none;">
           ${item.answer}
         </div>
       </div>
