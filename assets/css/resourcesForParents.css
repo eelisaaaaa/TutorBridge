@@ -72,3 +72,70 @@
     color:var(--grey-dark);
     margin-bottom:16px;
 }
+
+/* ===== Dark mode ===== */
+
+/* Guide card titles default to the fixed dark teal (--teal-deep), which
+   disappears against the dark .card background in dark mode. Lighten to
+   the same teal accent used elsewhere on the site in dark mode. */
+html[data-theme="dark"] .guide-title {
+    color: #5fb3a3;
+}
+
+/* "Read Guide" buttons are .btn-soft, which resolves to dark teal text on
+   a dark teal-tinted background in dark mode (--teal-light goes dark too)
+   — nearly unreadable. Recolor specifically for this page's buttons. */
+html[data-theme="dark"] .guide-btn {
+    background: #12302e;
+    color: #5fb3a3;
+}
+
+html[data-theme="dark"] .guide-btn:hover {
+    background: #5fb3a3;
+    color: #0f181d;
+}
+
+/* Resources card is hardcoded white (#fff), which stays white and
+   somewhat clashes with the dark page. Swap to the same dark card
+   surface used elsewhere in dark mode. */
+html[data-theme="dark"] .resources-card {
+    background: #16232b;
+    border-color: #33424a;
+}
+
+html[data-theme="dark"] .resources-title {
+    color: #5fb3a3;
+}
+
+html[data-theme="dark"] .resources-list {
+    color: #cfd6da;
+}
+
+html[data-theme="dark"] .resources-list a {
+    color: #cfd6da;
+}
+
+html[data-theme="dark"] .resources-list a:hover {
+    color: var(--coral);
+}
+
+/* FAQ box (.step-box + .faq-box) is a hardcoded light mint box that
+   doesn't shift with the theme. Darken it to match the rest of the
+   page's dark surfaces instead of leaving a bright box behind. */
+html[data-theme="dark"] .faq-box {
+    background: #12302e;
+    border-color: #5fb3a3;
+}
+
+html[data-theme="dark"] .faq-box h3 {
+    color: #5fb3a3;
+}
+
+html[data-theme="dark"] .faq-box p {
+    color: #cfd6da;
+}
+
+html[data-theme="dark"] .faq-modal-title,
+html[data-theme="dark"] .faq-question-btn {
+  color: #5fb3a3;
+}

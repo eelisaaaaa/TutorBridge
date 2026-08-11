@@ -1,3 +1,177 @@
+/* TutorBridge — Swipe Deck ("Find Your Tutor") Styles */
+
+.swipe-wrapper {
+  max-width: 460px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.swipe-card-stack {
+  position: relative;
+  height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.swipe-card {
+  width: 100%;
+  height: 360px;
+  background: var(--paper);
+  border: 1px solid var(--grey-mid);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  position: absolute;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  user-select: none;
+  cursor: grab;
+  touch-action: none;
+}
+
+.swipe-card.dragging {
+  transition: none !important;
+  cursor: grabbing;
+}
+
+.swipe-card.back-2 {
+  transform: scale(0.92) translateY(16px);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.swipe-card.back-1 {
+  transform: scale(0.96) translateY(8px);
+  opacity: 0.8;
+  z-index: 2;
+}
+
+.swipe-card.top {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+  z-index: 3;
+}
+
+.swipe-card-badge {
+  position: absolute;
+  top: 16px;
+  font-weight: 800;
+  font-size: 18px;
+  padding: 4px 12px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  pointer-events: none;
+}
+
+.swipe-card-badge.like {
+  right: 20px;
+  color: #27ae60;
+  border: 3px solid #27ae60;
+  transform: rotate(15deg);
+}
+
+.swipe-card-badge.nope {
+  left: 20px;
+  color: #e74c3c;
+  border: 3px solid #e74c3c;
+  transform: rotate(-15deg);
+}
+
+.swipe-card-bio {
+  font-size: 12px;
+  color: var(--grey-dark);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.swipe-card-rating {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--teal-deep);
+  background: var(--teal-light);
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-top: 8px;
+}
+
+.swipe-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  margin-top: 24px;
+}
+
+.swipe-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.swipe-btn.dismiss {
+  background: var(--paper);
+  border: 2px solid var(--grey-mid);
+  color: var(--grey-dark);
+}
+
+.swipe-btn.dismiss:hover {
+  background: #f7e8e8;
+  border-color: #e57373;
+  color: #d32f2f;
+}
+
+.swipe-btn.shortlist {
+  background: var(--coral);
+  color: #fff;
+}
+
+.swipe-btn.shortlist:hover {
+  transform: scale(1.1);
+  background: var(--coral-hover);
+}
+
+.swipe-message {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--grey-dark);
+  margin: 0;
+}
+
+.swipe-instructions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 500px; /* match your card width */
+  width: 100%;
+  margin: 16px auto;
+  font-size: 12px;
+  color: var(--grey-dark);
+}
+
+.shortlist-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+/* Empty state (shown after all tutors have been swiped through) */
 .swipe-empty {
   justify-content: center;
   cursor: default;
@@ -21,32 +195,61 @@
   margin: 0;
 }
 
-.swipe-card-bio {
-  font-size: 12px;
-  color: var(--grey-dark);
-  line-height: 1.4;
-  margin: 0;
+.tutor-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--teal-light);
+  margin-bottom: 12px;
+  pointer-events: none;
+  flex-shrink: 0;
+  aspect-ratio: 1 / 1;
 }
 
-.swipe-card-rating {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--teal-deep);
-  background: var(--teal-light);
-  padding: 4px 10px;
-  border-radius: 12px;
-  margin-top: 8px;
+[data-theme="dark"] .swipe-card {
+  background: #16232b;
+  border-color: #33424a;
 }
 
-.swipe-instructions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 500px; /* match your card width */
-  margin: 0 auto;
+[data-theme="dark"] .tutor-avatar {
+  border-color: #5fb3a3;
 }
 
-.shortlist-container {
-  display: flex;
-  justify-content: center;
+[data-theme="dark"] .swipe-card-bio {
+  color: #cfd6da;
+}
+
+[data-theme="dark"] .swipe-card-rating {
+  background: #0f181d;
+  color: #5fb3a3;
+}
+
+[data-theme="dark"] .swipe-btn.dismiss {
+  background: #0f181d;
+  border-color: #33424a;
+  color: #9aa5ab;
+}
+
+[data-theme="dark"] .swipe-btn.dismiss:hover {
+  background: #3a1f1f;
+  border-color: #e57373;
+  color: #ff8a80;
+}
+
+[data-theme="dark"] .swipe-btn.shortlist:hover {
+  background: var(--coral-hover);
+}
+
+[data-theme="dark"] .swipe-message,
+[data-theme="dark"] .swipe-instructions {
+  color: #9aa5ab;
+}
+
+[data-theme="dark"] .swipe-empty-title {
+  color: #5fb3a3;
+}
+
+[data-theme="dark"] .swipe-empty-text {
+  color: #cfd6da;
 }
