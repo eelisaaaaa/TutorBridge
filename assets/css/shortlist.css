@@ -146,7 +146,7 @@ a:hover { color: var(--coral); }
 .empty-state-text { font-size: 14px; color: var(--grey-dark); margin-bottom: 24px; }
 .shortlist-summary { font-size: 13px; color: var(--grey-dark); text-align: center; margin-bottom: 24px; }
 .tutor-card-row { display: flex; gap: 16px; align-items: center; }
-.tutor-card-info { flex: 1; }
+.tutor-card-info { flex: 1;text-align:center; }
 .tutor-card-name { font-size: 16px; color: var(--teal-deep); margin-bottom: 2px; }
 .tutor-card-meta { font-size: 12px; color: var(--grey-dark); margin-bottom: 4px; }
 .tutor-card-country { font-size: 11px; background: var(--teal-light); color: var(--teal-deep); padding: 2px 8px; border-radius: 10px; display: inline-block; margin-bottom: 8px; }
@@ -154,6 +154,18 @@ a:hover { color: var(--coral); }
 .tutor-card-actions { display: flex; flex-direction: column; gap: 8px; }
 .btn-request { padding: 6px 14px; font-size: 12px; }
 .btn-remove { padding: 4px 12px; font-size: 11px; border-color: var(--grey-mid); color: var(--grey-dark); }
+
+/* Dark mode: --teal-deep stays a very dark near-black teal even when the
+   card background goes dark, so it reads as near-invisible text. Lighten
+   it here, and give the Remove button a brighter, visible border. */
+html[data-theme="dark"] .tutor-card-name,
+html[data-theme="dark"] .tutor-card-country {
+  color: #8de8d6;
+}
+html[data-theme="dark"] .btn-remove {
+  border-color: var(--grey-dark);
+  color: #cfd6d4;
+}
 
 /* Navbar sub-elements (replacing former inline styles in the nav template) */
 .nav-account-btn { padding: 6px 14px; font-size: 12.5px; border-color: #fff; color: #fff; }

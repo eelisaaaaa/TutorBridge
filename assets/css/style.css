@@ -69,6 +69,16 @@ html[data-theme="dark"] .brand {
   color: #000;
 }
 
+/* Dark mode: --teal-deep stays a very dark near-black teal even when the
+   background goes dark, so these index-page headings/tabs become nearly
+   invisible. Lighten them here, matching the teal accent used on the
+   pricing page dark-mode overrides (#5fb3a3). */
+html[data-theme="dark"] .section-heading,
+html[data-theme="dark"] .cta-heading,
+html[data-theme="dark"] .tab.active {
+  color: #5fb3a3;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

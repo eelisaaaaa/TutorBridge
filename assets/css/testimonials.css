@@ -126,3 +126,12 @@
     height: 38px;
   }
 }
+
+/* Dark mode: --teal-deep stays a very dark near-black teal even when the
+   card background goes dark, so this text becomes nearly invisible.
+   Lighten it here for dark mode only. */
+html[data-theme="dark"] .nav-arrow-btn,
+html[data-theme="dark"] .testimonial-quote,
+html[data-theme="dark"] .testimonial-name {
+  color: #8de8d6;
+}

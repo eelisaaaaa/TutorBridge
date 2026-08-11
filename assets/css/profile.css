@@ -129,3 +129,13 @@
   background: var(--grey-light);
   color: var(--teal-deep);
 }
+
+/* Dark mode: --teal-deep stays a very dark near-black teal even when the
+   card background goes dark, so these headings become nearly invisible.
+   Lighten them here, matching the teal accent used on the pricing page
+   dark-mode overrides (#5fb3a3). */
+html[data-theme="dark"] .card-heading,
+html[data-theme="dark"] .card-subheading,
+html[data-theme="dark"] .tx-table th {
+  color: #5fb3a3;
+}
