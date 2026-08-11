@@ -18,6 +18,8 @@
   font-size: 15px;
   color: var(--charcoal);
   line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 /* Step Cards */
@@ -79,6 +81,11 @@
   font-weight: 600;
   color: var(--teal-deep);
   margin-bottom: 6px;
+  transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+  color: #5fb3a3; /* highlight on hover */
 }
 
 .faq-answer {
