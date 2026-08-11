@@ -79,6 +79,19 @@ html[data-theme="dark"] .tab.active {
   color: #5fb3a3;
 }
 
+/* Dark mode: .btn-ghost and .btn-soft both rely on var(--teal-deep) for
+   text (and .btn-ghost for its border too), which stays near-black even
+   in dark mode and disappears against their darkened backgrounds.
+   Lighten both to the same teal accent used above. */
+html[data-theme="dark"] .btn-ghost {
+  color: #5fb3a3;
+  border-color: #5fb3a3;
+}
+
+html[data-theme="dark"] .btn-soft {
+  color: #5fb3a3;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
