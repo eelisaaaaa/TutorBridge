@@ -881,7 +881,7 @@ a:hover {
 
 .cta-heading {
   font-size: 20px;
-  color: #68a8a4;
+  color: var(--teal-deep);
   margin-bottom: 8px;
 }
 
