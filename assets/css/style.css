@@ -71,7 +71,7 @@ body {
 
 h1, h2, h3, h4, h5, h6, .font-heading {
   font-family: 'Outfit', sans-serif;
-  color: var(--teal-deep);
+  color: #68a8a4;
   line-height: 1.25;
 }
 
@@ -730,7 +730,7 @@ a:hover {
 
 /* Dark Laptop-Style Footer */
 .footer-dark {
-  background: var(--footer-bg);
+  background: var(--teal-deep);
   color: #fff;
   padding: 48px 24px 28px;
   margin-top: auto;
