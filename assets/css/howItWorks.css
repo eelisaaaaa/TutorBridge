@@ -2,6 +2,12 @@
    How It Works Page Styles
    ========================== */
 
+/* Reset margins to remove white borders */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 /* Page Header */
 .page-header {
   margin-bottom: 32px;
@@ -115,21 +121,20 @@
 .star-rating span {
   font-size: 30px;
   cursor: pointer;
-  color: #666; /* visible in light mode */
+  color: #666;
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .star-rating span:hover,
 .star-rating span.active {
-  color: #ffb400; /* gold highlight */
+  color: #ffb400;
   transform: scale(1.2);
 }
 
-/* Instruction text under stars */
 .star-instruction {
   font-size: 14px;
   margin-top: 10px;
-  color: #555; /* visible in light mode */
+  color: #555;
 }
 
 /* Feedback Section */
@@ -158,8 +163,8 @@
   padding: 12px;
   font-size: 14px;
   margin-bottom: 16px;
-  color: var(--charcoal);          /* ✅ visible text in light mode */
-  background-color: var(--paper);  /* ✅ consistent background */
+  color: var(--charcoal);
+  background-color: var(--paper);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -187,15 +192,25 @@
 
 /* Footer */
 footer {
+  width: 100%;              /* ensure full width */
   padding: 30px 20px;
   background-color: var(--grey-light);
   color: var(--charcoal);
   text-align: center;
 }
 
-/* ==========================
-   Dark Mode Overrides
-   ========================== */
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: var(--radius-sm);
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Dark Mode Overrides */
 html[data-theme="dark"] .page-header h1,
 html[data-theme="dark"] .step-card h2,
 html[data-theme="dark"] .faq-box h2,
@@ -209,7 +224,7 @@ html[data-theme="dark"] .page-header p,
 html[data-theme="dark"] .step-card p,
 html[data-theme="dark"] .faq-answer,
 html[data-theme="dark"] .feedback-section textarea {
-  color: #eee; /* ✅ light text for visibility */
+  color: #eee;
 }
 
 html[data-theme="dark"] .step-card,
@@ -221,7 +236,7 @@ html[data-theme="dark"] .feedback-section {
 }
 
 html[data-theme="dark"] .star-rating span {
-  color: #ccc; /* visible grey in dark mode */
+  color: #ccc;
 }
 
 html[data-theme="dark"] .star-rating span.active,
@@ -230,12 +245,12 @@ html[data-theme="dark"] .star-rating span:hover {
 }
 
 html[data-theme="dark"] .star-instruction {
-  color: #aaa; /* visible instruction text in dark mode */
+  color: #aaa;
 }
 
 html[data-theme="dark"] footer {
-  background-color: #29574e; /* ✅ your chosen dark green */
-  color: #eee;               /* ✅ light text for contrast */
+  background-color: #29574e;
+  color: #eee;
 }
 
 /* Responsive */
