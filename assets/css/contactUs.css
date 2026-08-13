@@ -110,7 +110,7 @@ a:hover { color: var(--coral); }
 .modal-close { position: absolute; top: 16px; right: 16px; background: none; border: none; font-size: 22px; color: var(--grey-dark); cursor: pointer; }
 
 /* Footer (rendered by main.js into #global-footer) */
-.footer-dark { background: var(--footer-bg); color: #fff; padding: 48px 24px 28px; margin-top: auto; }
+.footer-dark { background: var(--teal-deep); color: #fff; padding: 48px 24px 28px; margin-top: auto; }
 .footer-dark-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 36px; border-bottom: 1px solid rgba(255,255,255,0.12); padding-bottom: 32px; margin-bottom: 20px; }
 .footer-dark-brand { font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 800; color: #fff; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
 .footer-dark-desc { font-size: 13.5px; color: rgba(255,255,255,0.65); line-height: 1.6; max-width: 380px; }
