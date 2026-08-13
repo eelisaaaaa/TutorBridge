@@ -1,5 +1,6 @@
 // howItWorks.js
 
+
 document.addEventListener("DOMContentLoaded", () => {
   // Step card hover effect
   const stepCards = document.querySelectorAll(".step-card");
@@ -9,11 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
       card.style.boxShadow = "0 10px 20px rgba(15,107,102,0.15)";
     });
 
+
     card.addEventListener("mouseleave", () => {
       card.style.transform = "translateY(0)";
       card.style.boxShadow = "0 4px 10px rgba(0,0,0,0.05)";
     });
   });
+
 
   // Star rating interaction
   const stars = document.querySelectorAll(".star-rating span");
@@ -21,10 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
   ratingMessage.className = "text-success";
   ratingMessage.style.marginTop = "10px";
 
+
   const starSection = document.querySelector(".star-rating-section");
   if (starSection) {
     starSection.appendChild(ratingMessage);
   }
+
 
   stars.forEach((star, index) => {
     star.addEventListener("click", () => {
@@ -36,14 +41,17 @@ document.addEventListener("DOMContentLoaded", () => {
     star.setAttribute("title", `Rate ${index + 1} star${index > 0 ? "s" : ""}`);
   });
 
+
   // Feedback submission
   const feedbackBtn = document.querySelector(".feedback-section button");
   const feedbackTextarea = document.querySelector(".feedback-section textarea");
+
 
   if (feedbackBtn && feedbackTextarea) {
     const feedbackMessage = document.createElement("p");
     feedbackMessage.style.marginTop = "10px";
     feedbackBtn.parentNode.appendChild(feedbackMessage);
+
 
     feedbackBtn.addEventListener("click", () => {
       const feedback = feedbackTextarea.value.trim();
@@ -57,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
 
   // Back to Top button tooltip + scroll
   const backToTopBtn = document.querySelector(".back-to-top");

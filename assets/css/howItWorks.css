@@ -2,17 +2,43 @@
    How It Works Page Styles
    ========================== */
 
+
+
+
+/* Page Container Fixes (Removes white margins/gaps above footer on this page) */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+main.container {
+  margin-bottom: 0 !important;
+  padding-bottom: 40px;
+}
+
+
+
+
 /* Page Header */
 .page-header {
   margin-bottom: 32px;
   text-align: center;
 }
 
+
+
+
 .page-header h1 {
   font-size: 2.2rem;
   color: var(--teal-deep);
   margin-bottom: 12px;
 }
+
+
+
 
 .page-header p {
   font-size: 15px;
@@ -21,6 +47,9 @@
   max-width: 700px;
   margin: 0 auto;
 }
+
+
+
 
 /* Step Cards */
 .step-card {
@@ -33,11 +62,17 @@
   margin-bottom: 24px;
 }
 
+
+
+
 .step-card h2 {
   font-size: 1.3rem;
   color: var(--teal-deep);
   margin-bottom: 10px;
 }
+
+
+
 
 .step-card p {
   font-size: 14px;
@@ -45,17 +80,26 @@
   line-height: 1.6;
 }
 
+
+
+
 .step-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-md);
   border-color: var(--teal-deep);
 }
 
+
+
+
 /* FAQ Section */
 .faq-section {
   margin: 50px auto;
   max-width: 900px;
 }
+
+
+
 
 .faq-box {
   background: var(--paper);
@@ -65,6 +109,9 @@
   box-shadow: var(--shadow-md);
 }
 
+
+
+
 .faq-box h2 {
   font-size: 1.6rem;
   color: var(--teal-deep);
@@ -72,9 +119,15 @@
   text-align: center;
 }
 
+
+
+
 .faq-item {
   margin-bottom: 20px;
 }
+
+
+
 
 .faq-question {
   font-size: 1.1rem;
@@ -84,9 +137,15 @@
   transition: color 0.3s ease;
 }
 
+
+
+
 .faq-question:hover {
   color: #5fb3a3;
 }
+
+
+
 
 .faq-answer {
   font-size: 14px;
@@ -94,11 +153,17 @@
   line-height: 1.6;
 }
 
+
+
+
 /* Star Rating Section */
 .star-rating-section {
   margin: 40px auto;
   text-align: center;
 }
+
+
+
 
 .star-rating-section h2 {
   font-size: 1.4rem;
@@ -106,35 +171,49 @@
   margin-bottom: 16px;
 }
 
+
+
+
 .star-rating {
   display: flex;
   gap: 10px;
   justify-content: center;
 }
 
+
+
+
 .star-rating span {
   font-size: 30px;
   cursor: pointer;
-  color: #666; /* visible in light mode */
+  color: #666;
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
+
+
+
 .star-rating span:hover,
 .star-rating span.active {
-  color: #ffb400; /* gold highlight */
+  color: #ffb400;
   transform: scale(1.2);
 }
 
-/* Instruction text under stars */
+
+
+
 .star-instruction {
   font-size: 14px;
   margin-top: 10px;
-  color: #555; /* visible in light mode */
+  color: #555;
 }
+
+
+
 
 /* Feedback Section */
 .feedback-section {
-  margin: 50px auto;
+  margin: 50px auto 0 auto;
   max-width: 700px;
   background: var(--grey-light);
   border: 2px solid var(--grey-mid);
@@ -143,12 +222,18 @@
   box-shadow: var(--shadow-sm);
 }
 
+
+
+
 .feedback-section h2 {
   font-size: 1.3rem;
   color: var(--teal-deep);
   margin-bottom: 16px;
   text-align: center;
 }
+
+
+
 
 .feedback-section textarea {
   width: 100%;
@@ -158,16 +243,22 @@
   padding: 12px;
   font-size: 14px;
   margin-bottom: 16px;
-  color: var(--charcoal);          /* ✅ visible text in light mode */
-  background-color: var(--paper);  /* ✅ consistent background */
+  color: var(--charcoal);
+  background-color: var(--paper);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+
+
+
 
 .feedback-section textarea:focus {
   border-color: var(--teal-deep);
   box-shadow: 0 0 6px rgba(15,107,102,0.25);
   outline: none;
 }
+
+
+
 
 .feedback-section button {
   background: var(--teal-deep);
@@ -180,18 +271,16 @@
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
+
+
+
 .feedback-section button:hover {
   background: var(--teal-dark);
   transform: translateY(-2px);
 }
 
-/* Footer */
-footer {
-  padding: 30px 20px;
-  background-color: var(--grey-light);
-  color: var(--charcoal);
-  text-align: center;
-}
+
+
 
 /* ==========================
    Dark Mode Overrides
@@ -205,12 +294,18 @@ html[data-theme="dark"] .star-rating-section h2 {
   color: #5fb3a3;
 }
 
+
+
+
 html[data-theme="dark"] .page-header p,
 html[data-theme="dark"] .step-card p,
 html[data-theme="dark"] .faq-answer,
 html[data-theme="dark"] .feedback-section textarea {
-  color: #eee; /* ✅ light text for visibility */
+  color: #eee;
 }
+
+
+
 
 html[data-theme="dark"] .step-card,
 html[data-theme="dark"] .faq-box,
@@ -220,23 +315,67 @@ html[data-theme="dark"] .feedback-section {
   box-shadow: 0 8px 20px rgba(0,0,0,0.6);
 }
 
+
+
+
 html[data-theme="dark"] .star-rating span {
-  color: #ccc; /* visible grey in dark mode */
+  color: #ccc;
 }
+
+
+
 
 html[data-theme="dark"] .star-rating span.active,
 html[data-theme="dark"] .star-rating span:hover {
   color: #ffb400;
 }
 
+
+
+
 html[data-theme="dark"] .star-instruction {
-  color: #aaa; /* visible instruction text in dark mode */
+  color: #aaa;
 }
 
+
+
+
+/* ========================================================
+   Force Green Footer (Light & Dark Mode)
+   ======================================================== */
+#global-footer,
+footer,
+html[data-theme="dark"] #global-footer,
 html[data-theme="dark"] footer {
-  background-color: #29574e; /* ✅ your chosen dark green */
-  color: #eee;               /* ✅ light text for contrast */
+  background-color: #29574e !important; /* Signature Green */
+  color: #ffffff !important;
+  border: none !important;
+  padding: 30px 20px;
+  text-align: center;
 }
+
+
+
+
+#global-footer a,
+footer a,
+html[data-theme="dark"] #global-footer a,
+html[data-theme="dark"] footer a {
+  color: #e0f2f1 !important;
+  text-decoration: none;
+}
+
+
+
+
+#global-footer a:hover,
+footer a:hover {
+  color: #ffffff !important;
+  text-decoration: underline;
+}
+
+
+
 
 /* Responsive */
 @media (max-width: 800px) {
