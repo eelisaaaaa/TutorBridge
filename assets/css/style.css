@@ -53,6 +53,14 @@ html[data-theme="dark"] .billing-summary-title {
   color: #e8c37a;
 }
 
+/* .page-header h1 is set to --teal-deep for light mode, but that's too
+   dark to read against the near-black dark mode background, so restore
+   the lighter teal (matching the rest of the h1 headings) when dark
+   mode is active. */
+html[data-theme="dark"] .page-header h1 {
+  color: #68a8a4;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -241,6 +249,7 @@ a:hover {
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 8px;
+  color: var(--teal-deep);
 }
 
 .page-header p {
@@ -305,15 +314,7 @@ a:hover {
 
 .btn-soft {
   background: var(--teal-light);
-<<<<<<< HEAD
-<<<<<<< HEAD
-  color: #68a8a4;
-=======
   color: var(--teal-deep);
->>>>>>> parent of c1dbf72 (colour)
-=======
-  color: var(#68a8a4);
->>>>>>> parent of d93c569 (colour)
 }
 
 .btn-soft:hover {
