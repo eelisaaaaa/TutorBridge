@@ -294,8 +294,8 @@ a:hover {
 
 .btn-ghost {
   background: var(--paper);
-  color: #68a8a4;
-  border: 2px solid #68a8a4;
+  color: var(--teal-deep);
+  border: 2px solid var(--teal-deep);
 }
 
 .btn-ghost:hover {
