@@ -305,7 +305,7 @@ a:hover {
 
 .btn-soft {
   background: var(--teal-light);
-  color: var(--teal-deep);
+  color: var(#68a8a4);
 }
 
 .btn-soft:hover {
