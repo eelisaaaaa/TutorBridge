@@ -105,6 +105,7 @@
   cursor: pointer;
   font-size: 13px;
   font-weight: 600;
+  color: var(--charcoal);
 }
 
 .status-paid {
@@ -117,6 +118,7 @@
   border-collapse: collapse;
   font-size: 13px;
   margin-top: 12px;
+  color: var(--charcoal);
 }
 
 .tx-table th, .tx-table td {
@@ -128,14 +130,4 @@
 .tx-table th {
   background: var(--grey-light);
   color: var(--teal-deep);
-}
-
-/* Dark mode: --teal-deep stays a very dark near-black teal even when the
-   card background goes dark, so these headings become nearly invisible.
-   Lighten them here, matching the teal accent used on the pricing page
-   dark-mode overrides (#5fb3a3). */
-html[data-theme="dark"] .card-heading,
-html[data-theme="dark"] .card-subheading,
-html[data-theme="dark"] .tx-table th {
-  color: #5fb3a3;
 }
