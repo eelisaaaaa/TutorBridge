@@ -53,6 +53,14 @@ html[data-theme="dark"] .billing-summary-title {
   color: #e8c37a;
 }
 
+/* .page-header h1 is set to --teal-deep for light mode, but that's too
+   dark to read against the near-black dark mode background, so restore
+   the lighter teal (matching the rest of the h1 headings) when dark
+   mode is active. */
+html[data-theme="dark"] .page-header h1 {
+  color: #68a8a4;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -71,7 +79,7 @@ body {
 
 h1, h2, h3, h4, h5, h6, .font-heading {
   font-family: 'Outfit', sans-serif;
-  color: var(--teal-deep);
+  color: #68a8a4;
   line-height: 1.25;
 }
 
@@ -241,6 +249,7 @@ a:hover {
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 8px;
+  color: var(--teal-deep);
 }
 
 .page-header p {
@@ -294,8 +303,8 @@ a:hover {
 
 .btn-ghost {
   background: var(--paper);
-  color: #68a8a4;
-  border: 2px solid #68a8a4;
+  color: var(--teal-deep);
+  border: 2px solid var(--teal-deep);
 }
 
 .btn-ghost:hover {
@@ -305,7 +314,7 @@ a:hover {
 
 .btn-soft {
   background: var(--teal-light);
-  color: #68a8a4;
+  color: var(--teal-deep);
 }
 
 .btn-soft:hover {
@@ -730,7 +739,7 @@ a:hover {
 
 /* Dark Laptop-Style Footer */
 .footer-dark {
-  background: var(--footer-bg);
+  background: var(--teal-deep);
   color: #fff;
   padding: 48px 24px 28px;
   margin-top: auto;
@@ -852,7 +861,7 @@ a:hover {
 
 .section-heading {
   font-size: 20px;
-  color: #68a8a4;
+  color: var(--teal-deep);
   margin-bottom: 16px;
 }
 
@@ -877,7 +886,7 @@ a:hover {
 
 .cta-heading {
   font-size: 20px;
-  color: #68a8a4;
+  color: var(--teal-deep);
   margin-bottom: 8px;
 }
 
