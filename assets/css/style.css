@@ -313,17 +313,7 @@ a:hover {
 }
 
 .btn-soft {
-  background: var(--teal-light);
-<<<<<<< HEAD
-<<<<<<< HEAD
-  color: #68a8a4;
-=======
-  color: var(--teal-deep);
->>>>>>> parent of c1dbf72 (colour)
-=======
-  color: var(#68a8a4);
->>>>>>> parent of d93c569 (colour)
-}
+  background: #438e89;}
 
 .btn-soft:hover {
   background: var(--teal-soft);
