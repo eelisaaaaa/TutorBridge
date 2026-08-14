@@ -314,15 +314,7 @@ a:hover {
 
 .btn-soft {
   background: var(--teal-light);
-<<<<<<< HEAD
-<<<<<<< HEAD
   color: #68a8a4;
-=======
-  color: var(--teal-deep);
->>>>>>> parent of c1dbf72 (colour)
-=======
-  color: var(#68a8a4);
->>>>>>> parent of d93c569 (colour)
 }
 
 .btn-soft:hover {
@@ -516,7 +508,11 @@ a:hover {
 .tutor-name {
   font-size: 16px;
   font-weight: 700;
-  color:#68a8a4;
+  color: var(--teal-deep);
+}
+
+html[data-theme="dark"] .tutor-name {
+  color: #68a8a4;
 }
 
 .tutor-meta {

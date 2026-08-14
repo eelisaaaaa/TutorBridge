@@ -200,7 +200,7 @@
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--teal-light);
+  border: 3px solid var(--teal-deep);
   margin-bottom: 12px;
   pointer-events: none;
   flex-shrink: 0;
